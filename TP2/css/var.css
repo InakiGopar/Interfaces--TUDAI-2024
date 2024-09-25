@@ -1,0 +1,24 @@
+:root {
+    /*Violetas*/
+    --background-color: #250043;
+    --primary-violet: #45007C;
+    --secondary-violet: #6E01C8;
+    --background-form: #6e01c88a;
+    --third-violet: #5900A1;
+    --fourth-violet: #9747FF;
+    
+
+    /*Verdes*/
+    --primary-green: #86B700;
+    --primary-green-hover:#9dd405;
+    --play-icon-green: #2BF001;
+    --discount-background: #4C6B22;
+    --discount-color: #BEEE11;
+
+    /*Amarillo*/
+    --yellow: #FFCB00;
+
+    /*Gris*/
+    --Grey: #5E6367;
+
+}
