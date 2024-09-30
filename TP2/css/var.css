@@ -14,11 +14,15 @@
     --play-icon-green: #2BF001;
     --discount-background: #4C6B22;
     --discount-color: #BEEE11;
+    --input-success: #A6E300;
 
     /*Amarillo*/
     --yellow: #FFCB00;
 
     /*Gris*/
     --Grey: #5E6367;
+
+    /*Rojo*/
+    --input-denied: #F24E1E; 
 
 }

@@ -55,6 +55,12 @@ form h1 {
     margin-bottom: 10px;
 }
 
+.input-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .input-form p {
     margin-top: 5px;
     margin-right: 140px;
@@ -65,14 +71,6 @@ form h1 {
 
 .input-form p:hover {
     color: var(--primary-green-hover);
-}
-
-.label1 {
-    padding-right: 210px ;
-}
-
-.label2 {
-    padding-right: 170px ;
 }
 
 .separator {

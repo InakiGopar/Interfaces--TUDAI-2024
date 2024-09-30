@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+/*Sacar las flechas del input type=number*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -30,8 +37,17 @@ input {
     border-style: none;
     font-size: 20px;
     padding-left: 10px;
+    outline: none; 
 }
 
 a {
     text-decoration: none;
+}
+
+.disabled {
+    display: none;
+}
+
+.activated {
+    display:block;
 }
