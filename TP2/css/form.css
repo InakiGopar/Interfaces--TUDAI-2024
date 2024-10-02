@@ -1,4 +1,5 @@
 form {
+    padding-top: 5px;
     text-align: center;
     margin: 10px;
     width: 500px;
@@ -10,7 +11,7 @@ form {
 
 form h1 {
     font-size: 32px;
-    margin-bottom: 22px;
+    margin-bottom: 10px;
     font-weight: 300;
 }
 

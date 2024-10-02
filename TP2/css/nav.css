@@ -1,0 +1,182 @@
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-violet);
+    width: 100%;
+    height: 83px;
+    color: #fff;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    width:  237px;
+    justify-content: center;
+}
+
+.hamburger-icon {
+    background-image: url('../assets/img/hamburger-icon.png');
+    background-size: cover;
+    background-position: center center;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo p {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight:500;
+}
+
+.img-logo {
+    background-image: url("../assets/img/30\ games\ logo.png");
+    background-size: cover;
+    background-position: center center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 100px;
+    -webkit-box-shadow: 8px -1px 14px -4px rgba(0,0,0,1);
+    -moz-box-shadow: 8px -1px 14px -4px rgba(0,0,0,1);
+    box-shadow: 8px -1px 14px -4px rgba(0,0,0,1);
+}
+
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    width:471px;
+    height: 46px;
+    background-color: var(--secondary-violet);
+    border-radius: 50px;
+}
+
+.search input {
+    font-family: "Poetsen One", sans-serif;
+    margin-right: 140px;
+}
+
+.lens {
+    background-image: url("../assets/img/lupa.png");
+    background-size: cover;
+    background-position: center center;
+    width: 35px;
+    height: 35px;
+}
+
+.cancel {
+    background-image: url("../assets/img/cancelar.png");
+    background-size: cover;
+    background-position: center center;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    width: 232px;
+    justify-content: center;
+    font-size: 18px;
+}
+
+
+.profile-logo {
+    background-image: url('../assets/img/usuario.png');
+    background-size: cover;
+    background-position: center center;
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.cart {
+    background-image: url('../assets/img/carrito-de-compras.png');
+    background-size: cover;
+    background-position: center center;
+    width: 27px;
+    height: 27px;
+}
+
+.menu {
+    background-color: var(--primary-violet);
+    width: 209px;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 2%;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%); /* Mueve el menú fuera de la pantalla */
+    transition: transform 0.3s ease; /* La transición será de 0.3 segundos */
+    z-index: 999;
+}
+
+.menu.active {
+    transform: translateX(0); /* Despliega el menú */
+}
+
+.menu-item :hover {
+    color: var(--fourth-violet);
+    transition: 0.2s;
+}
+
+.user-menu {
+    height: 350px;
+    width: 250px;
+    background-color: var(--primary-violet);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 5px;
+    margin-right: 5px;
+    overflow: hidden; /* Asegura que el contenido no se desborde durante la animación */
+    max-height: 0; /* Menú oculto inicialmente */
+    transition: max-height 0.3s ease; /* Transición suave para la altura */
+}
+
+.user-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-menu.active {
+    padding: 1%;
+    max-height: 350px;
+}
+
+.user-profile-img {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    background-color: var(--fourth-violet);
+    margin-right: 10px;
+    /*  background-img: url(imagen de messi cabezon);
+        background-size: cover;
+        background-position: center center;
+    */
+}
+
+.line-white {
+    background-color: #fff;
+    height: 1px;
+    width: 193px;
+}

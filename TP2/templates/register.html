@@ -10,92 +10,97 @@
     <link rel="stylesheet" href="../css/var.css">
     <link rel="stylesheet" href="../css/form.css">
     <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/spinnet.css">
     <title>30 Games</title>
 </head>
 <body>
-    <form action="">
-
-        <div class="logo-form">
-            <figure>
-            </figure>
-            <p>30 Games</p>
-        </div>
-
-        <h1>Registrate</h1>
-
-        <div class="line"></div>
-
-        <div class="input-form">
-            <div class="input-form-container">
-                <label>
-                    Nombre y Apellido * 
-                    <span class="text-msg disabled"> Nombre invalido! </span>
-                </label>
-                <input type="text" class="input-validate">
+    <div class="main-content">
+        <form action="">
+            <div class="logo-form">
+                <figure>
+                </figure>
+                <p>30 Games</p>
             </div>
-        </div>
-
-        <div class="input-form">
-            <div class="input-form-container">
-                <label>Nickname</label>
-                <input type="text" placeholder="Opcional">
-            </div>
-        </div>
-
-        <div class="input-form">
-            <div class="input-form-container">
-                <label>
-                    Edad * 
-                    <span class="age-msg disabled"> Mayor a 7 años! </span>
-                </label>
-                <input type="number" class="input-validate">
-            </div>
-        </div>
-
-        <div class="input-form">
-            <div class="input-form-container">
-                <label>
-                    Mail *  
-                    <span class="email-msg disabled"> Mail invalido! </span>
-                </label>
-                <input type="email" class="input-validate">
-            </div>
-        </div>
-
-        <div class="password">
+    
+            <h1>Registrate</h1>
+    
+            <div class="line"></div>
+    
             <div class="input-form">
                 <div class="input-form-container">
-                    <label>Contraseña *</label>
-                    <input type="password" class="input-validate">
+                    <label>
+                        Nombre y Apellido * 
+                        <span class="text-msg disabled"> Nombre invalido! </span>
+                    </label>
+                    <input type="text" class="input-validate" required>
                 </div>
             </div>
-            <div class="disabled password-msg">
-                <div class="password-strength-meter">
-                    <p>8 Carácteres</p>
-                    <p>1 Mayúscula</p>
-                    <p>Al menos un numero</p>     
-                </div>
-            </div>
-        </div>
-
+    
             <div class="input-form">
                 <div class="input-form-container">
-                    <label>Repetir Contraseña *</label>
-                    <input type="password" class="input-validate">
+                    <label>Nickname</label>
+                    <input type="text" placeholder="Opcional">
                 </div>
             </div>
+    
+            <div class="input-form">
+                <div class="input-form-container">
+                    <label>
+                        Edad * 
+                        <span class="age-msg disabled"> Mayor a 7 años! </span>
+                    </label>
+                    <input type="number" class="input-validate" required>
+                </div>
+            </div>
+    
+            <div class="input-form">
+                <div class="input-form-container">
+                    <label>
+                        Mail *  
+                        <span class="email-msg disabled"> Mail invalido! </span>
+                    </label>
+                    <input type="email" class="input-validate" required>
+                </div>
+            </div>
+    
+            <div class="password">
+                <div class="input-form">
+                    <div class="input-form-container">
+                        <label>Contraseña *</label>
+                        <input type="password" class="input-validate" required>
+                    </div>
+                </div>
+                <div class="disabled password-msg">
+                    <div class="password-strength-meter">
+                        <p>8 Carácteres</p>
+                        <p>1 Mayúscula</p>
+                        <p>Al menos un numero</p>     
+                    </div>
+                </div>
+            </div>
+    
+                <div class="input-form">
+                    <div class="input-form-container">
+                        <label>Repetir Contraseña *</label>
+                        <input type="password" class="input-validate" required>
+                    </div>
+                </div>
+    
+            <div class="captcha">
+                <input type="checkbox">
+                <p>No soy un robot</p>
+                <figure></figure>
+            </div>
+    
+            <div class="sing-in">
+                <button>Registrate</button>
+            </div>
+        </form>
+    </div>
 
-        <div class="captcha">
-            <input type="checkbox">
-            <p>No soy un robot</p>
-            <figure></figure>
-        </div>
+    <div class="spinner disabled"></div>
 
-        <div class="sing-in">
-            <button>Registrate</button>
-        </div>
-
-    </form>
     <script src="../js/register.js"></script>
+    <script src="../js/spinner.js"></script>
 </body>
 </html>

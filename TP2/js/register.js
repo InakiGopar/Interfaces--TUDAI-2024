@@ -62,4 +62,3 @@ function validatePassword(input) {
     password_msg.classList.toggle('activated', !isValid);
 }
 
-

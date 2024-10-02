@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+::placeholder {
+    font-family: "Poetsen One", sans-serif;
+    color: #ffffff96;
+    font-size: 18px;
+}
+
 /*Sacar las flechas del input type=number*/
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -16,6 +22,7 @@ body {
     align-items: center;
     background-color: var(--background-color);
     font-family: "Poetsen One", sans-serif;
+    color: #fff;
 }
 
 button {
