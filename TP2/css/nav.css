@@ -119,8 +119,9 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
     font-size: 20px;
-    padding: 2%;
+    padding: 1.15%;
     top: 0;
     left: 0;
     transform: translateX(-100%); /* Mueve el menú fuera de la pantalla */
@@ -132,14 +133,24 @@ header {
     transform: translateX(0); /* Despliega el menú */
 }
 
-.menu-item :hover {
+.menu-item {
+    display: flex;
+    align-items: center;
+}
+
+.menu-item p {
+    cursor: pointer;
+    margin-left: 2px;
+}
+
+.menu-item:hover {
     color: var(--fourth-violet);
     transition: 0.2s;
 }
 
 .user-menu {
     height: 350px;
-    width: 250px;
+    width: 220px;
     background-color: var(--primary-violet);
     border-radius: 15px;
     display: flex;
@@ -156,6 +167,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.user-menu-item {
+    margin-left: 10px;
+}
+
+.user-menu-item:hover {
+    transition: 0.2s;
+    color: var(--fourth-violet);
 }
 
 .user-menu.active {
@@ -175,8 +195,89 @@ header {
     */
 }
 
+.user-menu-item {
+    display: flex;
+    align-items: center;
+}
+
+.user-menu-item p {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
 .line-white {
     background-color: #fff;
     height: 1px;
     width: 193px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media only screen and (max-width: 900px) {
+    .search {
+        width:271px;
+        height: 46px;
+    }
+
+    .search input {
+        width: 100px;
+        margin-right: 0px;
+    }
+
+    .lens {
+        height: 25px;
+        width: 25px;
+    }
+
+    .cancel {
+        height: 16px;
+        width: 16px;
+    }
+
+    .user-section {
+        width: 120px;
+    }
+
+    .user-section p{
+        display: none;
+    }
+
+    .menu-item {
+        padding-left: 5px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        z-index: 999;
+    }
+    .search {
+        display: none;
+    }
+
+    .menu {
+        flex-direction: column;
+        font-size: 13px;
+        transform: translateY(-100%);
+        height: 340px;
+        width: 140px;
+        z-index: 10;
+    }
+
+    .user-menu {
+        font-size: 12px;
+    }
+
+    .user-menu-item {
+        margin-left: 40px;
+    }
+
+    .line-white {
+        width:  120px;
+    }
+
+    .user-profile-img {
+        height: 30px;
+        width: 30px;
+    }
 }

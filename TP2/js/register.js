@@ -1,6 +1,5 @@
 "use strict"
 
-
 document.querySelectorAll('.input-validate').forEach(input => {
     input.addEventListener('input', function() {
         if (input.type === 'text') {

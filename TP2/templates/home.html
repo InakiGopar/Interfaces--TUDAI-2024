@@ -8,6 +8,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/var.css">
         <link rel="stylesheet" href="../css/global.css">
+        <link rel="stylesheet" href="../css/icons.css">
+        <link rel="stylesheet" href="../css/spinnet.css">
         <link rel="stylesheet" href="../css/home.css">
         <link rel="stylesheet" href="../css/nav.css">
         <link rel="stylesheet" href="../css/carrusel.css">
@@ -38,39 +40,48 @@
         </header>
 
         <main class="main-content">
-            <div class="disabled menu">
+            <nav class="menu">
                 <div class="menu-item">
+                    <span class="fa-solid--home"></span>
                     <p>Inicio</p>
                 </div>
     
                 <div class="menu-item">
+                    <span class="noto-v1--glowing-star"></span>
                     <p>Favoritos</p>
                 </div>
     
                 <div class="menu-item">
+                    <span class="ri--group-line"></span>
                     <p>Dos jugadores</p>
                 </div>
     
                 <div class="menu-item">
+                    <span class="emojione--crossed-swords"></span>
                     <p>Accion</p>
                 </div>
     
                 <div class="menu-item">
+                    <span class="noto--compass"></span>
                     <p>Aventura</p>
                 </div>
     
                 <div class="menu-item">
+                    <span class="emojione--soccer-ball"></span>
                     <p>Deportes</p>
                 </div>
                 
                 <div class="menu-item">
+                    <span class="noto--chess-pawn"></span>
                     <p>Estrategia</p>
                 </div>
-            </div>
+            </nav>
 
-            <div class="carrusel">
+            <section class="carrusel">
+                <div class="big-carrusel">
 
-            </div>
+                </div>
+            </section>
 
             <div class="user-menu">
 
@@ -82,38 +93,39 @@
                 <div class="line-white"></div>
 
                 <div class="user-menu-item">
-                    <figure></figure>
+                    <span class="heroicons--user-16-solid"></span>
                     <p>Mi Perfil</p>
                 </div>
 
                 <div class="user-menu-item" >
-                    <figure></figure>
+                    <span class="noto-v1--glowing-star"></span>
                     <p>Mis Favoritos</p>
                 </div>
 
                 <div class="user-menu-item">
-                    <figure></figure>
+                    <span class="mdi--cart"></span>
                     <p>Mi Carrito</p>
                 </div>
 
                 <div class="user-menu-item">
-                    <figure></figure>
+                    <span class="ion--game-controller-outline"></span>
                     <p>Mis Juegos</p>
                 </div>
 
                 <div class="user-menu-item">
-                    <figure></figure>
+                    <span class="carbon--settings"></span>
                     <p>Configuración</p>
                 </div>
 
                 <div class="line-white"></div>
 
                 <div class="user-menu-item">
-                    <figure></figure>
-                    <p>Cerrar Sesión</p>
+                    <span class="game-icons--exit-door"></span>
+                    <p id="exit">Cerrar Sesión</p>
                 </div>
             </div>
         </main>
+        <div class="spinner disabled"></div>
         
         <script src="../js/nav.js"></script>
     </body>

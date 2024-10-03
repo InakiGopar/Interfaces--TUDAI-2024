@@ -4,6 +4,7 @@ const menu = document.querySelector('.menu');
 const hamburger_menu = document.querySelector('.hamburger-icon');
 const main = document.querySelector('main');
 
+
 const search_input = document.getElementById('search');
 const search_cancel = document.getElementById('cancel');
 
@@ -34,6 +35,20 @@ profile_picture.addEventListener('click', () => {
 main.addEventListener('click', ()=> {
     user_menu.classList.remove('active');
 });
+
+//cerrar sesion
+const exit = document.getElementById('exit');
+
+exit.addEventListener('click', ()=> {
+    document.querySelector('.spinner').style.display = 'block';
+    document.querySelector('.main-content').classList.add('blur'); //difuminar el fondo
+
+    setTimeout(() => {
+        window.location.href = '../index.html'; 
+    }, 2000); // Simulamos 2 segundos de carga
+});
+
+
 
 
 
