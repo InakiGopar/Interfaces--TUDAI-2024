@@ -265,11 +265,12 @@ header {
     }
 
     .user-menu {
+        width: 150px;
         font-size: 12px;
     }
 
     .user-menu-item {
-        margin-left: 40px;
+        margin-left: 20px;
     }
 
     .line-white {

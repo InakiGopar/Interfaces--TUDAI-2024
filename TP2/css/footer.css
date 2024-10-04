@@ -1,0 +1,191 @@
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 612px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #250043, #2d0051, #35005f, #3d006d, #45007c);
+}
+
+footer h3 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo figure {
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+    border-radius: 50px;
+    background-image: url('../assets/img/30\ games\ logo.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.footer-logo p {
+    font-size: 25px;
+}
+
+.footer-nav ul {
+    height: 356px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    padding-left: 60px;
+}
+
+.footer-nav ul li {
+    font-size: 18px;
+}
+
+.footer-nav ul li:hover {
+    color: var(--fourth-violet);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.footer-middle {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    width: 551px;
+}
+
+.footer-middle h3 {
+    margin-bottom: -15px;
+}
+
+.line {
+    margin: 20px auto;
+    width:420px;
+    background-color: #fff;
+    height: 1px;
+}
+
+.social-media {
+    width: 207px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-right {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-bottom: 90px;
+}
+
+.mail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+.phone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .footer-left {
+        margin: 0;
+    }
+    .footer-logo {
+        margin-right: 40px;
+    }
+    .footer-logo figure {
+        height: 50px;
+        width: 50px;
+    }
+    .footer-nav ul {
+        padding-left: 40px;
+    }
+    .footer-middle {
+        margin-top: 50px;
+        width: 451px;
+    }
+    .footer-middle p{
+        font-size: 15px;
+    }
+    .footer-right {
+        margin-top: 50px;
+        font-size: 12px;
+        margin-bottom: 100px;
+    }
+    .mail {
+        width: 100px;
+    }
+    .phone {
+        width: 100px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    footer {
+        flex-direction: column;
+        height: max-content;
+    }
+
+    .footer-left {
+        align-items: center;
+    }
+
+    .footer-nav ul {
+        padding: 0;
+        margin-top: 5px;
+    }
+
+    .footer-nav ul li {
+        margin-right: 10px;
+        text-align: center;
+    }
+
+    .footer-middle {
+        height: 300px;
+    }
+
+    .footer-right {
+        margin-bottom: 0;
+    }
+    
+}
+
+@media only screen and (max-width: 500px) {
+    .footer-left ul {
+        padding: 1%;
+    }
+    .footer-left ul li {
+        font-size: 12px;
+    }
+    .footer-middle {
+        width: 300px;
+    }
+    .line {
+        width:  200px;
+    }
+    .footer-middle p {
+        font-size: 13px;
+    }
+}
+
