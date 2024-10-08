@@ -4,6 +4,7 @@
     --primary-violet: #45007C;
     --secondary-violet: #6E01C8;
     --background-form: #5800a180;
+    --card-botton-color: #5800a1e4;
     --third-violet: #5900A1;
     --fourth-violet: #9747FF;
 
@@ -19,7 +20,8 @@
     --yellow: #FFCB00;
 
     /*Gris*/
-    --Grey: #5E6367;
+    --grey: #5E6367;
+    --background-grey: #777d82;
 
     /*Rojo*/
     --input-denied: #F24E1E; 
