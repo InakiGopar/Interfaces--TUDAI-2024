@@ -8,8 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/var.css">
     <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="./css/icons.css">
     <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/spinnet.css">
+    <link rel="stylesheet" href="css/spinner.css">
     <title>30 Games</title>
 </head>
 <body>
@@ -65,13 +66,18 @@
             </div>
     
             <div class="sing-in">
-                <button>Ingresar</button>
+                <button>
+                    <span class="text-button">Ingresar</span>
+                    <span class="play-text">A Jugar!</span>
+                </button>
+                
             </div>
             
         </form>
     </div>
     
-    <div class="spinner disabled"></div>
+    <div class="spinner"></div>
+    <div class="loading-percent">0%</div>
 
     <script src="/js/spinner.js"></script>
 </body>

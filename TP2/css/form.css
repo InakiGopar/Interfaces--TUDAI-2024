@@ -105,6 +105,10 @@ form h1 {
 }
 
 .login-button-container button {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1;
     background-color: var(--secondary-violet);
     color: #fff;
     width: 250px;
@@ -116,8 +120,28 @@ form h1 {
     border-style: none;
 }
 
-.login-button-container button:hover {
-    background-color: var( --fourth-violet);
+.login-button-container button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; 
+    width: 100%;
+    height: 100%;
+    background-color: var(--fourth-violet); 
+    z-index: -1;
+    transition: left 0.4s ease; 
+}
+
+.login-button-container button:hover::before {
+    left: 0;
+}
+
+.login-button-container button figure {
+    transition: transform 0.4s ease;
+}
+
+.login-button-container button:hover figure {
+    transform: rotate(360deg); 
 }
 
 .logo-google {
@@ -157,4 +181,48 @@ form h1 {
     height: 50px;
     width: 150px;
     font-size: 22px;
+    position: relative; /* Posicionamiento para los elementos hijos */
+    overflow: hidden;
 }
+
+.sing-in button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; 
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-green-hover); 
+    transition: left 0.4s ease; 
+}
+
+.sing-in button:hover::before {
+    left: 0;
+}
+
+.text-button {
+    display: inline-block; 
+    transition: transform 0.3s ease; /* Transición para el movimiento */
+}
+
+.play-text {
+    position: absolute; 
+    top: 50%; 
+    left: 25%; 
+    transform: translate(-100%, -50%);
+    opacity: 0; /* Inicialmente oculto */
+    visibility: hidden; /* Asegurar que no sea visible */
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; /* Transiciones para movimiento y opacidad */
+}
+
+.sing-in button:hover .text-button {
+    transform: translateX(-150%); 
+}
+
+.sing-in button:hover .play-text {
+    transform: translate(0, -50%); 
+    opacity: 1; 
+    visibility: visible;
+}
+
+

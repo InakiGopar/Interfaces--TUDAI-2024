@@ -64,7 +64,7 @@
     justify-content: space-between;
     border-radius: 15px;
     position: relative; 
-    transition: background-color 0.3s ease, filter 0.3s ease;  
+    transition: background-color 0.3s ease, filter 0.3s ease;
 }
 
 .card-pay-top {
@@ -97,9 +97,8 @@
 }
 
 .pay-card:hover {
-    background-color: rgba(126, 3, 214, 0.747); 
-    background-blend-mode: multiply; 
-    
+    background-color: rgba(37, 0, 67, 0.80); 
+    background-blend-mode: multiply;
 }
 
 .add-to-cart-button {

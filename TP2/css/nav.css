@@ -29,6 +29,7 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .logo p {

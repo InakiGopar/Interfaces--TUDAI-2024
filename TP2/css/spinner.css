@@ -4,6 +4,7 @@
 }
 
 .spinner {
+    display: none;
     border: 8px solid rgba(0, 0, 0, 0.1);
     border-top: 8px solid var(--primary-green);
     border-radius: 50%;
@@ -14,6 +15,16 @@
     margin-top: 200px;
     transform: translate(-50%, -50%);
     z-index: 9999; 
+}
+
+.loading-percent {
+    display: none;
+    position: fixed;
+    top: 300px;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--primary-green);
+    z-index: 10000; 
 }
 
 .blur {

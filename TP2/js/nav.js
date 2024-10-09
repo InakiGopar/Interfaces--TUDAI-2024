@@ -3,6 +3,7 @@
 const menu = document.querySelector('.menu');
 const hamburger_menu = document.querySelector('.hamburger-icon');
 const main = document.querySelector('main');
+const logo = document.querySelector('.logo');
 
 
 const search_input = document.getElementById('search');
@@ -36,12 +37,32 @@ main.addEventListener('click', ()=> {
     user_menu.classList.remove('active');
 });
 
+//redirige al home al hacer click en el logo
+logo.addEventListener('click', ()=> {
+    window.location.href = '../templates/home.html'
+})
+
 //cerrar sesion
 const exit = document.getElementById('exit');
 
 exit.addEventListener('click', ()=> {
     document.querySelector('.spinner').style.display = 'block';
     document.querySelector('.main-content').classList.add('blur'); //difuminar el fondo
+    document.querySelector('header').classList.add('blur');   //difuminar el header
+    document.querySelector('footer').classList.add('blur'); //difuminar el footer
+
+    let loadingPercent = document.querySelector('.loading-percent');
+    loadingPercent.style.display = 'block';
+
+    let percent = 0;
+    let interval = setInterval(() => {
+        percent += 1; 
+        loadingPercent.innerHTML = `${percent}%`; // Actualizar el porcentaje en el html
+
+        if (percent === 100) {
+            clearInterval(interval); 
+        }
+    }, 20);
 
     setTimeout(() => {
         window.location.href = '../index.html'; 
