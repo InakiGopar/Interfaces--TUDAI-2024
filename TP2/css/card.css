@@ -1,5 +1,6 @@
 .card {
     margin-top: 50px;
+    margin: 5px; /* Margen horizontal de 5px para tener 10px de separación total */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -134,5 +135,3 @@ background-color: var(--primary-green-hover);
 .remove-to-cart-button:hover {
     background-color: var(--background-grey);
 }
-
-

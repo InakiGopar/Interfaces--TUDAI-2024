@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>30 Games</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/var.css">
+        <link rel="stylesheet" href="../css/global.css">
+        <link rel="stylesheet" href="../css/icons.css">
+        <link rel="stylesheet" href="../css/spinner.css">
+        <link rel="stylesheet" href="../css/nav.css">
+        <link rel="stylesheet" href="../css/game.css">
+        <link rel="stylesheet" href="../css/footer.css">
+    </head>
+    <body>
+        <header>
+            <div class="header-left">
+                <figure class="hamburger-icon"></figure>
+
+                <div class="logo">
+                    <figure class="img-logo"></figure>
+                    <p>30 Games</p>
+                </div>
+            </div>
+
+            <div class="search">
+                <figure class="lens"></figure>
+                <input id="search" type="text" placeholder="search..">
+                <figure id="cancel" class="cancel"></figure>
+            </div>
+
+            <div class="user-section">
+                <p>Hola, Juan</p>
+                <figure class="profile-logo"></figure>
+                <figure class="cart"></figure>
+            </div>
+        </header>
+        <div class="toggle-menu-container">   
+            <nav class="menu">
+                <div class="menu-item">
+                    <span class="fa-solid--home"></span>
+                    <p>Inicio</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="noto-v1--glowing-star"></span>
+                    <p>Favoritos</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="ri--group-line"></span>
+                    <p>Dos jugadores</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="emojione--crossed-swords"></span>
+                    <p>Accion</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="noto--compass"></span>
+                    <p>Aventura</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="emojione--soccer-ball"></span>
+                    <p>Deportes</p>
+                </div>
+                
+                <div class="menu-item">
+                    <span class="noto--chess-pawn"></span>
+                    <p>Estrategia</p>
+                </div>
+            </nav>
+            <div class="user-menu">
+
+                <div class="user-menu-header">
+                    <figure class="user-profile-img"></figure>
+                    <p>Juan Perez</p>
+                </div>
+
+                <div class="line-white"></div>
+
+                <div class="user-menu-item">
+                    <span class="heroicons--user-16-solid"></span>
+                    <p>Mi Perfil</p>
+                </div>
+
+                <div class="user-menu-item" >
+                    <span class="noto-v1--glowing-star"></span>
+                    <p>Mis Favoritos</p>
+                </div>
+
+                <div class="user-menu-item">
+                    <span class="mdi--cart"></span>
+                    <p>Mi Carrito</p>
+                </div>
+
+                <div class="user-menu-item">
+                    <span class="ion--game-controller-outline"></span>
+                    <p>Mis Juegos</p>
+                </div>
+
+                <div class="user-menu-item">
+                    <span class="carbon--settings"></span>
+                    <p>Configuración</p>
+                </div>
+
+                <div class="line-white"></div>
+
+                <div class="user-menu-item">
+                    <span class="game-icons--exit-door"></span>
+                    <p id="exit">Cerrar Sesión</p>
+                </div>
+            </div>
+        </div>
+        <main class="main-content">
+            <section class="game-section">
+                <div class="game">
+                    <button>Jugar</button>
+                </div>
+            </section>
+        </main>
+
+        <div class="spinner"></div>
+        <div class="loading-percent">0%</div>
+
+        <footer>
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <figure></figure>
+                    <p>30 Games</p>
+                </div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li>Inicio</li>
+                        <li>Favoritos</li>
+                        <li>Dos Jugadores</li>
+                        <li>Accion</li>
+                        <li>Aventura</li>
+                        <li>Deportes</li>
+                        <li>Estrategia</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-middle">
+                <div class="about-us">
+                    <h3>Sobre nosotros</h3>
+                    <div class="line"></div>
+                    <p>
+                        Somos una plataforma de juegos online inspirada en las clásicas paginas  Friv y 1001 Juegos.
+                        Ofrecemos una amplia variedad de juegos para todas las edades, desde aventuras emocionantes hasta puzzles desafiantes.
+                        Nuestro objetivo es brindarte los mejores juegos para que  te puedas divertir,
+                        con una experiencia divertida y segura. ¡Empeza ya mismo a dievertirte!
+                    </p>
+                    <div class="line"></div>
+                </div>
+                
+                <div class="social-media">
+                    <span class="ic--baseline-facebook"></span>
+                    <span class="mdi--instagram"></span>
+                    <span class="hugeicons--new-twitter"></span>
+                    <span class="mdi--youtube"></span>
+                </div>
+            </div>
+            <div class="footer-right">
+
+                <h3>Contacto</h3>
+
+                <div class="mail">
+                    <span class="material-symbols--mail-outline"></span>
+                    <p>30games@gmail.com</p>
+                </div>
+
+                <div class="phone">
+                    <span class="ic--baseline-phone"></span>
+                    <p>+54 123 456 789</p>
+                </div>
+
+            </div>
+        </footer>
+        <script src="../js/spinner.js"></script>
+        <script src="../js/nav.js"></script>
+    </body>
+</html>

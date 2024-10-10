@@ -1,0 +1,26 @@
+main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.game {
+    margin-top: 137px;
+    background-image: url('../assets/img/card-img/Portada\ cuatro\ en\ linea.png');
+    background-size: cover;
+    background-position: center center;
+    width: 999px;
+    height: 495px;
+    background-color: rgba(37, 0, 67, 0.591); 
+    background-blend-mode: multiply;
+}
+
+.game button {
+    height: 54px;
+    width: 226px;
+    position: relative;
+    top: 45%;
+    left: 40%;
+    z-index: 9999;
+    font-size: 28px;
+}
