@@ -92,6 +92,17 @@ main {
     height: 55px;
     width: 180px;
     font-size: 1.5em;
+    transition: all 0.5s;
+}
+
+.share-button-container button:hover {
+    background-color: var(--primary-green-hover);
+}
+
+.share-button-container button:hover span {
+    transition: 0.5s;
+    rotate: -8deg;
+    scale: 1.1;
 }
 
 .game-description {

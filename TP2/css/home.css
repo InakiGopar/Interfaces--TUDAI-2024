@@ -3,7 +3,12 @@
     flex-direction: column;
 }
 
+.main-content {
+    width: 100%;
+}
+
 .card-section {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
 }

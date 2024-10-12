@@ -30,6 +30,9 @@
 
 .card-bottom p {
     margin-left: 8px;
+    font-size: 20px;
+    font-weight: 100;
+    font-family: "Passion One", sans-serif;
 }
 
 .play-button {
@@ -51,7 +54,6 @@
     scale: 1.1;
     transform: rotate(360deg);
 }
-
 
 .pay-card {
     width: 270px;
