@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/var.css">
+        <link rel="stylesheet" href="../css/global.css">
+        <link rel="stylesheet" href="../css/icons.css">
+        <link rel="stylesheet" href="../css/spinner.css">
+        <link rel="stylesheet" href="../css/home.css">
+        <link rel="stylesheet" href="../css/nav.css">
+        <link rel="stylesheet" href="../css/card.css">
+        <link rel="stylesheet" href="../css/carrusel.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <title>30 Games</title>
+    </head>
+    <body>
+        <header>
+            <div class="header-left">
+                <figure class="hamburger-icon"></figure>
+
+                <div class="logo">
+                    <figure class="img-logo"></figure>
+                    <p>30 Games</p>
+                </div>
+            </div>
+
+            <div class="search">
+                <figure class="lens"></figure>
+                <input id="search" type="text" placeholder="search..">
+                <figure id="cancel" class="cancel"></figure>
+            </div>
+
+            <div class="user-section">
+                <p>Hola, Juan</p>
+                <figure class="profile-logo"></figure>
+                <figure class="cart"></figure>
+            </div>
+        </header>
+        <div class="toggle-menu-container">   
+            <nav class="menu">
+                <div class="menu-item">
+                    <span class="fa-solid--home"></span>
+                    <p>Inicio</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="noto-v1--glowing-star"></span>
+                    <p>Favoritos</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="ri--group-line"></span>
+                    <p>Dos jugadores</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="emojione--crossed-swords"></span>
+                    <p>Accion</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="noto--compass"></span>
+                    <p>Aventura</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="emojione--soccer-ball"></span>
+                    <p>Deportes</p>
+                </div>
+                
+                <div class="menu-item">
+                    <span class="noto--chess-pawn"></span>
+                    <p>Estrategia</p>
+                </div>
+            </nav>
+            <div class="user-menu">
+
+                <div class="user-menu-header">
+                    <figure class="user-profile-img"></figure>
+                    <p>Juan Perez</p>
+                </div>
+
+                <div class="line-white"></div>
+
+                <div class="user-menu-item">
+                    <span class="heroicons--user-16-solid"></span>
+                    <p>Mi Perfil</p>
+                </div>
+
+                <div class="user-menu-item" >
+                    <span class="noto-v1--glowing-star"></span>
+                    <p>Mis Favoritos</p>
+                </div>
+
+                <div class="user-menu-item">
+                    <span class="mdi--cart"></span>
+                    <p>Mi Carrito</p>
+                </div>
+
+                <div class="user-menu-item">
+                    <span class="ion--game-controller-outline"></span>
+                    <p>Mis Juegos</p>
+                </div>
+
+                <div class="user-menu-item">
+                    <span class="carbon--settings"></span>
+                    <p>Configuración</p>
+                </div>
+
+                <div class="line-white"></div>
+
+                <div class="user-menu-item">
+                    <span class="game-icons--exit-door"></span>
+                    <p id="exit">Cerrar Sesión</p>
+                </div>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <section class="card-section">
+                <div class="big-carrusel-container">
+                    <div class="big-carrusel">
+                        <button class="prev-btn-big" ><span class="weui--arrow-filled"></span></button>
+                        <div class="big-card" id="big-card-activa">
+                            <div class="img-big">
+                                <img id="img-main" src="../assets/img/card-img/godofwar.webp" alt="God Of War">
+                            </div>
+                            <div class="detalles">
+                                <p>God Of War-Ragnarok</p>
+                                <div class="img-chiquitas">
+                                    <div class="chiquitas1y2">
+                                        <img id="img-hover" src="../assets/img/card-img/godofwarchiquita1.jpg" alt="1">
+                                        <img id="img-hover"src="../assets/img/card-img/godofwarchiquita2.jpg" alt="2">
+                                    </div>
+                                    <div class="chiquitas3y4">
+                                        <img id="img-hover" src="../assets/img/card-img/godofwarchiquita3.jpg" alt="3">
+                                        <img id="img-hover" src="../assets/img/card-img/godofwarchiquita4.jpg" alt="4">
+                                    </div>
+                                </div>
+                                <div class="comprar">
+                                    <div class="oferta">
+                                        <div class="descuento">
+                                            <p>%20</p>
+                                        </div>
+                                        <div class="precio">
+                                            <p>25USD-<s>32USD</s></p>
+                                        </div>
+                                        
+                                    </div>
+                                    <button class="add-to-cart-button-big">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="next-btn-big"><span class="weui--arrow-filled2"></span></button>    
+                    </div>
+                    <div class="puntitos">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    
+                </div>
+                
+                <div class="carrusel-container">
+                    <p class="card-title">Ultimos que jugaste...</p>
+                    <button class="prev-btn" id="pb1"><span class="weui--arrow-filled"></span></button>
+                    <div class="carrusel" id="carrusel1">
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Valorant</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Counter Strike 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>EA FC 25</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>League of Legends</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Rocket league</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>NBA 2K25</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Silent Hill 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Silent Hill 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="next-btn" id="nb1"><span class="weui--arrow-filled2"></span></button>
+                </div>
+                <div class="carrusel-container">
+                    <p class="card-title">Accion</p>
+                    <button class="prev-btn" id="pb2"><span class="weui--arrow-filled"></span></button>
+                    <div class="carrusel" id="carrusel2">
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Valorant</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Counter Strike 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>EA FC 25</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>League of Legends</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Rocket league</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>NBA 2K25</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Silent Hill 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Silent Hill 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="next-btn" id="nb2"><span class="weui--arrow-filled2"></span></button>
+                </div>
+                <div class="carrusel-container">
+                    <p class="card-title">Deportes</p>
+                    <button class="prev-btn" id="pb3"><span class="weui--arrow-filled"></span></button>
+                    <div class="carrusel" id="carrusel3">
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Valorant</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Counter Strike 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>EA FC 25</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>League of Legends</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Rocket league</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>NBA 2K25</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Silent Hill 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Silent Hill 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="next-btn" id="nb3"><span class="weui--arrow-filled2"></span></button>
+                </div>
+                <div class="carrusel-container">
+                    <p class="card-title">Estrategia</p>
+                    <button class="prev-btn" id="pb4"><span class="weui--arrow-filled"></span></button>
+                    <div class="carrusel" id="carrusel4">
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Valorant</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Counter Strike 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>EA FC 25</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>League of Legends</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Rocket league</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>NBA 2K25</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Silent Hill 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Silent Hill 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="next-btn" id="nb4"><span class="weui--arrow-filled2"></span></button>
+                </div>
+                <div class="carrusel-container">
+                    <p class="card-title">SuperHeroes</p>
+                    <button class="prev-btn" id="pb5"><span class="weui--arrow-filled"></span></button>
+                    <div class="carrusel" id="carrusel5">
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Valorant</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Counter Strike 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>EA FC 25</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>League of Legends</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Rocket league</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>NBA 2K25</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Silent Hill 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Silent Hill 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="next-btn" id="nb5"><span class="weui--arrow-filled2"></span></button>
+                </div>
+            </section>
+        </main>
+
+        <div class="spinner"></div>
+        <div class="loading-percent">0%</div>
+        
+        <footer>
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <figure></figure>
+                    <p>30 Games</p>
+                </div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li>Inicio</li>
+                        <li>Favoritos</li>
+                        <li>Dos Jugadores</li>
+                        <li>Accion</li>
+                        <li>Aventura</li>
+                        <li>Deportes</li>
+                        <li>Estrategia</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-middle">
+                <div class="about-us">
+                    <h3>Sobre nosotros</h3>
+                    <div class="line"></div>
+                    <p>
+                        Somos una plataforma de juegos online inspirada en las clásicas paginas  Friv y 1001 Juegos.
+                        Ofrecemos una amplia variedad de juegos para todas las edades, desde aventuras emocionantes hasta puzzles desafiantes.
+                        Nuestro objetivo es brindarte los mejores juegos para que  te puedas divertir,
+                        con una experiencia divertida y segura. ¡Empeza ya mismo a dievertirte!
+                    </p>
+                    <div class="line"></div>
+                </div>
+                
+                <div class="social-media">
+                    <span class="ic--baseline-facebook"></span>
+                    <span class="mdi--instagram"></span>
+                    <span class="hugeicons--new-twitter"></span>
+                    <span class="mdi--youtube"></span>
+                </div>
+            </div>
+            <div class="footer-right">
+
+                <h3>Contacto</h3>
+
+                <div class="mail">
+                    <span class="material-symbols--mail-outline"></span>
+                    <p>30games@gmail.com</p>
+                </div>
+
+                <div class="phone">
+                    <span class="ic--baseline-phone"></span>
+                    <p>+54 123 456 789</p>
+                </div>
+
+            </div>
+        </footer>
+        
+        <script src="../js/card.js"></script>
+        <script src="../js/carrusel.js"></script>
+        <script src="../js/nav.js"></script>
+        <script src="../js/big-carrsel.js"></script>
+    </body>
+</html>
