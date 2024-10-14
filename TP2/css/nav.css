@@ -200,7 +200,7 @@ header {
     border-radius: 50%;
     background-color: var(--fourth-violet);
     margin-right: 10px;
-    background-image: url('../assets/img/messienano.jpg');
+    background-image: url('../assets/img/users/messienano.jpg');
     background-size: cover;
     background-position: center center;
 }

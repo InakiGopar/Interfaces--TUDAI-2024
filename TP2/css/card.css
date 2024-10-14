@@ -145,6 +145,11 @@ background-color: var(--primary-green-hover);
     margin-top: 50px;
     width:930px;
     height:353px;
+    display: none;
+}
+
+.big-card.active {
+  display: flex;
 }
 
 .img-big{
@@ -157,6 +162,10 @@ background-color: var(--primary-green-hover);
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.img-main{
+    transition: opacity 0.5s ease-in-out; /* Controla la velocidad del cambio */     
 }
 
 .detalles{
@@ -179,26 +188,32 @@ background-color: var(--primary-green-hover);
 .img-chiquitas{
     width: 100%;
 }
-
-.chiquitas1y2{
-    display:flex;
-    justify-content: space-between;
-}
-
-.chiquitas3y4{
-    display:flex;
-    justify-content: space-between;
-}
-
 .img-chiquitas img{
     width: 100%;
     height: 100%;
     margin: 5px
 }
 
-#img-hover{
+.chiquitas1y2 {
+    display:flex;
+    justify-content: space-around;
+    padding: 0 5%;
+}
+
+.chiquitas3y4 {
+    display:flex;
+    justify-content: space-around;
+    padding: 0 5%;
+}
+
+.chiquitas1y2 img{
     cursor: pointer;
 }
+
+.chiquitas3y4 img{
+    cursor: pointer;
+}
+ 
 .comprar{
     display: flex;
     align-items: center;
@@ -225,6 +240,7 @@ background-color: var(--primary-green-hover);
     font-family: "Poetsen One", sans-serif;
     justify-content: center;
     padding-left: 0px;
+    color: #BEEE11;
 }
 
 .precio{
@@ -252,19 +268,17 @@ background-color: var(--primary-green-hover);
     font-size: 15px;
 }
 
-
-.add-to-cart-button-big:hover {
-background-color: var(--primary-green-hover);
-}
-
-.remove-to-cart-button-big {
+.remove-to-cart-button-big.add-to-cart-button-big {
     background-color: var(--grey);
 }
 
-.remove-to-cart-button-big:hover {
-    background-color: var(--background-grey);
+.add-to-cart-button-big:hover {
+    background-color: var( --primary-green-hover);
 }
 
+.remove-to-cart-button-big:hover {
+background-color: var(--background-grey);
+}
 
 @media only screen and (max-width: 420px){
     .card {
@@ -289,5 +303,93 @@ background-color: var(--primary-green-hover);
         width: 30px;
         border: 1.5px solid #fff;
     }
-        
+    
+    .big-card{
+        margin-top: 2%;
+        width:350px;
+        height:150px;
+    }
+
+    .img-big{
+        width: 70%;
+        height: 100%;
+    }
+
+    .detalles{
+        width:30%;
+        height: 100%;
+    }
+
+    .detalles p{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 33%;
+        font-size: 13px;
+        padding: 0%;
+       text-align: center;
+    }
+
+
+    .img-chiquitas{
+        display:none;
+    }
+    
+    .comprar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        height: 100%;
+    }
+
+    .oferta{
+        display: flex;
+        width: 80%;
+        height: 40;
+    }
+    
+    .descuento{
+        width: 30%;
+        border-radius: 15%;
+        border-top-right-radius:0px;
+        border-bottom-right-radius:0px;
+    }
+    
+    .descuento p{
+        height: 100%;
+        font-size: 10px;
+        align-items: center;
+    }
+    
+    .precio{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        background-color: #250043;
+        border-radius: 9%;
+        border-top-left-radius:0px ;
+        border-bottom-left-radius:0px ;
+    }
+    .precio p{
+        height: 100%;
+        align-items: center;
+        font-size: 10px;
+    }
+    
+    .add-to-cart-button-big { 
+        width: 75%;
+        height: 30px;
+        border: none;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        font-size: 7px;
+
+
+    }
+    
+
 }

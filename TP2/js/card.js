@@ -36,22 +36,5 @@ cards.forEach((card, index) => {
 
 
 
-// Selecciona la imagen principal
-const mainImage = document.getElementById('img-main');
-// Selecciona todas las miniaturas
-const hoverImages = document.querySelectorAll('#img-hover');
-// Guarda la fuente original de la imagen principal
-const originalSrc = mainImage.src;
 
-// Añade eventos a cada miniatura
-hoverImages.forEach((hoverImg) => {
-  // Cambia la imagen principal al hacer hover
-  hoverImg.addEventListener('mouseover', () => {
-    mainImage.src = hoverImg.src;
-  });
 
-  // Restaura la imagen principal cuando se quita el hover
-  hoverImg.addEventListener('mouseout', () => {
-    mainImage.src = originalSrc;
-  });
-});

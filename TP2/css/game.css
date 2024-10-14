@@ -200,6 +200,7 @@ main {
     background-size: cover;
     background-position: center center;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .gallery span {
@@ -217,6 +218,40 @@ main {
     font-size: 2.2em;
     font-weight: 500;
 }
+
+.send-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.send-button .material-symbols-light--send {
+    display: inline-block;
+    position: absolute;
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateX(-160%); 
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición para mostrarlo */
+}
+
+.send-button {
+    transition: 0.3s;
+}
+
+.send-button:hover span {
+    transition: 0.5s;
+}
+
+.send-button:hover {
+    background-color: var(--primary-green-hover);
+}
+
+.send-button:hover .material-symbols-light--send {
+    opacity: 1; 
+    transform: translateX(180%); 
+}
+
 
 .box-comment {
     display: flex;
@@ -294,6 +329,44 @@ main {
     display: flex;
     align-items: center;
 }
+
+.user-img.user1 {
+    background-image: url('../assets/img/users/user1.webp');
+    background-size: cover;
+    background-position: center center;
+}
+
+.user-img.user2 {
+    background-image: url('../assets/img/users/user2.jfif');
+    background-size: cover;
+    background-position: center center;
+}
+
+.user-img.user3 {
+    background-image: url('../assets/img/users/user3.avif');
+    background-size: cover;
+    background-position: center center;
+}
+
+.user-img.user4 {
+    background-image: url('../assets/img/users/user4.avif');
+    background-size: cover;
+    background-position: center center;
+}
+
+.user-img.user5 {
+    background-image: url('../assets/img/users/user5.jfif');
+    background-size: cover;
+    background-position: center center;
+}
+
+.user-img.user6 {
+    background-image: url('../assets/img/users/user6.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+
 
 .button-like-dislike-container {
     padding-right: 4%;
