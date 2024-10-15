@@ -7,13 +7,15 @@ header {
     width: 100%;
     height: 83px;
     color: #fff;
+    z-index: 1000;
 }
 
 .header-left {
     display: flex;
     align-items: center;
-    width:  237px;
+    width:  240px;
     justify-content: center;
+    padding: 10px;
 }
 
 .hamburger-icon {
@@ -34,7 +36,7 @@ header {
 
 .logo p {
     margin-left: 10px;
-    font-size: 18px;
+    font-size: 25px;
     font-weight:500;
 }
 
@@ -50,7 +52,6 @@ header {
     -moz-box-shadow: 8px -1px 14px -4px rgba(0,0,0,1);
     box-shadow: 8px -1px 14px -4px rgba(0,0,0,1);
 }
-
 
 .search {
     display: flex;
@@ -85,7 +86,6 @@ header {
     cursor: pointer;
 }
 
-
 .user-section {
     display: flex;
     align-items: center;
@@ -93,7 +93,6 @@ header {
     justify-content: center;
     font-size: 18px;
 }
-
 
 .profile-logo {
     background-image: url('../assets/img/usuario.png');
@@ -125,12 +124,10 @@ header {
     align-items: flex-start;
     font-size: 20px;
     padding: 1.15%;
-    top: 0;
     left: 0;
     transform: translateX(-100%); /* Mueve el menú fuera de la pantalla */
     transition: transform 0.3s ease; /* La transición será de 0.3 segundos */
     z-index: 999;
-    margin-top: 83px;
 }
 
 .menu.active {
@@ -153,38 +150,48 @@ header {
 }
 
 .user-menu {
+    position: absolute;
+    z-index: 20;
     height: 350px;
     width: 220px;
     background-color: var(--primary-violet);
     border-radius: 15px;
+    transform: translateX(-100%);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-top: 5px;
+    margin-top: 0.2%;
     margin-right: 5px;
     overflow: hidden; /* Asegura que el contenido no se desborde durante la animación */
     max-height: 0; /* Menú oculto inicialmente */
+    right: 0;
+    left: 99.8%;
     transition: max-height 0.3s ease; /* Transición suave para la altura */
+}
+
+.user-menu.active {
+    max-height: 350px;
 }
 
 .user-menu-header {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10%;
 }
 
 .user-menu-item {
-    margin-left: 10px;
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+.user-menu-item:last-of-type {
+    padding-bottom: 5%;
 }
 
 .user-menu-item:hover {
     transition: 0.2s;
     color: var(--fourth-violet);
-}
-
-.user-menu.active {
-    padding: 1%;
-    max-height: 350px;
 }
 
 .user-profile-img {
@@ -193,10 +200,9 @@ header {
     border-radius: 50%;
     background-color: var(--fourth-violet);
     margin-right: 10px;
-    /*  background-img: url(imagen de messi cabezon);
-        background-size: cover;
-        background-position: center center;
-    */
+    background-image: url('../assets/img/users/messienano.jpg');
+    background-size: cover;
+    background-position: center center;
 }
 
 .user-menu-item {
@@ -217,63 +223,155 @@ header {
     margin-left: auto;
 }
 
-@media only screen and (max-width: 900px) {
-    .search {
-        width:271px;
-        height: 46px;
+
+@media only screen and (max-width: 1450px) {
+    .logo p {
+        font-size: 22px;
+    }
+    .user-menu {
+        width: 200px;
+    }
+    .menu-item {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    .menu {
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .user-menu {
+        width: 180px;
+    }
+    .line-white {
+        width: 150px;
     }
 
+    .user-profile-img {
+        height: 40px;
+        width: 40px;
+    }
+    .user-menu-item {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .user-menu {
+        width: 170px;
+    }
+    .user-menu-item {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .menu {
+        width: 180px;
+    }
+    .menu-item {
+        margin-left: 15px;
+    }
+    .user-menu {
+        width: 150px;
+    }
+    .user-profile-img {
+        height: 35px;
+        width: 35px;
+    }
+    .user-menu-item {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .menu {
+        width: 160px;
+    }
+    .user-menu-header {
+        align-items:  center;
+        flex-direction: column;
+    }
+    .user-profile-img {
+        margin: 0;
+        margin-bottom: 5px;
+    }
+    .img-logo {
+        height: 50px;
+        width: 50px;
+    }
+    .search {
+        width:350px;
+        height: 46px;
+    }
     .search input {
         width: 100px;
         margin-right: 0px;
     }
-
     .lens {
         height: 25px;
         width: 25px;
     }
-
     .cancel {
         height: 16px;
         width: 16px;
     }
-
+    .user-menu {
+        width: 130px;
+    }
+    .user-menu-header {
+        font-size: 13px;
+    }
+    .line-white {
+        width: 90px;
+    }
     .user-section {
         width: 120px;
     }
-
     .user-section p{
         display: none;
     }
+}
 
+@media only screen and (max-width: 780px) {
+    .hamburger-icon {
+        height: 35px;
+        width: 35px;
+    }
     .menu-item {
-        padding-left: 5px;
+        font-size: medium;
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
+    .menu-item {
+        margin-left: 5px;
+    }
+    .img-logo {
+        height: 45px;
+        width: 45px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
     header {
         z-index: 999;
     }
+
     .search {
         display: none;
     }
 
-    .menu {
-        flex-direction: column;
-        font-size: 13px;
-        height: 340px;
-        width: 140px;
-        z-index: 10;
-    }
-
-    .user-menu {
-        width: 150px;
-        font-size: 12px;
-    }
-
-    .user-menu-item {
+    .menu-item {
         margin-left: 20px;
+    }
+
+    .menu {
+        height: 400px;
+        width: 140px;
     }
 
     .line-white {
@@ -284,13 +382,25 @@ header {
         height: 30px;
         width: 30px;
     }
-
-    .logo p{
-        font-size: medium;
+    .header-left{
+        width: 60%;
+        justify-content: space-between;
     }
-
-    .img-logo{
-        width: 50px;
-        height: 50px;
-    }
+    
 }
+
+@media only screen and (max-width: 420px){
+    .user-menu-item {
+        margin-left: 10px;
+    }
+
+    .header-left{
+        width: auto;
+    }
+
+    .logo{
+        margin-left: 45px;
+    }
+
+}
+

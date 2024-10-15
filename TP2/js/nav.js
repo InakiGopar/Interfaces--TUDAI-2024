@@ -32,7 +32,7 @@ profile_picture.addEventListener('click', () => {
     user_menu.classList.toggle('active');
 });
 
-//ocultar el menú al hacer clic en la pantalla
+//ocultar el menú al hacer clic en la pantalla principal
 main.addEventListener('click', ()=> {
     user_menu.classList.remove('active');
 });
@@ -44,11 +44,17 @@ logo.addEventListener('click', ()=> {
 
 //cerrar sesion
 const exit = document.getElementById('exit');
+const home = document.getElementById('home');
+
+
+
 
 exit.addEventListener('click', ()=> {
     document.querySelector('.spinner').style.display = 'block';
     document.querySelector('.main-content').classList.add('blur'); //difuminar el fondo
     document.querySelector('header').classList.add('blur');   //difuminar el header
+    document.querySelector('.menu').classList.add('blur'); //difuminar le menu principal
+    document.querySelector('.user-menu').classList.add('blur'); //difuminar el menu de usuario
     document.querySelector('footer').classList.add('blur'); //difuminar el footer
 
     let loadingPercent = document.querySelector('.loading-percent');
@@ -66,7 +72,7 @@ exit.addEventListener('click', ()=> {
 
     setTimeout(() => {
         window.location.href = '../index.html'; 
-    }, 2000); // Simulamos 2 segundos de carga
+    }, 5000); // Simulamos 5 segundos de carga
 });
 
 

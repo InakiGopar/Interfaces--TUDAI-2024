@@ -5,6 +5,7 @@ footer {
     height: 612px;
     width: 100%;
     background-image: linear-gradient(to bottom, #250043, #2d0051, #35005f, #3d006d, #45007c);
+
 }
 
 footer h3 {
@@ -189,3 +190,10 @@ footer h3 {
     }
 }
 
+
+@media only screen and (max-width: 420px) {
+    footer{
+        margin-top: 40px;
+
+    }
+}

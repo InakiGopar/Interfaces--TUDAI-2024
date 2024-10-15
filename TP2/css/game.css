@@ -1,0 +1,423 @@
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.breadcrumbs {
+    display: flex;
+    margin-top: 5%;
+    padding-right: 35%;
+    font-size: 22px;
+}
+
+.breadcrumbs a {
+    color: #fff;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary-green);
+}
+
+.game {
+    margin-top: 2%;
+    background-image: url('../assets/img/card-img/estrategia/Portadacuatroenlinea.png');
+    background-size: cover;
+    background-position: center center;
+    width: 999px;
+    height: 495px;
+    background-color: rgba(37, 0, 67, 0.591); 
+    background-blend-mode: multiply;
+}
+
+.game button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    width: 226px;
+    position: relative;
+    top: 45%;
+    left: 40%;
+    z-index: 9999;
+    font-size: 28px;
+    overflow: hidden; 
+}
+
+.game button .text {
+    transition: transform 0.3s ease; /* Transición suave para el movimiento */
+    position: relative;
+    z-index: 1;
+}
+
+.game button .entypo--game-controller {
+    display: inline-block;
+    font-size: 28px;
+    position: absolute;
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateX(-150%); 
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición para mostrarlo */
+}
+
+/* Estilo hover */
+.game button:hover .text {
+    transform: translateX(-20%); /* Mover el texto hacia la derecha fuera del botón */
+}
+
+.game button:hover .entypo--game-controller {
+    opacity: 1; 
+    transform: translateX(160%); 
+}
+
+.game button:hover {
+    background-color: var(--primary-green-hover); 
+}
+
+.share-button-container {
+    display: flex;
+    width: 999px;
+    justify-content: flex-end;
+    margin-top: 0.5em;
+}
+
+.share-button-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    width: 180px;
+    font-size: 1.5em;
+    transition: all 0.5s;
+}
+
+.share-button-container button:hover {
+    background-color: var(--primary-green-hover);
+}
+
+.share-button-container button:hover span {
+    transition: 0.5s;
+    rotate: -8deg;
+    scale: 1.1;
+}
+
+.game-description {
+    width: 60%;
+}
+
+.game-description h2 {
+    font-size: 2.2em;
+    font-weight: 500;
+}
+
+.game-description p {
+    font-size: 1.3em;
+}
+
+.green-line {
+    height: 1px;
+    width: 100%;
+    background-color: var(--primary-green);
+    margin: 18px 0px;
+}
+
+.game-controls {
+    margin-top: 7%;
+    width: 60%;
+    height: 250px;
+}
+
+.game-controls h3 {
+    font-size: 2.2em;
+    font-weight: 500;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.controls h4 {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-bottom: 1.2em;
+}
+
+.controls h5 {
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.mouse {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: left;
+}
+
+.mouse-controls {
+    display: flex;
+    align-items: center;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: left;
+}
+
+.keyboard-controls {
+    display: flex;
+    align-items: center;
+}
+
+.game-gallery {
+    margin-top: 7%;
+    width: 60%;
+}
+
+.game-gallery h3 {
+    font-size: 2.2em;
+    font-weight: 500;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.gallery div {
+    width: 250px;
+    height: 150px;
+    background-image: url('../assets/img/card-img/estrategia/Portadacuatroenlinea.png');
+    background-size: cover;
+    background-position: center center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.gallery span {
+    position: relative;
+    left: 42%;
+    top: 42%;
+}
+
+.comments {
+    margin-top: 7%;
+    width: 60%;
+}
+
+.comments h3 {
+    font-size: 2.2em;
+    font-weight: 500;
+}
+
+.send-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.send-button .material-symbols-light--send {
+    display: inline-block;
+    position: absolute;
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateX(-160%); 
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición para mostrarlo */
+}
+
+.send-button {
+    transition: 0.3s;
+}
+
+.send-button:hover span {
+    transition: 0.5s;
+}
+
+.send-button:hover {
+    background-color: var(--primary-green-hover);
+}
+
+.send-button:hover .material-symbols-light--send {
+    opacity: 1; 
+    transform: translateX(180%); 
+}
+
+
+.box-comment {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 15px;
+    width: 70%;
+    height: 200px;
+    background-color: var( --background-form);
+}
+
+.box-comment-header {
+    padding-left: 3%;
+    display: flex;
+    align-items: center;
+    height: 35%;
+}
+
+.box-comment-line {
+    width: 90%;
+    margin: auto;
+    height: 1px;
+    background-color: var(--primary-green);
+}
+
+.box-comment-header .user-img {
+    background-image: url('../assets/img/users/messienano.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80%;
+    padding-left: 4%;
+}
+
+.comment input {
+    background-color: transparent;
+    font-family: "Poetsen One", sans-serif;
+    width: 90%;
+}
+
+.comment button {
+    width: 120px;
+    height: 30px;
+    font-size: 1.1em;
+    margin-left: 75%;
+}
+
+.comments h4 {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-bottom: 1.2em;
+    margin-top: 1em;
+}
+
+.community-comments {
+    overflow-y: auto;
+    max-height: 450px;
+}
+
+.community-comments .box-comment-header {
+    justify-content: space-between;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-img.user1 {
+    background-image: url('../assets/img/users/user1.webp');
+    background-size: cover;
+    background-position: center center;
+}
+
+.user-img.user2 {
+    background-image: url('../assets/img/users/user2.jfif');
+    background-size: cover;
+    background-position: center center;
+}
+
+.user-img.user3 {
+    background-image: url('../assets/img/users/user3.avif');
+    background-size: cover;
+    background-position: center center;
+}
+
+.user-img.user4 {
+    background-image: url('../assets/img/users/user4.avif');
+    background-size: cover;
+    background-position: center center;
+}
+
+.user-img.user5 {
+    background-image: url('../assets/img/users/user5.jfif');
+    background-size: cover;
+    background-position: center center;
+}
+
+.user-img.user6 {
+    background-image: url('../assets/img/users/user6.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+
+
+.button-like-dislike-container {
+    padding-right: 4%;
+}
+
+.community-comments .box-comment {
+    margin-top: 1em;
+}
+
+.community-comments .comment {
+    margin-top: 1.2em;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.community-comments::-webkit-scrollbar {
+    width: 8px;
+}
+
+.community-comments::-webkit-scrollbar-thumb {
+    background-color: var(--primary-green);
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.community-comments::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-green-hover);
+}
+
+.community-comments::-webkit-scrollbar-track {
+    background-color: var(--background-form);
+    border-radius: 10px;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--input-success); /* Color de las partículas */
+    border-radius: 50%;
+    opacity: 1;
+    animation: fly 0.8s forwards;
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(0.5);
+        opacity: 0;
+    }
+}
