@@ -23,9 +23,16 @@ function loading() {
     }, 20);
 
     setTimeout(() => {
-        window.location.href = '../templates/home.html'; 
+        window.location.href = 'templates/home.html'; 
     }, 2000); // Simulamos 2 segundos de carga
 }
 
 
-
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        // Si la página está cargada desde el caché, no ejecutar el efecto
+        document.querySelector('.spinner').style.display = 'none';
+        document.querySelector('.main-content').classList.remove('blur');
+        document.querySelector('.loading-percent').style.display = 'none';
+    }
+});

@@ -40,3 +40,33 @@ nextButton.addEventListener('click', () => {
 
 // Inicializa el carrusel para que muestre la primera tarjeta y el punto activo
 updateCarousel();
+
+
+
+let intervalScroll; // almacenar el intervalo
+let isPause = false;
+
+function autoScroll() {
+  intervalScroll = setInterval(() => {
+      currentIndex = (currentIndex < bigCards.length - 1) ? currentIndex + 1 : 0;
+      if(!isPause)
+          updateCarousel();
+  }, 5000); // Cambia de juego cada 5 segundos
+}
+
+function pauseIntervalScroll() {
+  isPause = true;
+  clearInterval(intervalScroll);
+}
+
+const bigCarousel = document.querySelector('.big-carrusel');
+bigCarousel.addEventListener('mouseover', pauseIntervalScroll);
+bigCarousel.addEventListener('mouseout', resetAutoScroll);
+
+// Función para resetear el auto-scroll si el usuario interactúa
+function resetAutoScroll() {
+
+  isPause = false;
+  clearInterval(intervalScroll);
+  autoScroll();
+}

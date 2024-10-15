@@ -44,6 +44,10 @@ logo.addEventListener('click', ()=> {
 
 //cerrar sesion
 const exit = document.getElementById('exit');
+const home = document.getElementById('home');
+
+
+
 
 exit.addEventListener('click', ()=> {
     document.querySelector('.spinner').style.display = 'block';
