@@ -14,7 +14,8 @@ class Juego {
         this.turno = this.turnoInicial;
         this.botonReiniciar = new BotonJugarDeNuevo(this.canvasWidth / 2 - 150, canvasHeight / 2 + 50 , this.ctx, 300, 50, "Jugar de nuevo" );
         this.juegoTerminado = false; // Variable para controlar el estado del juego
-        this.temporizador = new Temporizador(this.canvasWidth / 2 - 80, -10, this.ctx, 300); // 30 segundos como tiempo máximo
+        this.temporizador = new Temporizador(this.canvasWidth / 2 - 80, -10, this.ctx, 150); // 30 segundos como tiempo máximo
+        
     }
 
     iniciarJuego() {
@@ -27,7 +28,7 @@ class Juego {
                 this.fichaSize,
                 '#FF0000', // Color de Jugador 1
                 this.ctx,
-                'img/ficha-argentina.png' // Ruta de imagen
+                'img/ficha-zidane-animada2.jpg' // Ruta de imagen
             ));
 
             this.fichasJugador2.push(new Ficha(
@@ -36,7 +37,7 @@ class Juego {
                 this.fichaSize,
                 '#0000FF', // Color de Jugador 2
                 this.ctx,
-                'img/ficha-francia.png' // Ruta de imagen
+                'img/ficha-maradona-animada.jpg' // Ruta de imagen
             ));
         }
 
@@ -44,7 +45,16 @@ class Juego {
     
         this.addEventListeners();
         this.drawGame();
+        this.loop(); // Iniciar el bucle de dibujo
     }
+
+    loop() {
+        if (!this.juegoTerminado || this.temporizador.tiempoRestante != 0) {
+            this.drawGame();
+            requestAnimationFrame(() => this.loop());
+        }
+    }
+    
 
     drawGame() {
         
@@ -58,12 +68,24 @@ class Juego {
         for (const ficha of this.fichasJugador2) {
             ficha.draw();
         }
-        
+      
 
         if (this.juegoTerminado) {
             this.mostrarGanador();
             this.botonReiniciar.draw(); // Dibuja el botón de reinicio si el juego ha terminado
         }
+
+        if(this.temporizador.tiempoRestante === 0){
+            
+            this.juegoTerminado = true;
+            this.mostrarEmpate();
+            this.botonReiniciar.draw();
+        }
+
+        if(!this.juegoTerminado){
+            this.temporizador.draw();
+        }
+        
     }
 
     handleFichaDrop(ficha) {
@@ -83,10 +105,21 @@ class Juego {
         }
     }
 
+   
+
     mostrarGanador() {
         const mensaje = `Ganador:  ${this.turno ? 'Francia' : 'Argentina'}`;
         this.ctx.fillStyle = 'rgba(0, 0, 0, 0.7)'; // Fondo semi-transparente
-        //350 , 250
+        this.ctx.fillRect(this.canvasWidth / 2 - 150, this.canvasHeight / 2 - 60, 300, 100); // Ajusta la posición y tamaño según necesites
+        this.ctx.fillStyle = '#FFF';
+        this.ctx.font = '30px Arial';
+        this.ctx.textAlign = 'center';
+        this.ctx.fillText(mensaje, this.canvasWidth / 2 , this.canvasHeight / 2 ); // Ajusta posición del texto según el rectángulo
+    }
+
+    mostrarEmpate() {
+        const mensaje = `Empate`;
+        this.ctx.fillStyle = 'rgba(0, 0, 0, 0.7)'; // Fondo semi-transparente
         this.ctx.fillRect(this.canvasWidth / 2 - 150, this.canvasHeight / 2 - 60, 300, 100); // Ajusta la posición y tamaño según necesites
         this.ctx.fillStyle = '#FFF';
         this.ctx.font = '30px Arial';
@@ -96,12 +129,13 @@ class Juego {
 
 
     verificarGanador(columna, ficha) {
-        const fila = this.tablero.obtenerFilaPorColumna(columna); // Método que debes implementar
+        let fila = this.tablero.obtenerFilaPorColumna(columna); // Método que debes implementar
+    
         return (
-            this.verificarVertical(columna, fila, ficha) ||
-            this.verificarHorizontal(columna, fila, ficha) ||
-            this.verificarDiagonal(columna, fila, ficha)
-        );
+                this.verificarVertical(columna, fila, ficha) ||
+                this.verificarHorizontal(columna, fila, ficha) ||
+                this.verificarDiagonal(columna, fila, ficha)
+            )
     }
 
     verificarVertical(columna, fila, ficha) {
@@ -134,36 +168,61 @@ class Juego {
         return this.verificarDiagonalAscendente(columna, fila, ficha) || 
                this.verificarDiagonalDescendente(columna, fila, ficha);
     }
-
+    
     verificarDiagonalAscendente(columna, fila, ficha) {
-        let count = 0;
-        for (let i = 0; i < 4; i++) {
-            const c = columna - i;
-            const f = fila + i;
-            if (c >= 0 && f < this.tablero.rows && this.tablero.celdas[f][c] && this.tablero.celdas[f][c].color === ficha.color) {
-                count++;
-                if (count === 4) return true;
-            } else {
-                break;
-            }
+        let count = 1;
+    
+        // Verifica hacia abajo a la derecha
+        let c = columna + 1;
+        let f = fila + 1;
+        while (c < this.tablero.columns && f < this.tablero.rows && this.tablero.celdas[f][c] && this.tablero.celdas[f][c].color === ficha.color) {
+            count++;
+            if (count === 4) return true;
+            c++;
+            f++;
         }
+    
+        // Verifica hacia arriba a la izquierda
+        c = columna - 1;
+        f = fila - 1;
+        while (c >= 0 && f >= 0 && this.tablero.celdas[f][c] && this.tablero.celdas[f][c].color === ficha.color) {
+            count++;
+            if (count === 4) return true;
+            c--;
+            f--;
+        }
+    
         return false;
     }
-
+    
     verificarDiagonalDescendente(columna, fila, ficha) {
-        let count = 0;
-        for (let i = 0; i < 4; i++) {
-            const c = columna + i;
-            const f = fila + i;
-            if (c < this.tablero.columns && f < this.tablero.rows && this.tablero.celdas[f][c] && this.tablero.celdas[f][c].color === ficha.color) {
-                count++;
-                if (count === 4) return true;
-            } else {
-                break;
-            }
+        let count = 1;
+    
+        // Verifica hacia abajo a la izquierda
+        let c = columna - 1;
+        let f = fila + 1;
+        while (c >= 0 && f < this.tablero.rows && this.tablero.celdas[f][c] && this.tablero.celdas[f][c].color === ficha.color) {
+            count++;
+            if (count === 4) return true;
+            c--;
+            f++;
         }
+    
+        // Verifica hacia arriba a la derecha
+        c = columna + 1;
+        f = fila - 1;
+        while (c < this.tablero.columns && f >= 0 && this.tablero.celdas[f][c] && this.tablero.celdas[f][c].color === ficha.color) {
+            count++;
+            if (count === 4) return true;
+            c++;
+            f--;
+        }
+    
         return false;
     }
+    
+
+
 
     addEventListeners() {
         // Detectar clic inicial
@@ -208,7 +267,7 @@ class Juego {
     }
     
     onClick(e) {
-        if (this.juegoTerminado) {
+        if (this.juegoTerminado || this.temporizador.tiempoRestante == 0) {
             const { offsetX, offsetY } = e;
             if (this.botonReiniciar.isPointInside(offsetX, offsetY)) {
                 this.reiniciarJuego();
