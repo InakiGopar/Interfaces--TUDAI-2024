@@ -7,14 +7,16 @@ class Ficha extends Dibujable {
         this.img = new Image(); 
         this.img.src = imgSrc;
         this.dragging = false; //Estado para saber si la ficha esta siendo arrastrada
+        this.color = fill; // Almacena el color para verificar el ganador
+        this.colocada = false;
     }
+
 
     draw() {
         this.ctx.fillStyle = this.fill;
         this.ctx.drawImage(this.img, this.posX - this.radius, this.posY - this.radius, this.radius * 2, this.radius * 2);
         this.ctx.beginPath();
         this.ctx.arc(this.posX, this.posY, this.radius, 0 , 2 * Math.PI);
-        this.ctx.fill();
         this.ctx.closePath();
     }
 
@@ -29,6 +31,7 @@ class Ficha extends Dibujable {
         return Math.sqrt(_x * _x + _y * _y) < this.radius;
     }
 
+    
 
     setDragging(isDragging) {
         this.dragging = isDragging;
