@@ -1,5 +1,19 @@
 class Juego {
-    constructor(canvas, tablero, context, canvasWidth, canvasHeight, fichaSize, cellSize) {
+    constructor
+    (
+        canvas,
+        tablero,
+        context,
+        canvasWidth,
+        canvasHeight,
+        fichaSize,
+        cellSize,
+        playerSkin1,
+        playerSkin2,
+        playerNickname1,
+        playerNickname2   
+    ) 
+    {
         this.canvas = canvas;
         this.tablero = tablero;
         this.ctx = context;
@@ -9,6 +23,10 @@ class Juego {
         this.canvasHeight = canvasHeight;
         this.fichaSize = fichaSize;
         this.cellSize = cellSize;
+        this.playerSkin1 = playerSkin1;
+        this.playerSkin2 = playerSkin2;
+        this.playerNickname1 = playerNickname1;
+        this.playerNickname2 = playerNickname2;
         this.fichaArrastrada = null;
         this.zonaLanzar = new ZonaLanzar(tablero.getPosX(), tablero.getPosY() - 100, context, tablero, tablero.tableroWidth, 100);
         this.turnoInicial = true; // true para Jugador 1, false para Jugador 2
@@ -21,6 +39,8 @@ class Juego {
 
     iniciarJuego() {
         const fichaOffsetY = this.canvasHeight / 2;
+        console.log( "player1: " + this.playerSkin1.src + " player2: " + this.playerSkin2.src);
+        
         // Crear fichas de cada jugador
         for (let i = 0; i < 30; i++) {
             this.fichasJugador1.push(new Ficha(
@@ -29,7 +49,7 @@ class Juego {
                 this.fichaSize,
                 '#FF0000', // Color de Jugador 1
                 this.ctx,
-                'img/ficha-argentina.png' // Ruta de imagen
+                this.playerSkin1.src // Skin de la ficha
             ));
             
             this.fichasJugador2.push(new Ficha(
@@ -38,7 +58,7 @@ class Juego {
                 this.fichaSize,
                 '#0000FF', // Color de Jugador 2
                 this.ctx,
-                'img/ficha-francia.png' // Ruta de imagen
+                this.playerSkin2.src // Skin de la ficha
             ));
         }
 

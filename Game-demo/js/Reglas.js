@@ -7,12 +7,18 @@ class Regla {
             { texto: "7 en línea", columnas: 10, filas: 9 , cellSize: 60 , tamFicha: 20}
         ];
         this.skins = [
-                    "img/ficha-messi-animada1.jpg",
-                    "img/ficha-dimaria-animada2.jpg",
-                    "img/ficha-maradona-animada.jpg",
-                    "ficha-mbappe-animada.jpg",
-                    "ficha-griezman-animada.jpg",
-                    "ficha-zidane-animada2.jpg"
+                    this.createImage("img/ficha-messi-animada1.jpg"),
+                    this.createImage("img/ficha-dimaria-animada2.jpg"),
+                    this.createImage("img/ficha-maradona-animada.jpg"),
+                    this.createImage("img/ficha-mbappe-animada.jpg"),
+                    this.createImage("img/ficha-griezmann-animada.jpg"),
+                    this.createImage("img/ficha-zidane-animada2.jpg")
                 ]
+    }
+
+    createImage(src) {
+        const img = new Image();
+        img.src = src;
+        return img;
     }
 }
