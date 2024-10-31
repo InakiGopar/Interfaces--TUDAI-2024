@@ -11,31 +11,31 @@ class Tablero extends Dibujable {
         this.calculateMean();
 
         this.imgCentro = new Image();
-        this.imgCentro.src = "img/celda-pasto.jpg";
+        this.imgCentro.src = "img/celda-pasto-animada.png";
 
         this.imgEsquinaSuperiorIzquierda = new Image();
-        this.imgEsquinaSuperiorIzquierda.src = 'img/celda-superior-izquierda.png';
+        this.imgEsquinaSuperiorIzquierda.src = 'img/celda-pasto-animada-superior-izquierda.png';
 
         this.imgEsquinaSuperiorDerecha = new Image();
-        this.imgEsquinaSuperiorDerecha.src = 'img/celda-superior-derecha.png';
+        this.imgEsquinaSuperiorDerecha.src = 'img/celda-pasto-animada-superior-derecha.png';
 
         this.imgEsquinaInferiorIzquierda = new Image();
-        this.imgEsquinaInferiorIzquierda.src = 'img/celda-inferior-izquierda.png';
+        this.imgEsquinaInferiorIzquierda.src = 'img/celda-pasto-animada-inferior-izquierda.png';
 
         this.imgEsquinaInferiorDerecha = new Image();
-        this.imgEsquinaInferiorDerecha.src = 'img/celda-inferior-derecha.png';
+        this.imgEsquinaInferiorDerecha.src = 'img/celda-pasto-animada-inferior-derecha.png';
 
         this.imgLadoDerecho = new Image();
-        this.imgLadoDerecho.src = 'img/celda-derecha.png';
+        this.imgLadoDerecho.src = 'img/celda-pasto-animada-derecha.png';
 
         this.imgLadoIzquierdo = new Image();
-        this.imgLadoIzquierdo.src = 'img/celda-izquierda.png';
+        this.imgLadoIzquierdo.src = 'img/celda-pasto-animada-izquierda.png';
 
         this.imgLadoSuperior = new Image();
-        this.imgLadoSuperior.src = 'img/celda-superior.png';
+        this.imgLadoSuperior.src = 'img/celda-pasto-animada-superior.png';
 
         this.imgLadoInferior = new Image();
-        this.imgLadoInferior.src = 'img/celda-inferior.png';
+        this.imgLadoInferior.src = 'img/celda-pasto-animada-inferior.png';
 
 
     }

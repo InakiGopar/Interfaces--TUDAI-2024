@@ -7,13 +7,13 @@ class Regla {
             { texto: "7 en línea", columnas: 10, filas: 9 , cellSize: 60 , tamFicha: 20}
         ];
         this.skins = [
-                    this.createImage("img/ficha-messi-animada1.jpg"),
-                    this.createImage("img/ficha-dimaria-animada2.jpg"),
-                    this.createImage("img/ficha-maradona-animada.jpg"),
-                    this.createImage("img/ficha-mbappe-animada.jpg"),
-                    this.createImage("img/ficha-griezmann-animada.jpg"),
-                    this.createImage("img/ficha-zidane-animada2.jpg")
-                ]
+            this.createImage("img/messi-animado.jpg"),
+            this.createImage("img/lautaro-animado.jpg"),
+            this.createImage("img/dimaria-animado.jpg"),
+            this.createImage("img/zidane-animado.jpg"),
+            this.createImage("img/lloris-animado.jpg"),
+            this.createImage("img/pogba-animado.jpg")
+        ]
     }
 
     createImage(src) {

@@ -52,7 +52,7 @@ class Juego {
                 offsetXJugador1,
                 offsetY + i * this.fichaSize, // Espaciado vertical entre fichas
                 this.fichaSize,
-                '#FF0000', // Color de Jugador 1
+                '#00AAE4', // Color de Jugador 1
                 this.ctx,
                 this.playerSkin1.src // Skin de la ficha
             ));
@@ -64,7 +64,7 @@ class Juego {
                 offsetXJugador1 +  espacioEntrePilas + this.fichaSize * 2, // Mover la segunda pila a la derecha
                 offsetY + i * this.fichaSize, // Espaciado vertical entre fichas
                 this.fichaSize,
-                '#FF0000', // Color de Jugador 1
+                '#00AAE4', // Color de Jugador 2
                 this.ctx,
                 this.playerSkin1.src // Skin de la ficha
             ));
@@ -283,12 +283,15 @@ class Juego {
         if (this.juegoTerminado) return; // Bloquear si el juego ha terminado
     
         const { offsetX, offsetY } = e;
-        const fichas = this.turno ? this.fichasJugador1 : this.fichasJugador2; 
+        const fichas = this.turno ? this.fichasJugador1 : this.fichasJugador2;
     
         for (const ficha of fichas) {
             if (!ficha.colocada && ficha.isPointInside(offsetX, offsetY)) {
                 ficha.setDragging(true);
                 this.fichaArrastrada = ficha;
+    
+                // Guardar posición inicial de la ficha antes de arrastrarla
+                ficha.posicionInicial = { x: ficha.posX, y: ficha.posY };
                 break;
             }
         }
@@ -306,8 +309,17 @@ class Juego {
         if (this.juegoTerminado || !this.fichaArrastrada) return;
     
         this.fichaArrastrada.setDragging(false);
-        this.handleFichaDrop(this.fichaArrastrada);
+    
+        // Verificar si la ficha fue soltada en la zona de lanzamiento
+        if (this.zonaLanzar.isFichaEnZona(this.fichaArrastrada)) {
+            this.handleFichaDrop(this.fichaArrastrada);
+        } else {
+            // Si la ficha está fuera de la zona, volver a la posición inicial
+            this.fichaArrastrada.setPosition(this.fichaArrastrada.posicionInicial.x, this.fichaArrastrada.posicionInicial.y);
+        }
+    
         this.fichaArrastrada = null;
+        this.drawGame();
     }
     
     onClick(e) {
