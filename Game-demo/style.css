@@ -5,6 +5,7 @@ body {
 }
 
 canvas {
+    margin-top: 2%;
     background-image: url('img/Estadio-fondo.avif');
     background-size: cover; 
     background-position: center center;

@@ -1,5 +1,19 @@
 class Juego {
-    constructor(canvas, tablero, context, canvasWidth, canvasHeight, fichaSize) {
+    constructor
+    (
+        canvas,
+        tablero,
+        context,
+        canvasWidth,
+        canvasHeight,
+        fichaSize,
+        cellSize,
+        playerSkin1,
+        playerSkin2,
+        playerNickname1,
+        playerNickname2   
+    ) 
+    {
         this.canvas = canvas;
         this.tablero = tablero;
         this.ctx = context;
@@ -8,39 +22,78 @@ class Juego {
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
         this.fichaSize = fichaSize;
+        this.cellSize = cellSize;
+        this.playerSkin1 = playerSkin1;
+        this.playerSkin2 = playerSkin2;
+        this.playerNickname1 = playerNickname1;
+        this.playerNickname2 = playerNickname2;
         this.fichaArrastrada = null;
         this.zonaLanzar = new ZonaLanzar(tablero.getPosX(), tablero.getPosY() - 100, context, tablero, tablero.tableroWidth, 100);
         this.turnoInicial = true; // true para Jugador 1, false para Jugador 2
         this.turno = this.turnoInicial;
         this.botonReiniciar = new BotonJugarDeNuevo(this.canvasWidth / 2 - 150, canvasHeight / 2 + 50 , this.ctx, 300, 50, "Jugar de nuevo" );
         this.juegoTerminado = false; // Variable para controlar el estado del juego
-        this.temporizador = new Temporizador(this.canvasWidth / 2 - 80, -10, this.ctx, 150); // 30 segundos como tiempo máximo
+        this.temporizador = new Temporizador(this.canvasWidth / 2 - 80, 10, this.ctx, 150); // 30 segundos como tiempo máximo
+        const spacing = 40; // Espaciado entre las fichas
         
     }
 
     iniciarJuego() {
-        const fichaOffsetY = this.canvasHeight / 2;
-        // Crear fichas de cada jugador
-        for (let i = 0; i < 10; i++) {
+        const offsetY = 200; // Ajuste para la posición vertical inicial de las pilas
+        const offsetXJugador1 = this.tablero.getPosX() - this.fichaSize * 5; // Posición de Jugador 1
+        const offsetXJugador2 = this.tablero.getPosX() + this.tablero.columns * this.cellSize + this.fichaSize * 3; // Posición de Jugador 2
+    
+        const numFichasPorPila = 11; // Ajusta el número según la cantidad de fichas que desees en cada pila
+        const espacioEntrePilas = 20; 
+    
+        // Crear fichas para Jugador 1 - Primera Pila
+        for (let i = 0; i < numFichasPorPila; i++) {
             this.fichasJugador1.push(new Ficha(
-                this.tablero.getPosX() - this.fichaSize * 3, // Posición a la izquierda del tablero
-                fichaOffsetY,
+                offsetXJugador1,
+                offsetY + i * this.fichaSize, // Espaciado vertical entre fichas
                 this.fichaSize,
                 '#FF0000', // Color de Jugador 1
                 this.ctx,
-                'img/ficha-zidane-animada2.jpg' // Ruta de imagen
+                this.playerSkin1.src // Skin de la ficha
             ));
-
+        }
+    
+        // Crear fichas para Jugador 1 - Segunda Pila
+        for (let i = 0; i < numFichasPorPila; i++) {
+            this.fichasJugador1.push(new Ficha(
+                offsetXJugador1 +  espacioEntrePilas + this.fichaSize * 2, // Mover la segunda pila a la derecha
+                offsetY + i * this.fichaSize, // Espaciado vertical entre fichas
+                this.fichaSize,
+                '#FF0000', // Color de Jugador 1
+                this.ctx,
+                this.playerSkin1.src // Skin de la ficha
+            ));
+        }
+    
+        // Crear fichas para Jugador 2 - Primera Pila
+        for (let i = 0; i < numFichasPorPila; i++) {
             this.fichasJugador2.push(new Ficha(
-                this.tablero.getPosX() + this.tablero.columns * 80 + this.fichaSize * 3, // Posición a la derecha del tablero
-                fichaOffsetY,
+                offsetXJugador2,
+                offsetY + i * this.fichaSize, // Espaciado vertical entre fichas
                 this.fichaSize,
                 '#0000FF', // Color de Jugador 2
                 this.ctx,
-                'img/ficha-maradona-animada.jpg' // Ruta de imagen
+                this.playerSkin2.src // Skin de la ficha
             ));
         }
-
+    
+        // Crear fichas para Jugador 2 - Segunda Pila
+        for (let i = 0; i < numFichasPorPila; i++) {
+            this.fichasJugador2.push(new Ficha(
+                offsetXJugador2 + espacioEntrePilas + this.fichaSize * 2, // Mover la segunda pila a la derecha
+                offsetY + i * this.fichaSize, // Espaciado vertical entre fichas
+                this.fichaSize,
+                '#0000FF', // Color de Jugador 2
+                this.ctx,
+                this.playerSkin2.src // Skin de la ficha
+            ));
+        }
+    
         this.temporizador.iniciar();
     
         this.addEventListeners();
@@ -68,7 +121,6 @@ class Juego {
         for (const ficha of this.fichasJugador2) {
             ficha.draw();
         }
-      
 
         if (this.juegoTerminado) {
             this.mostrarGanador();
@@ -105,32 +157,23 @@ class Juego {
         }
     }
 
-   
 
     mostrarGanador() {
         const mensaje = `Ganador:  ${this.turno ? 'Francia' : 'Argentina'}`;
-        this.ctx.fillStyle = 'rgba(0, 0, 0, 0.7)'; // Fondo semi-transparente
-        this.ctx.fillRect(this.canvasWidth / 2 - 150, this.canvasHeight / 2 - 60, 300, 100); // Ajusta la posición y tamaño según necesites
-        this.ctx.fillStyle = '#FFF';
-        this.ctx.font = '30px Arial';
-        this.ctx.textAlign = 'center';
-        this.ctx.fillText(mensaje, this.canvasWidth / 2 , this.canvasHeight / 2 ); // Ajusta posición del texto según el rectángulo
+        const mensajeGanador = new MensajeFinal(0, 0, this.ctx, mensaje, this.canvasWidth, this.canvasHeight)
+        mensajeGanador.draw();
     }
 
     mostrarEmpate() {
-        const mensaje = `Empate`;
-        this.ctx.fillStyle = 'rgba(0, 0, 0, 0.7)'; // Fondo semi-transparente
-        this.ctx.fillRect(this.canvasWidth / 2 - 150, this.canvasHeight / 2 - 60, 300, 100); // Ajusta la posición y tamaño según necesites
-        this.ctx.fillStyle = '#FFF';
-        this.ctx.font = '30px Arial';
-        this.ctx.textAlign = 'center';
-        this.ctx.fillText(mensaje, this.canvasWidth / 2 , this.canvasHeight / 2 ); // Ajusta posición del texto según el rectángulo
+        const mensaje = "Empate";
+        const mensajeEmpate = new MensajeFinal(0, 0, this.ctx, mensaje, this.canvasWidth, this.canvasHeight)
+        mensajeEmpate.draw();
     }
 
 
     verificarGanador(columna, ficha) {
-        let fila = this.tablero.obtenerFilaPorColumna(columna); // Método que debes implementar
-    
+        
+        let fila = this.tablero.obtenerFilaPorColumna(columna); 
         return (
                 this.verificarVertical(columna, fila, ficha) ||
                 this.verificarHorizontal(columna, fila, ficha) ||
@@ -153,6 +196,7 @@ class Juego {
 
     verificarHorizontal(columna, fila, ficha) {
         let count = 0;
+        console.log(count);
         for (let c = 0; c < this.tablero.columns; c++) {
             if (this.tablero.celdas[fila][c] && this.tablero.celdas[fila][c].color === ficha.color) {
                 count++;
@@ -166,7 +210,7 @@ class Juego {
 
     verificarDiagonal(columna, fila, ficha) {
         return this.verificarDiagonalAscendente(columna, fila, ficha) || 
-               this.verificarDiagonalDescendente(columna, fila, ficha);
+                this.verificarDiagonalDescendente(columna, fila, ficha);
     }
     
     verificarDiagonalAscendente(columna, fila, ficha) {
