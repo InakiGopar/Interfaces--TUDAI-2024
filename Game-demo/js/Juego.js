@@ -317,11 +317,13 @@ class Juego {
             // Si la ficha está fuera de la zona, volver a la posición inicial
             this.fichaArrastrada.setPosition(this.fichaArrastrada.posicionInicial.x, this.fichaArrastrada.posicionInicial.y);
         }
-    
+        // Iniciar la animación para que la figura caiga
+        
         this.fichaArrastrada = null;
         this.drawGame();
+     
     }
-    
+
     onClick(e) {
         if (this.juegoTerminado || this.temporizador.tiempoRestante == 0) {
             const { offsetX, offsetY } = e;

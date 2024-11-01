@@ -135,9 +135,9 @@ class Menu extends Dibujable {
         const clickY = event.clientY - rect.top;
     
         this.reglas.skins.forEach((skin, index) => {
-            const x = this.skinPositionX + (index % 3) * this.skinSpacing;
-            const y = index < 3 ? this.skinPositionYTop : this.skinPositionYBotton;
-    
+            const y = this.skinPositionY ;  
+            const x = index < 3 ? this.skinPositionXLeft + (index % 3) * this.skinSpacing : this.skinPositionXRight + (index % 3) * this.skinSpacing;
+
             if (
                 clickX > x &&
                 clickX < x + this.skinRadius * 2 &&
