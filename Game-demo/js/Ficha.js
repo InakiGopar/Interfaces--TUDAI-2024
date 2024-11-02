@@ -12,14 +12,31 @@ class Ficha extends Dibujable {
     }
 
 
+   
     draw() {
-        this.ctx.fillStyle = this.fill;
-        this.ctx.drawImage(this.img, this.posX - this.radius, this.posY - this.radius, this.radius * 2, this.radius * 2);
+        // Guarda el contexto de dibujo actual
+        this.ctx.save();
+    
+        // Configura el área circular para la ficha
         this.ctx.beginPath();
-        this.ctx.arc(this.posX, this.posY, this.radius, 0 , 2 * Math.PI);
+        this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
         this.ctx.closePath();
+        this.ctx.clip();
+    
+        // Dibuja la imagen ajustada al círculo
+        this.ctx.drawImage(this.img, this.posX - this.radius, this.posY - this.radius, this.radius * 2, this.radius * 2);
+    
+        // Opcional: agregar borde
+        this.ctx.beginPath();
+        this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
+        this.ctx.closePath();
+        this.ctx.strokeStyle = this.fill;
+        this.ctx.lineWidth = 3;
+        this.ctx.stroke();
+    
+        // Restaura el contexto de dibujo original
+        this.ctx.restore();
     }
-
 
     getRadius() {
         return this.radius;

@@ -17,9 +17,8 @@ class Temporizador extends Dibujable {
             if (this.tiempoRestante <= 0) {
                 this.tiempoRestante = 0;
                 clearInterval(this.intervalo);
-                // Aquí podrías manejar el fin del tiempo, por ejemplo, terminar el juego
             }
-        }, 1000); // Cada segundo
+        }, 1000); 
         
     }
 

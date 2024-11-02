@@ -3,6 +3,7 @@ class Juego {
     (
         canvas,
         tablero,
+        fichasToWin,
         context,
         canvasWidth,
         canvasHeight,
@@ -16,6 +17,8 @@ class Juego {
     {
         this.canvas = canvas;
         this.tablero = tablero;
+        this.fichasToWin = fichasToWin;
+        this.fichasToWin = fichasToWin
         this.ctx = context;
         this.fichasJugador1 = [];
         this.fichasJugador2 = [];
@@ -34,34 +37,64 @@ class Juego {
         this.botonReiniciar = new BotonJugarDeNuevo(this.canvasWidth / 2 - 150, canvasHeight / 2 + 50 , this.ctx, 300, 50, "Jugar de nuevo" );
         this.juegoTerminado = false; // Variable para controlar el estado del juego
         this.temporizador = new Temporizador(this.canvasWidth / 2 - 80, 10, this.ctx, 150); // 30 segundos como tiempo máximo
-        
     }
 
     iniciarJuego() {
-        const fichaOffsetY = this.canvasHeight / 2;
-        console.log( "player1: " + this.playerSkin1.src + " player2: " + this.playerSkin2.src);
-        
-        // Crear fichas de cada jugador
-        for (let i = 0; i < 30; i++) {
+        const offsetY = 200; // Ajuste para la posición vertical inicial de las pilas
+        const offsetXJugador1 = this.tablero.getPosX() - this.fichaSize * 5; // Posición de Jugador 1
+        const offsetXJugador2 = this.tablero.getPosX() + this.tablero.columns * this.cellSize + this.fichaSize * 3; // Posición de Jugador 2
+    
+        const numFichasPorPila = 11; // Ajusta el número según la cantidad de fichas que desees en cada pila
+        const espacioEntrePilas = 20; 
+    
+        // Crear fichas para Jugador 1 - Primera Pila
+        for (let i = 0; i < numFichasPorPila; i++) {
             this.fichasJugador1.push(new Ficha(
-                this.tablero.getPosX() - this.fichaSize * 3, // Posición a la izquierda del tablero
-                fichaOffsetY,
+                offsetXJugador1,
+                offsetY + i * this.fichaSize, // Espaciado vertical entre fichas
                 this.fichaSize,
                 '#FF0000', // Color de Jugador 1
                 this.ctx,
                 this.playerSkin1.src // Skin de la ficha
             ));
-            
+        }
+    
+        // Crear fichas para Jugador 1 - Segunda Pila
+        for (let i = 0; i < numFichasPorPila; i++) {
+            this.fichasJugador1.push(new Ficha(
+                offsetXJugador1 +  espacioEntrePilas + this.fichaSize * 2, // Mover la segunda pila a la derecha
+                offsetY + i * this.fichaSize, // Espaciado vertical entre fichas
+                this.fichaSize,
+                '#FF0000', // Color de Jugador 1
+                this.ctx,
+                this.playerSkin1.src // Skin de la ficha
+            ));
+        }
+    
+        // Crear fichas para Jugador 2 - Primera Pila
+        for (let i = 0; i < numFichasPorPila; i++) {
             this.fichasJugador2.push(new Ficha(
-                this.tablero.getPosX() + this.tablero.columns * this.cellSize + this.fichaSize * 3, // Posición a la derecha del tablero
-                fichaOffsetY,
+                offsetXJugador2,
+                offsetY + i * this.fichaSize, // Espaciado vertical entre fichas
                 this.fichaSize,
                 '#0000FF', // Color de Jugador 2
                 this.ctx,
                 this.playerSkin2.src // Skin de la ficha
             ));
         }
-
+    
+        // Crear fichas para Jugador 2 - Segunda Pila
+        for (let i = 0; i < numFichasPorPila; i++) {
+            this.fichasJugador2.push(new Ficha(
+                offsetXJugador2 + espacioEntrePilas + this.fichaSize * 2, // Mover la segunda pila a la derecha
+                offsetY + i * this.fichaSize, // Espaciado vertical entre fichas
+                this.fichaSize,
+                '#0000FF', // Color de Jugador 2
+                this.ctx,
+                this.playerSkin2.src // Skin de la ficha
+            ));
+        }
+    
         this.temporizador.iniciar();
     
         this.addEventListeners();
@@ -110,16 +143,20 @@ class Juego {
 
     handleFichaDrop(ficha) {
         if (this.zonaLanzar.isFichaEnZona(ficha)) {
-            const columna = this.tablero.obtenerColumnaPorPosicion(ficha.posX);
+            const columna = this.tablero.obtenerColumnaPorPosicion(ficha.getPosX());
             if (columna !== null) {
+    
+                // Ahora suelta la ficha en la columna correspondiente
                 this.tablero.soltarFichaEnColumna(ficha, columna);
                 ficha.colocada = true;
+    
                 // Verificar si hay un ganador después de soltar la ficha
                 if (this.verificarGanador(columna, ficha)) {
                     this.juegoTerminado = true; // Indica que el juego ha terminado
-                    
                 }
-                this.turno = !this.turno; // Cambia el turno después de soltar la ficha
+                this.turno = !this.turno; 
+    
+                // Redibuja el juego después de que la sombra y la ficha se hayan colocado
                 this.drawGame();
             }
         }
@@ -140,8 +177,8 @@ class Juego {
 
 
     verificarGanador(columna, ficha) {
-        
         let fila = this.tablero.obtenerFilaPorColumna(columna); 
+
         return (
                 this.verificarVertical(columna, fila, ficha) ||
                 this.verificarHorizontal(columna, fila, ficha) ||
@@ -154,7 +191,7 @@ class Juego {
         for (let f = 0; f < this.tablero.rows; f++) {
             if (this.tablero.celdas[f][columna] && this.tablero.celdas[f][columna].color === ficha.color) {
                 count++;
-                if (count === 4) return true;
+                if (count === this.fichasToWin) return true;
             } else {
                 count = 0;
             }
@@ -164,11 +201,10 @@ class Juego {
 
     verificarHorizontal(columna, fila, ficha) {
         let count = 0;
-        console.log(count);
         for (let c = 0; c < this.tablero.columns; c++) {
             if (this.tablero.celdas[fila][c] && this.tablero.celdas[fila][c].color === ficha.color) {
                 count++;
-                if (count === 4) return true;
+                if (count === this.fichasToWin) return true;
             } else {
                 count = 0;
             }
@@ -189,7 +225,7 @@ class Juego {
         let f = fila + 1;
         while (c < this.tablero.columns && f < this.tablero.rows && this.tablero.celdas[f][c] && this.tablero.celdas[f][c].color === ficha.color) {
             count++;
-            if (count === 4) return true;
+            if (count === this.fichasToWin) return true;
             c++;
             f++;
         }
@@ -199,7 +235,7 @@ class Juego {
         f = fila - 1;
         while (c >= 0 && f >= 0 && this.tablero.celdas[f][c] && this.tablero.celdas[f][c].color === ficha.color) {
             count++;
-            if (count === 4) return true;
+            if (count === this.fichasToWin) return true;
             c--;
             f--;
         }
@@ -215,7 +251,7 @@ class Juego {
         let f = fila + 1;
         while (c >= 0 && f < this.tablero.rows && this.tablero.celdas[f][c] && this.tablero.celdas[f][c].color === ficha.color) {
             count++;
-            if (count === 4) return true;
+            if (count === this.fichasToWin) return true;
             c--;
             f++;
         }
@@ -225,7 +261,7 @@ class Juego {
         f = fila - 1;
         while (c < this.tablero.columns && f >= 0 && this.tablero.celdas[f][c] && this.tablero.celdas[f][c].color === ficha.color) {
             count++;
-            if (count === 4) return true;
+            if (count === this.fichasToWin) return true;
             c++;
             f--;
         }
@@ -246,6 +282,7 @@ class Juego {
         // Detectar clic en el botón de reinicio
         this.canvas.addEventListener("click", (e) => this.onClick(e));
     }
+
 
     onMouseDown(e) {
         if (this.juegoTerminado) return; // Bloquear si el juego ha terminado
@@ -286,6 +323,8 @@ class Juego {
             }
         }
     }
+
+    
 
     reiniciarJuego() {
         // Reiniciar el tablero y las fichas

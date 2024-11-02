@@ -14,20 +14,54 @@ class Menu extends Dibujable {
         this.player1Skin = null;
         this.player2Skin = null;
         this.skinRadius = 25;
-        this.skinPositionYTop = 70;
-        this.skinPositionYBotton = 140;
-        this.skinPositionX = 200;
+        this.skinPositionXRight = canvas.width / 2 + 200;
+        this.skinPositionXLeft = canvas.width / 2 - 400;
+        this.skinPositionY = 250;
         this.skinSpacing =  this.skinRadius * 3 //Espacio entre los distintos skins
-        this.currentPlayer = 1;
+        this.selectedSkinIndex = null; // Índice de la skin seleccionada
+        this.logo = new Image();
+        this.logo.src = "img/linea-de-cuatro-logo.png"; 
+        this.logoX = (this.canvas.width) / 2 -123;
+        this.logoY = -45;
+        this.argentinaTitle = new Image();
+        this.argentinaTitle.src = "img/argentina-title.png";
+        this.franciaTitle = new Image();
+        this.franciaTitle.src = "img/francia-title.png";
+        this.countryTitlesY = this.logoY + 100; // Posición para los countryTitulos en y
+        this.argentinaTitleX = (this.canvas.width) / 2 - 470;
+        this.franciaTitleX = (this.canvas.width) / 2 + 120;
+
+        this.blinkVisible = true; // Controla la visibilidad del texto titilante
+        this.blinkInterval = setInterval(() => {
+            this.blinkVisible = !this.blinkVisible; // Cambia la visibilidad cada intervalo
+            this.draw(); 
+        }, 500); // Intervalo en milisegundos (500 ms para titilar cada medio segundo)
     }
+    
 
     draw() {
-        this.ctx.font = this.btnFuente;
+
+        // Logo 
+        this.ctx.drawImage(this.logo, this.logoX, this.logoY, 250, 250); 
+
+        this.ctx.font = "20px Arial";
         this.ctx.textAlign = "center";
+
+        // Bandera de Argentina
+        this.ctx.drawImage(this.argentinaTitle, this.argentinaTitleX, this.countryTitlesY , 350, 250); 
+
+        // Bandera de Francia
+        this.ctx.drawImage(this.franciaTitle, this.franciaTitleX, this.countryTitlesY , 350, 250); 
+
+        if (this.blinkVisible) {
+            this.ctx.fillStyle = "#FFD700"; // Color dorado para resaltar el mensaje
+            this.ctx.font = "bold 20px Arial"; // Fuente para el mensaje
+            this.ctx.fillText("Selecciona tu jugador", this.canvas.width / 2, 200);
+        }
 
         this.reglas.gameRules.forEach((opcion, index) => {
             const x = (this.canvas.width - this.btnAncho) / 2;
-            const y = this.posY + index * (this.btnAlto + this.marginVertical);
+            const y = this.posY + index * (this.btnAlto + this.marginVertical) + 50;
 
             // Dibujar el botón
             this.ctx.fillStyle = this.btnColor;
@@ -43,8 +77,8 @@ class Menu extends Dibujable {
                 const clickX = event.clientX - rect.left;
                 const clickY = event.clientY - rect.top;
 
-                if (clickX > x && clickX < x + this.btnAncho && clickY > y && clickY < y + this.btnAlto) {
-                    this.startGame(this.canvas, this.ctx, opcion.columnas, opcion.filas, opcion.cellSize, opcion.tamFicha);
+                if (clickX > x && clickX < x + this.btnAncho && clickY > y && clickY < y + this.btnAlto && this.player1Skin && this.player2Skin) {
+                    this.startGame(this.canvas, this.ctx, opcion.columnas, opcion.filas, opcion.cellSize, opcion.tamFicha, opcion.fichasToWin);
                 }
             });
         });
@@ -52,11 +86,12 @@ class Menu extends Dibujable {
         this.drawSkins();
     }
 
-    drawSkins() {   
+    drawSkins(){   
 
         this.reglas.skins.forEach((skin, index) => {
-            const x = this.skinPositionX + (index % 3) * this.skinSpacing;
-            const y = index < 3 ? this.skinPositionYTop : this.skinPositionYBotton;
+
+            const x = index < 3 ? this.skinPositionXLeft + (index % 3) * this.skinSpacing : this.skinPositionXRight + (index % 3) * this.skinSpacing;
+            const y = this.skinPositionY ;  
 
             skin.onload = () => {
                 this.ctx.save();
@@ -78,46 +113,58 @@ class Menu extends Dibujable {
         const rect = this.canvas.getBoundingClientRect();
         const clickX = event.clientX - rect.left;
         const clickY = event.clientY - rect.top;
-
     
         this.reglas.skins.forEach((skin, index) => {
-            const x = this.skinPositionX + (index % 3) * this.skinSpacing;
-            const y = index < 3 ? this.skinPositionYTop : this.skinPositionYBotton;
-    
+            const y = this.skinPositionY ;  
+            const x = index < 3 ? this.skinPositionXLeft + (index % 3) * this.skinSpacing : this.skinPositionXRight + (index % 3) * this.skinSpacing;
+
             if (
                 clickX > x &&
                 clickX < x + this.skinRadius * 2 &&
                 clickY > y &&
                 clickY < y + this.skinRadius * 2
             ) {
-                // Asigna la skin al jugador actual
-                if (this.currentPlayer === 1) {
+    
+                // Marcar el borde del skin seleccionado
+                this.ctx.strokeStyle = "yellow";
+                this.ctx.lineWidth = 3;
+                this.ctx.beginPath();
+                this.ctx.arc(x + this.skinRadius, y + this.skinRadius, this.skinRadius + 4, 0, Math.PI * 2);
+                this.ctx.stroke();
+    
+                // Asignar el skin al jugador actual 
+                if (index < 3) {
                     this.player1Skin = skin;
-                    const nickname = prompt("Ingrese el nickname para el Jugador 1");
-                    this.player1Nickname = nickname;
-                } else {
+                }
+                if ( index >= 3) {
                     this.player2Skin = skin;
-                    const nickname = prompt("Ingrese el nickname para el Jugador 2");
-                    this.player2Nickname = nickname;
                 }
     
-                // Alterna al siguiente jugador después de asignar
-                this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
+                this.selectedSkinIndex = index; 
+    
+                this.draw(); 
             }
         });
     }
 
-    startGame(canvas, context, columns, rows, cellSize, tamFicha) {
-        //elimino los botones cuando el juego se inicia
+
+    chooseNickname() {
+        this.player1Nickname = prompt("Ingrese el nickname para el Jugador 1");
+        this.player2Nickname = prompt("Ingrese el nickname para el Jugador 2");
+    }
+
+    startGame(canvas, context, columns, rows, cellSize, tamFicha, fichasToWin) {
+        clearInterval(this.blinkInterval); // Detener el parpadeo cuando comience el juego
+
         this.btnAlto = 0;
         this.btnAncho = 0;
-        console.log("skin1 " + this.player1Skin);
-        console.log("skin2 " + this.playerSkin);
-        
+        this.skinRadius = 0;
+
         const tablero = new Tablero(0, 0, context, columns, rows, cellSize, canvas);
         const juego = new Juego(
                 canvas,
                 tablero,
+                fichasToWin,
                 context, 
                 canvas.width,
                 canvas.height,
