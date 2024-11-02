@@ -9,6 +9,7 @@ class Tablero extends Dibujable {
         this.canvas = canvas;
         this.celdas = Array.from({ length: rows }, () => Array(columns).fill(null)); // Matriz para almacenar las fichas
         this.calculateMean();
+        this.flechaActiva = null; // Almacena el índice de la columna activa
 
         this.imgCentro = new Image();
         this.imgCentro.src = "img/celda-azul.png";
@@ -66,6 +67,7 @@ class Tablero extends Dibujable {
     soltarFichaEnColumna(ficha, columna) {
         for (let fila = this.rows - 1; fila >= 0; fila--) {
             if (!this.isOcupado(columna, fila)) {
+                console.log(fila);
                 this.putFicha(columna, fila, ficha);
                 ficha.setPosition(
                     this.posX + columna * this.cellSize + this.cellSize / 2,
@@ -126,17 +128,26 @@ class Tablero extends Dibujable {
             }
         }
     }
-    
-    // draw() {
-    //     for (let row = 0; row < this.rows; row++) {
-    //         for (let col = 0; col < this.columns; col++) {
-    //             const x = this.posX + col * this.cellSize;
-    //             const y = this.posY + row * this.cellSize;
-                
-    //             // Dibujar la imagen de casillero en cada celda
-    //             this.ctx.drawImage(this.casilleroImg, x, y, this.cellSize, this.cellSize);
-    //         }
-    //     }
-    // }
 
+
+
+    drawArrows(zonaLanzar) {
+        if (this.flechaActiva !== null) {
+            const flechaPosX = this.posX + this.flechaActiva * this.cellSize + this.cellSize / 2;
+            const flechaPosY = this.posY - 5; // Ajusta la posición Y de la flecha
+            this.ctx.fillStyle = "#FFFF00"; // Color de la flecha
+            this.ctx.beginPath();
+            this.ctx.moveTo(flechaPosX, flechaPosY);
+            this.ctx.lineTo(flechaPosX - 10, flechaPosY -10); // Flecha a la izquierda
+            this.ctx.lineTo(flechaPosX + 10, flechaPosY -10); // Flecha a la derecha
+            this.ctx.closePath();
+            this.ctx.fill();
+        }
+    }
+
+    setFlechaActiva(columna) {
+        this.flechaActiva = columna;
+    }
+    
+  
 }

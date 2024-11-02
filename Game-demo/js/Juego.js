@@ -3,6 +3,7 @@ class Juego {
     (
         canvas,
         tablero,
+        fichasToWin,
         context,
         canvasWidth,
         canvasHeight,
@@ -16,6 +17,8 @@ class Juego {
     {
         this.canvas = canvas;
         this.tablero = tablero;
+        this.fichasToWin = fichasToWin;
+        this.fichasToWin = fichasToWin
         this.ctx = context;
         this.fichasJugador1 = [];
         this.fichasJugador2 = [];
@@ -33,9 +36,12 @@ class Juego {
         this.turno = this.turnoInicial;
         this.botonReiniciar = new BotonJugarDeNuevo(this.canvasWidth / 2 - 150, canvasHeight / 2 + 50 , this.ctx, 300, 50, "Jugar de nuevo" );
         this.juegoTerminado = false; // Variable para controlar el estado del juego
-        this.temporizador = new Temporizador(this.canvasWidth / 2 - 80, 10, this.ctx, 150); // 30 segundos como tiempo máximo
-        const spacing = 40; // Espaciado entre las fichas
-        
+        this.temporizador = new Temporizador(this.canvasWidth / 2 - 80, 5, this.ctx, 150); // 30 segundos como tiempo máximo
+        this.imagenGanadorArgentina = new Image();
+        this.imagenGanadorArgentina.src = 'img/Cartel-ganador-argentina.png';
+        this.imagenGanadorFrancia = new Image();
+        this.imagenGanadorFrancia.src = 'img/Cartel-ganador-francia.png';
+        this.botonVolverAlMenu = new BotonVolverMenu(this.canvasWidth / 2 - 150, canvasHeight / 2 + 110 , this.ctx, 300, 50, "Volver al Menu" );
     }
 
     iniciarJuego() {
@@ -52,7 +58,7 @@ class Juego {
                 offsetXJugador1,
                 offsetY + i * this.fichaSize, // Espaciado vertical entre fichas
                 this.fichaSize,
-                '#00AAE4', // Color de Jugador 1
+                '#FF0000', // Color de Jugador 1
                 this.ctx,
                 this.playerSkin1.src // Skin de la ficha
             ));
@@ -64,7 +70,7 @@ class Juego {
                 offsetXJugador1 +  espacioEntrePilas + this.fichaSize * 2, // Mover la segunda pila a la derecha
                 offsetY + i * this.fichaSize, // Espaciado vertical entre fichas
                 this.fichaSize,
-                '#00AAE4', // Color de Jugador 2
+                '#FF0000', // Color de Jugador 1
                 this.ctx,
                 this.playerSkin1.src // Skin de la ficha
             ));
@@ -113,7 +119,8 @@ class Juego {
         
         this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight); // Limpiar el canvas
         this.tablero.draw();
-
+        this.tablero.drawArrows(this.zonaLanzar);
+    
         for (const ficha of this.fichasJugador1) {
             ficha.draw();
         }
@@ -125,6 +132,7 @@ class Juego {
         if (this.juegoTerminado) {
             this.mostrarGanador();
             this.botonReiniciar.draw(); // Dibuja el botón de reinicio si el juego ha terminado
+            this.botonVolverAlMenu.draw();
         }
 
         if(this.temporizador.tiempoRestante === 0){
@@ -132,6 +140,7 @@ class Juego {
             this.juegoTerminado = true;
             this.mostrarEmpate();
             this.botonReiniciar.draw();
+            this.botonVolverAlMenu.draw();
         }
 
         if(!this.juegoTerminado){
@@ -142,16 +151,20 @@ class Juego {
 
     handleFichaDrop(ficha) {
         if (this.zonaLanzar.isFichaEnZona(ficha)) {
-            const columna = this.tablero.obtenerColumnaPorPosicion(ficha.posX);
+            const columna = this.tablero.obtenerColumnaPorPosicion(ficha.getPosX());
             if (columna !== null) {
+    
+                // Ahora suelta la ficha en la columna correspondiente
                 this.tablero.soltarFichaEnColumna(ficha, columna);
                 ficha.colocada = true;
+    
                 // Verificar si hay un ganador después de soltar la ficha
                 if (this.verificarGanador(columna, ficha)) {
                     this.juegoTerminado = true; // Indica que el juego ha terminado
-                    
                 }
-                this.turno = !this.turno; // Cambia el turno después de soltar la ficha
+                this.turno = !this.turno; 
+    
+                // Redibuja el juego después de que la sombra y la ficha se hayan colocado
                 this.drawGame();
             }
         }
@@ -159,8 +172,8 @@ class Juego {
 
 
     mostrarGanador() {
-        const mensaje = `Ganador:  ${this.turno ? 'Francia' : 'Argentina'}`;
-        const mensajeGanador = new MensajeFinal(0, 0, this.ctx, mensaje, this.canvasWidth, this.canvasHeight)
+        const imagenGanador = this.turno ? this.imagenGanadorFrancia: this.imagenGanadorArgentina;
+        const mensajeGanador = new MensajeFinal(0, 0, this.ctx, this.canvasWidth, this.canvasHeight, imagenGanador);
         mensajeGanador.draw();
     }
 
@@ -172,8 +185,8 @@ class Juego {
 
 
     verificarGanador(columna, ficha) {
-        
         let fila = this.tablero.obtenerFilaPorColumna(columna); 
+
         return (
                 this.verificarVertical(columna, fila, ficha) ||
                 this.verificarHorizontal(columna, fila, ficha) ||
@@ -186,7 +199,7 @@ class Juego {
         for (let f = 0; f < this.tablero.rows; f++) {
             if (this.tablero.celdas[f][columna] && this.tablero.celdas[f][columna].color === ficha.color) {
                 count++;
-                if (count === 4) return true;
+                if (count === this.fichasToWin) return true;
             } else {
                 count = 0;
             }
@@ -196,11 +209,10 @@ class Juego {
 
     verificarHorizontal(columna, fila, ficha) {
         let count = 0;
-        console.log(count);
         for (let c = 0; c < this.tablero.columns; c++) {
             if (this.tablero.celdas[fila][c] && this.tablero.celdas[fila][c].color === ficha.color) {
                 count++;
-                if (count === 4) return true;
+                if (count === this.fichasToWin) return true;
             } else {
                 count = 0;
             }
@@ -221,7 +233,7 @@ class Juego {
         let f = fila + 1;
         while (c < this.tablero.columns && f < this.tablero.rows && this.tablero.celdas[f][c] && this.tablero.celdas[f][c].color === ficha.color) {
             count++;
-            if (count === 4) return true;
+            if (count === this.fichasToWin) return true;
             c++;
             f++;
         }
@@ -231,7 +243,7 @@ class Juego {
         f = fila - 1;
         while (c >= 0 && f >= 0 && this.tablero.celdas[f][c] && this.tablero.celdas[f][c].color === ficha.color) {
             count++;
-            if (count === 4) return true;
+            if (count === this.fichasToWin) return true;
             c--;
             f--;
         }
@@ -247,7 +259,7 @@ class Juego {
         let f = fila + 1;
         while (c >= 0 && f < this.tablero.rows && this.tablero.celdas[f][c] && this.tablero.celdas[f][c].color === ficha.color) {
             count++;
-            if (count === 4) return true;
+            if (count === this.fichasToWin) return true;
             c--;
             f++;
         }
@@ -257,7 +269,7 @@ class Juego {
         f = fila - 1;
         while (c < this.tablero.columns && f >= 0 && this.tablero.celdas[f][c] && this.tablero.celdas[f][c].color === ficha.color) {
             count++;
-            if (count === 4) return true;
+            if (count === this.fichasToWin) return true;
             c++;
             f--;
         }
@@ -279,6 +291,7 @@ class Juego {
         this.canvas.addEventListener("click", (e) => this.onClick(e));
     }
 
+
     onMouseDown(e) {
         if (this.juegoTerminado) return; // Bloquear si el juego ha terminado
     
@@ -298,39 +311,70 @@ class Juego {
     }
     
     onMouseMove(e) {
+       
         if (this.juegoTerminado || !this.fichaArrastrada || !this.fichaArrastrada.isDragging()) return;
     
-        const { offsetX, offsetY } = e;
-        this.fichaArrastrada.setPosition(offsetX, offsetY);
-        this.drawGame();
-    }
-    
-    onMouseUp() {
-        if (this.juegoTerminado || !this.fichaArrastrada) return;
-    
-        this.fichaArrastrada.setDragging(false);
-    
-        // Verificar si la ficha fue soltada en la zona de lanzamiento
-        if (this.zonaLanzar.isFichaEnZona(this.fichaArrastrada)) {
-            this.handleFichaDrop(this.fichaArrastrada);
-        } else {
-            // Si la ficha está fuera de la zona, volver a la posición inicial
-            this.fichaArrastrada.setPosition(this.fichaArrastrada.posicionInicial.x, this.fichaArrastrada.posicionInicial.y);
-        }
-        // Iniciar la animación para que la figura caiga
+        const { offsetX } = e;
+        this.fichaArrastrada.setPosition(offsetX, e.offsetY);
         
-        this.fichaArrastrada = null;
+        // Actualiza la flecha activa
+        const columna = this.tablero.obtenerColumnaPorPosicion(offsetX);
+        if (this.zonaLanzar.isFichaEnZona(this.fichaArrastrada)) {
+            this.tablero.setFlechaActiva(columna);
+            
+        }
+        else {
+            this.tablero.setFlechaActiva(null); // Si no está en ninguna columna, ocultar la flecha
+        }
+    
         this.drawGame();
-     
     }
 
+   onMouseUp() {
+        if (this.juegoTerminado || !this.fichaArrastrada) return;
+
+        this.fichaArrastrada.setDragging(false);
+        
+        if (this.zonaLanzar.isFichaEnZona(this.fichaArrastrada)) {
+            this.handleFichaDrop(this.fichaArrastrada);
+        } 
+        else {
+            this.fichaArrastrada.setPosition(this.fichaArrastrada.posicionInicial.x, this.fichaArrastrada.posicionInicial.y);
+        }
+        
+        this.tablero.setFlechaActiva(null);
+        this.fichaArrastrada = null;
+        this.drawGame();
+    }
+    
     onClick(e) {
         if (this.juegoTerminado || this.temporizador.tiempoRestante == 0) {
             const { offsetX, offsetY } = e;
             if (this.botonReiniciar.isPointInside(offsetX, offsetY)) {
                 this.reiniciarJuego();
             }
+            if (this.botonVolverAlMenu.isPointInside(offsetX, offsetY)) {
+                this.backToMenu()
+            }
         }
+    }
+
+    backToMenu() {
+        // Remueve el canvas actual
+        this.canvas.parentNode.removeChild(canvas);
+
+        // Crea un nuevo canvas
+        const nuevoCanvas = document.createElement('canvas');
+        nuevoCanvas.id = 'canvas'; 
+        nuevoCanvas.width = 1000; 
+        nuevoCanvas.height = 650; 
+
+        document.body.appendChild(nuevoCanvas);
+
+        const nuevoCtx = nuevoCanvas.getContext('2d');
+        const menu = new Menu(0, 180, nuevoCtx, nuevoCanvas, 200, 50, "#007bff", "20px Arial", 20); 
+
+        menu.draw();
     }
 
     reiniciarJuego() {

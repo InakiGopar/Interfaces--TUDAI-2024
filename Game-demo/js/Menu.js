@@ -16,73 +16,55 @@ class Menu extends Dibujable {
         this.skinRadius = 25;
         this.skinPositionXRight = canvas.width / 2 + 200;
         this.skinPositionXLeft = canvas.width / 2 - 400;
-        this.skinPositionY = 200;
+        this.skinPositionY = 250;
         this.skinSpacing =  this.skinRadius * 3 //Espacio entre los distintos skins
         this.selectedSkinIndex = null; // Índice de la skin seleccionada
         this.logo = new Image();
-        this.logo.src = "img/logo-linea-de4.png"; // Asigna la fuente de la imagen del logo
-        this.banderaArg = new Image();
-        this.banderaArg.src = "img/bandera-argentina.jpg";
-        this.banderaFrancia = new Image();
-        this.banderaFrancia.src = "img/bandera-francia.jpg";
+        this.logo.src = "img/linea-de-cuatro-logo.png"; 
+        this.logoX = (this.canvas.width) / 2 -123;
+        this.logoY = -45;
+        this.argentinaTitle = new Image();
+        this.argentinaTitle.src = "img/argentina-title.png";
+        this.franciaTitle = new Image();
+        this.franciaTitle.src = "img/francia-title.png";
+        this.countryTitlesY = this.logoY + 100; // Posición para los countryTitulos en y
+        this.argentinaTitleX = (this.canvas.width) / 2 - 470;
+        this.franciaTitleX = (this.canvas.width) / 2 + 120;
 
-       this.blinkVisible = true; // Controla la visibilidad del texto titilante
+        this.blinkVisible = true; // Controla la visibilidad del texto titilante
         this.blinkInterval = setInterval(() => {
             this.blinkVisible = !this.blinkVisible; // Cambia la visibilidad cada intervalo
-            this.draw(); // Redibuja para actualizar el texto titilante
+            this.draw(); 
         }, 500); // Intervalo en milisegundos (500 ms para titilar cada medio segundo)
     }
     
 
     draw() {
 
-        // Dibujar el logo en la parte superior del canvas
-        const logoX = (this.canvas.width) / 2 -100; // Ajusta el tamaño según sea necesario
-        const logoY = -30; // Posición Y del logo
-        this.ctx.drawImage(this.logo, logoX, logoY, 200, 200); // Dibuja el logo (ajusta el tamaño)
+        // Logo 
+        this.ctx.drawImage(this.logo, this.logoX, this.logoY, 250, 250); 
 
-        // const argX = (this.canvas.width) / 2 -200; // Ajusta el tamaño según sea necesario
-        // const argY = 80; // Posición Y del logo
-        // this.ctx.drawImage(this.banderaArg, argX, argY, 70, 50); // Dibuja el logo (ajusta el tamaño)
-
-        // const fraX = (this.canvas.width) / 2 + 200; // Ajusta el tamaño según sea necesario
-        // const fraY = 80; // Posición Y del logo
-        // this.ctx.drawImage(this.banderaFrancia, fraX, fraY, 70, 50); // Dibuja el logo (ajusta el tamaño)
-
-        
         this.ctx.font = "20px Arial";
-      
         this.ctx.textAlign = "center";
 
-        // Posición para los nombres y las banderas debajo del logo
-        const countryY = logoY + 200; // Espacio debajo del logo
+        // Bandera de Argentina
+        this.ctx.drawImage(this.argentinaTitle, this.argentinaTitleX, this.countryTitlesY , 350, 250); 
 
-        // Dibujar "Argentina" y su bandera
-        const argX = (this.canvas.width) / 2 -400;
-        this.ctx.fillStyle = "#FFF"; // Color del texto
-        this.ctx.fillText("Argentina", argX, countryY); // Dibuja el nombre
-
-        // Dibuja la bandera de Argentina
-        const banderaArgX = argX +50; // Ajusta la posición de la bandera
-        this.ctx.drawImage(this.banderaArg, banderaArgX, countryY - 30, 60, 40); // Ajusta el tamaño de la bandera
-
-        // Dibujar "Francia" y su bandera
-        const fraX = (this.canvas.width) / 2 + 200;
-        this.ctx.fillText("Francia", fraX, countryY); // Dibuja el nombre
-
-        // Dibuja la bandera de Francia
-        const banderaFraX = fraX  +40; // Ajusta la posición de la bandera
-        this.ctx.drawImage(this.banderaFrancia, banderaFraX, countryY - 30, 60, 40); // Ajusta el tamaño de la bandera
+        // Bandera de Francia
+        this.ctx.drawImage(this.franciaTitle, this.franciaTitleX, this.countryTitlesY , 350, 250); 
 
         if (this.blinkVisible) {
-            this.ctx.fillStyle = "#FFD700"; // Color dorado para resaltar el mensaje
+            this.ctx.fillStyle = "#fffffff"; // Color dorado para resaltar el mensaje
             this.ctx.font = "bold 20px Arial"; // Fuente para el mensaje
-            this.ctx.fillText("Selecciona tu jugador", this.canvas.width / 2, countryY + 60);
+            this.ctx.fillText("Selecciona tu estadio", this.canvas.width / 2, 200);
+            this.ctx.strokeStyle = "#000000"; // Color negro para el borde
+            this.ctx.lineWidth = 1; // Ancho del borde
+            this.ctx.strokeText("Selecciona tu estadio", this.canvas.width / 2, 200);
         }
 
         this.reglas.gameRules.forEach((opcion, index) => {
             const x = (this.canvas.width - this.btnAncho) / 2;
-            const y = this.posY + index * (this.btnAlto + this.marginVertical);
+            const y = this.posY + index * (this.btnAlto + this.marginVertical) + 50;
 
             // Dibujar el botón
             this.ctx.fillStyle = this.btnColor;
@@ -99,7 +81,7 @@ class Menu extends Dibujable {
                 const clickY = event.clientY - rect.top;
 
                 if (clickX > x && clickX < x + this.btnAncho && clickY > y && clickY < y + this.btnAlto && this.player1Skin && this.player2Skin) {
-                    this.startGame(this.canvas, this.ctx, opcion.columnas, opcion.filas, opcion.cellSize, opcion.tamFicha);
+                    this.startGame(this.canvas, this.ctx, opcion.columnas, opcion.filas, opcion.cellSize, opcion.tamFicha, opcion.fichasToWin);
                 }
             });
         });
@@ -110,8 +92,9 @@ class Menu extends Dibujable {
     drawSkins(){   
 
         this.reglas.skins.forEach((skin, index) => {
-            const y = this.skinPositionY ;  
+
             const x = index < 3 ? this.skinPositionXLeft + (index % 3) * this.skinSpacing : this.skinPositionXRight + (index % 3) * this.skinSpacing;
+            const y = this.skinPositionY ;  
 
             skin.onload = () => {
                 this.ctx.save();
@@ -152,7 +135,7 @@ class Menu extends Dibujable {
                 this.ctx.arc(x + this.skinRadius, y + this.skinRadius, this.skinRadius + 4, 0, Math.PI * 2);
                 this.ctx.stroke();
     
-                // Asignar el skin al jugador actual y pedir el nickname
+                // Asignar el skin al jugador actual 
                 if (index < 3) {
                     this.player1Skin = skin;
                 }
@@ -160,9 +143,9 @@ class Menu extends Dibujable {
                     this.player2Skin = skin;
                 }
     
-                this.selectedSkinIndex = index; // Actualizar el índice del skin seleccionado
+                this.selectedSkinIndex = index; 
     
-                this.draw(); // Redibujar para reflejar los cambios
+                this.draw(); 
             }
         });
     }
@@ -173,17 +156,18 @@ class Menu extends Dibujable {
         this.player2Nickname = prompt("Ingrese el nickname para el Jugador 2");
     }
 
-    startGame(canvas, context, columns, rows, cellSize, tamFicha) {
+    startGame(canvas, context, columns, rows, cellSize, tamFicha, fichasToWin) {
         clearInterval(this.blinkInterval); // Detener el parpadeo cuando comience el juego
 
         this.btnAlto = 0;
         this.btnAncho = 0;
         this.skinRadius = 0;
-        
+
         const tablero = new Tablero(0, 0, context, columns, rows, cellSize, canvas);
         const juego = new Juego(
                 canvas,
                 tablero,
+                fichasToWin,
                 context, 
                 canvas.width,
                 canvas.height,

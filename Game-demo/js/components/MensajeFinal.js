@@ -1,17 +1,18 @@
 class MensajeFinal extends Dibujable {
-    constructor(posX, posY, ctx, mensaje, canvasWidth, canvasHeight) {
+    constructor(posX, posY, ctx, canvasWidth, canvasHeight, imagen) {
         super(posX, posY, ctx);
-        this.mensaje = mensaje;
+       
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
+        this.imagen = imagen; // Imagen opcional
     }
 
     draw() {
-        this.ctx.fillStyle = 'rgba(0, 0, 0, 0.7)'; // Fondo semi-transparente
-        this.ctx.fillRect(this.canvasWidth / 2 - 150, this.canvasHeight / 2 - 60, 300, 100); 
-        this.ctx.fillStyle = '#FFF';
-        this.ctx.font = '30px Arial';
-        this.ctx.textAlign = 'center';
-        this.ctx.fillText(this.mensaje, this.canvasWidth / 2 , this.canvasHeight / 2 ); 
+    
+        if (this.imagen) {
+            const imgWidth = 300;
+            const imgHeight = 150;
+            this.ctx.drawImage(this.imagen, this.canvasWidth / 2 - imgWidth / 2, this.canvasHeight / 2 + 40 - imgHeight, imgWidth, imgHeight);
+        }
     }
 }
