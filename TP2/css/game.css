@@ -24,7 +24,14 @@ main {
     color: var(--primary-green);
 }
 
-.game {
+
+canvas {
+    margin-top: 2%;
+    background-image: url('../assets/img/game/Estadio-fondo.avif');
+    background-size: cover; 
+    background-position: center center;
+}
+/* .game {
     margin-top: 2%;
     background-image: url('../assets/img/card-img/estrategia/Portadacuatroenlinea.png');
     background-size: cover;
@@ -33,7 +40,7 @@ main {
     height: 495px;
     background-color: rgba(37, 0, 67, 0.591); 
     background-blend-mode: multiply;
-}
+} */
 
 .game button {
     display: flex;
