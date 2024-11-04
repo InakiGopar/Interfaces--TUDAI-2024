@@ -30,12 +30,6 @@ class Menu extends Dibujable {
         this.countryTitlesY = this.logoY + 100; // Posición para los countryTitulos en y
         this.argentinaTitleX = (this.canvas.width) / 2 - 470;
         this.franciaTitleX = (this.canvas.width) / 2 + 120;
-
-        this.blinkVisible = true; // Controla la visibilidad del texto titilante
-        this.blinkInterval = setInterval(() => {
-            this.blinkVisible = !this.blinkVisible; // Cambia la visibilidad cada intervalo
-            this.draw(); 
-        }, 500); // Intervalo en milisegundos (500 ms para titilar cada medio segundo)
     }
     
 
@@ -44,7 +38,7 @@ class Menu extends Dibujable {
         // Logo 
         this.ctx.drawImage(this.logo, this.logoX, this.logoY, 250, 250); 
 
-        this.ctx.font = "20px Arial";
+        this.ctx.font = "18px 'Press Start 2P'";
         this.ctx.textAlign = "center";
 
         // Bandera de Argentina
@@ -52,15 +46,6 @@ class Menu extends Dibujable {
 
         // Bandera de Francia
         this.ctx.drawImage(this.franciaTitle, this.franciaTitleX, this.countryTitlesY , 350, 250); 
-
-        if (this.blinkVisible) {
-            this.ctx.fillStyle = "#fffffff"; // Color dorado para resaltar el mensaje
-            this.ctx.font = "bold 20px Arial"; // Fuente para el mensaje
-            this.ctx.fillText("Selecciona tu estadio", this.canvas.width / 2, 200);
-            this.ctx.strokeStyle = "#000000"; // Color negro para el borde
-            this.ctx.lineWidth = 1; // Ancho del borde
-            this.ctx.strokeText("Selecciona tu estadio", this.canvas.width / 2, 200);
-        }
 
         this.reglas.gameRules.forEach((opcion, index) => {
             const x = (this.canvas.width - this.btnAncho) / 2;
@@ -157,7 +142,6 @@ class Menu extends Dibujable {
     }
 
     startGame(canvas, context, columns, rows, cellSize, tamFicha, fichasToWin) {
-        clearInterval(this.blinkInterval); // Detener el parpadeo cuando comience el juego
 
         this.btnAlto = 0;
         this.btnAncho = 0;
