@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>30 Games</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/var.css">
+        <link rel="stylesheet" href="../css/global.css">
+        <link rel="stylesheet" href="../css/icons.css">
+        <link rel="stylesheet" href="../css/spinner.css">
+        <link rel="stylesheet" href="../css/nav.css">
+        <link rel="stylesheet" href="../css/game.css">
+        <link rel="stylesheet" href="../css/footer.css">
+    </head>
+    <body>
+        <header>
+            <div class="header-left">
+                <figure class="hamburger-icon"></figure>
+
+                <div class="logo" id="home">
+                    <figure class="img-logo"></figure>
+                    <p>30 Games</p>
+                </div>
+            </div>
+
+            <div class="search">
+                <figure class="lens"></figure>
+                <input id="search" type="text" placeholder="search..">
+                <figure id="cancel" class="cancel"></figure>
+            </div>
+
+            <div class="user-section">
+                <p>Hola, Juan</p>
+                <figure class="profile-logo"></figure>
+                <figure class="cart"></figure>
+            </div>
+        </header>
+        <div class="toggle-menu-container">   
+            <nav class="menu">
+                <div class="menu-item">
+                    <span class="fa-solid--home"></span>
+                    <p>Inicio</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="noto-v1--glowing-star"></span>
+                    <p>Favoritos</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="ri--group-line"></span>
+                    <p>Dos jugadores</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="emojione--crossed-swords"></span>
+                    <p>Accion</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="noto--compass"></span>
+                    <p>Aventura</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="emojione--soccer-ball"></span>
+                    <p>Deportes</p>
+                </div>
+                
+                <div class="menu-item">
+                    <span class="noto--chess-pawn"></span>
+                    <p>Estrategia</p>
+                </div>
+            </nav>
+            <div class="user-menu">
+
+                <div class="user-menu-header">
+                    <figure class="user-profile-img"></figure>
+                    <p>Juan Perez</p>
+                </div>
+
+                <div class="line-white"></div>
+
+                <div class="user-menu-item">
+                    <span class="heroicons--user-16-solid"></span>
+                    <p>Mi Perfil</p>
+                </div>
+
+                <div class="user-menu-item" >
+                    <span class="noto-v1--glowing-star"></span>
+                    <p>Mis Favoritos</p>
+                </div>
+
+                <div class="user-menu-item">
+                    <span class="mdi--cart"></span>
+                    <p>Mi Carrito</p>
+                </div>
+
+                <div class="user-menu-item">
+                    <span class="ion--game-controller-outline"></span>
+                    <p>Mis Juegos</p>
+                </div>
+
+                <div class="user-menu-item">
+                    <span class="carbon--settings"></span>
+                    <p>Configuración</p>
+                </div>
+
+                <div class="line-white"></div>
+
+                <div class="user-menu-item">
+                    <span class="game-icons--exit-door"></span>
+                    <p id="exit">Cerrar Sesión</p>
+                </div>
+            </div>
+        </div>
+        <main class="main-content">
+
+            <div class="breadcrumbs">
+                <a id="back">Home</a>
+                <p>></p>
+                <a href="#">Estrategia</a>
+                <p>></p>
+                <a href="../templates/game.html">Linea de Cuatro</a>
+            </div>
+
+            <section class="game-section">
+                <canvas width="1000px" height="650px" id="canvas"></canvas>
+                <!-- <div class="game">
+                    <button id="play-game">
+                        <span class="text">Jugar</span>
+                        <span class="entypo--game-controller"></span>
+                    </button>
+                </div> -->
+            </section>
+
+            <div class="share-button-container">
+                <button>
+                    <span class="material-symbols--share"></span>
+                    Compartir
+                </button>
+            </div>
+
+            <section class="game-description">
+                <h2>Linea de Cuatro</h2>
+                <div class="green-line"></div>
+                <p>
+                    ¿Estás listo para revivir la emoción de la final del mundo entre Argentina y Francia,
+                    pero con un giro? ¡En este juego Linea de cuatro, cada movimiento es una jugada de campeón! 
+                    Elige tu equipo, coloca tus fichas estratégicamente, y sé el primero en alinear 4 para llevar 
+                    a tu selección a la gloria. Con cada ficha que coloques, sentirás la adrenalina de los penales
+                    y los goles decisivos. ¡Lleva a tu equipo a la victoria una vez más, pero esta vez con pura estrategia
+                    futbolera! ¿Podrás repetir la hazaña de Messi o frenar el ataque imparable de Mbappé? 
+                    ¡El campo está listo, es tu turno de hacer historia!
+                </p>
+            </section>
+            <section class="game-controls">
+
+                <h3>Controles</h3>
+
+                <div class="green-line"></div>
+
+                <div class="controls">
+                    <div class="mouse">
+                        <h4>Mouse</h4>
+                        <div class="mouse-controls">
+                            <h5>Moverse</h5>
+                            <span class="ic--outline-mouse"></span>
+                            <h5>Seleccionar</h5>
+                            <span class="ph--mouse-left-click-fill"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="keyboard">
+                        <h4>Teclado</h4>
+                        <div class="keyboard-controls">
+                            <h5>Moverse</h5>
+                            <span class="gg--arrow-left-r"></span>
+                            <span class="gg--arrow-right-r"></span>
+                            <h5>Seleccionar</h5>
+                            <span class="icon-park-solid--enter-key"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="game-gallery">
+                <h3>Fotos y Videos</h3>
+
+                <div class="green-line"></div>
+
+                <div class="gallery">
+                    <div class="photo-game"></div>
+                    <div class="photo-game"></div>
+                    <div class="video-game">
+                        <span class="logos--youtube-icon"></span>
+                    </div>
+                </div>
+
+            </section>
+            <section class="comments">
+
+                <h3>Comentarios <span class="iconamoon--comment"></span></h3>
+
+                <div class="green-line"></div>
+
+                <div class="box-comment">
+                    <div class="box-comment-header">
+                        <figure class="user-img"></figure>
+                        <p>Tú</p>
+                    </div>
+
+                    <div class="box-comment-line"></div>
+
+                    <div class="comment">
+                        <input type="text" placeholder="Escribe tu opinion...">
+                        <button class="send-button">
+                            <p>Enviar</p>
+                            <span class="material-symbols-light--send"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <h4>Últimos Comentarios</h4>
+
+                <div class="community-comments">
+
+                    <div class="box-comment">
+                        <div class="box-comment-header">
+                            <div class="user-info">
+                                <figure class="user-img user1" ></figure>
+                                <p>Facux02</p>
+                            </div>
+
+                            <div class="button-like-dislike-container">
+                                <span class="iconamoon--like"></span>
+                                <span class="iconamoon--dislike"></span>
+                            </div>
+                        </div>
+    
+                        <div class="box-comment-line"></div>
+    
+                        <div class="comment">
+                            <p>Excelente juego!</p>
+                        </div>
+                    </div>
+
+                    <div class="box-comment">
+                        <div class="box-comment-header">
+
+                            <div class="user-info">
+                                <figure class="user-img user2"></figure>
+                                <p>Luca23</p>
+                            </div>
+                            
+                            <div class="button-like-dislike-container">
+                                <span class="iconamoon--like"></span>
+                                <span class="iconamoon--dislike"></span>
+                            </div>
+                        </div>
+    
+                        <div class="box-comment-line"></div>
+    
+                        <div class="comment">
+                            <p>Buenardopolis</p>
+                        </div>
+                    </div>
+
+                    <div class="box-comment">
+                        <div class="box-comment-header">
+
+                            <div class="user-info">
+                                <figure class="user-img user3"></figure>
+                                <p>Juanceto01</p>
+                            </div>
+
+                            <div class="button-like-dislike-container">
+                                <span class="iconamoon--like"></span>
+                                <span class="iconamoon--dislike"></span>
+                            </div>
+                        </div>
+    
+                        <div class="box-comment-line"></div>
+    
+                        <div class="comment">
+                            <p>La verdad pense que iba a ser mas divertido :/</p>
+                        </div>
+                    </div>
+
+                    <div class="box-comment">
+                        <div class="box-comment-header">
+
+                            <div class="user-info">
+                                <figure class="user-img user4"></figure>
+                                <p>DragonGamer23</p>
+                            </div>
+                            
+                            <div class="button-like-dislike-container">
+                                <span class="iconamoon--like"></span>
+                                <span class="iconamoon--dislike"></span>
+                            </div>
+                        </div>
+    
+                        <div class="box-comment-line"></div>
+    
+                        <div class="comment">
+                            <p>Un vedadero J U E G A Z O</p>
+                        </div>
+                    </div>
+
+                    <div class="box-comment">
+                        <div class="box-comment-header">
+                            <div class="user-info">
+                                <figure class="user-img user5"></figure>
+                                <p>DarkSoulHD</p>
+                            </div>
+
+                            <div class="button-like-dislike-container">
+                                <span class="iconamoon--like"></span>
+                                <span class="iconamoon--dislike"></span>
+                            </div>
+                        </div>
+    
+                        <div class="box-comment-line"></div>
+    
+                        <div class="comment">
+                            <p>Godinesss</p>
+                        </div>
+                    </div>
+
+                    <div class="box-comment">
+                        <div class="box-comment-header">
+
+                            <div class="user-info">
+                                <figure class="user-img user6"></figure>
+                                <p>Xeneize10</p>
+                            </div>
+                            
+                            <div class="button-like-dislike-container">
+                                <span class="iconamoon--like"></span>
+                                <span class="iconamoon--dislike"></span>
+                            </div>
+                        </div>
+    
+                        <div class="box-comment-line"></div>
+    
+                        <div class="comment">
+                            <p>Me gustaria que hagan uno de boca river!!</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <div class="spinner"></div>
+        <div class="loading-percent">0%</div>
+
+        <footer>
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <figure></figure>
+                    <p>30 Games</p>
+                </div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li>Inicio</li>
+                        <li>Favoritos</li>
+                        <li>Dos Jugadores</li>
+                        <li>Accion</li>
+                        <li>Aventura</li>
+                        <li>Deportes</li>
+                        <li>Estrategia</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-middle">
+                <div class="about-us">
+                    <h3>Sobre nosotros</h3>
+                    <div class="line"></div>
+                    <p>
+                        Somos una plataforma de juegos online inspirada en las clásicas paginas  Friv y 1001 Juegos.
+                        Ofrecemos una amplia variedad de juegos para todas las edades, desde aventuras emocionantes hasta puzzles desafiantes.
+                        Nuestro objetivo es brindarte los mejores juegos para que  te puedas divertir,
+                        con una experiencia divertida y segura. ¡Empeza ya mismo a dievertirte!
+                    </p>
+                    <div class="line"></div>
+                </div>
+                
+                <div class="social-media">
+                    <span class="ic--baseline-facebook"></span>
+                    <span class="mdi--instagram"></span>
+                    <span class="hugeicons--new-twitter"></span>
+                    <span class="mdi--youtube"></span>
+                </div>
+            </div>
+            <div class="footer-right">
+
+                <h3>Contacto</h3>
+
+                <div class="mail">
+                    <span class="material-symbols--mail-outline"></span>
+                    <p>30games@gmail.com</p>
+                </div>
+
+                <div class="phone">
+                    <span class="ic--baseline-phone"></span>
+                    <p>+54 123 456 789</p>
+                </div>
+
+            </div>
+        </footer>
+        <script src="../js/nav.js"></script>
+        <script src="../js/gameSection.js"></script>
+        <script src="../js/tp3/Dibujable.js"></script>
+        <script src="../js/tp3/Ficha.js"></script>
+        <script src="../js/tp3/Tablero.js"></script>
+        <script src="../js/tp3/Juego.js"></script>
+        <script src="../js/tp3/components/MensajeFinal.js"></script>
+        <script src="../js/tp3/components/ZonaLanzar.js"></script>
+        <script src="../js/tp3/components/BotonJugarDeNuevo.js"></script>
+        <script src="../js/tp3/components/Temporizador.js"></script>
+        <script src="../js/tp3/components/BotonVolverMenu.js"></script>
+        <script src="../js/tp3/Menu.js"></script>
+        <script src="../js/tp3/Reglas.js"></script>
+        <script src="../js/tp3/Main.js"></script>
+    </body>
+</html>

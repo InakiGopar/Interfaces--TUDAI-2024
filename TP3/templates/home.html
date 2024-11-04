@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/var.css">
+        <link rel="stylesheet" href="../css/global.css">
+        <link rel="stylesheet" href="../css/icons.css">
+        <link rel="stylesheet" href="../css/spinner.css">
+        <link rel="stylesheet" href="../css/home.css">
+        <link rel="stylesheet" href="../css/nav.css">
+        <link rel="stylesheet" href="../css/card.css">
+        <link rel="stylesheet" href="../css/carrusel.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <title>30 Games</title>
+    </head>
+    <body>
+        <header>
+            <div class="header-left">
+                <figure class="hamburger-icon"></figure>
+
+                <div class="logo">
+                    <figure class="img-logo"></figure>
+                    <p>30 Games</p>
+                </div>
+            </div>
+
+            <div class="search">
+                <figure class="lens"></figure>
+                <input id="search" type="text" placeholder="search..">
+                <figure id="cancel" class="cancel"></figure>
+            </div>
+
+            <div class="user-section">
+                <p>Hola, Juan</p>
+                <figure class="profile-logo"></figure>
+                <figure class="cart"></figure>
+            </div>
+        </header>
+        <div class="toggle-menu-container">   
+            <nav class="menu">
+                <div class="menu-item">
+                    <span class="fa-solid--home"></span>
+                    <p>Inicio</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="noto-v1--glowing-star"></span>
+                    <p>Favoritos</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="ri--group-line"></span>
+                    <p>Dos jugadores</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="emojione--crossed-swords"></span>
+                    <p>Accion</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="noto--compass"></span>
+                    <p>Aventura</p>
+                </div>
+
+                <div class="menu-item">
+                    <span class="emojione--soccer-ball"></span>
+                    <p>Deportes</p>
+                </div>
+                
+                <div class="menu-item">
+                    <span class="noto--chess-pawn"></span>
+                    <p>Estrategia</p>
+                </div>
+            </nav>
+            <div class="user-menu">
+
+                <div class="user-menu-header">
+                    <figure class="user-profile-img"></figure>
+                    <p>Juan Perez</p>
+                </div>
+
+                <div class="line-white"></div>
+
+                <div class="user-menu-item">
+                    <span class="heroicons--user-16-solid"></span>
+                    <p>Mi Perfil</p>
+                </div>
+
+                <div class="user-menu-item" >
+                    <span class="noto-v1--glowing-star"></span>
+                    <p>Mis Favoritos</p>
+                </div>
+
+                <div class="user-menu-item">
+                    <span class="mdi--cart"></span>
+                    <p>Mi Carrito</p>
+                </div>
+
+                <div class="user-menu-item">
+                    <span class="ion--game-controller-outline"></span>
+                    <p>Mis Juegos</p>
+                </div>
+
+                <div class="user-menu-item">
+                    <span class="carbon--settings"></span>
+                    <p>Configuración</p>
+                </div>
+
+                <div class="line-white"></div>
+
+                <div class="user-menu-item">
+                    <span class="game-icons--exit-door"></span>
+                    <p id="exit">Cerrar Sesión</p>
+                </div>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <section class="card-section">
+                <div class="big-carrusel-container">
+                    <div class="big-carrusel">
+
+                        <button class="prev-btn-big" ><span class="weui--arrow-filled"></span></button>
+
+                        <div class="big-card" id="big-card-activa">
+                            <div class="img-big">
+                                <img class="img-main" id="img-main1" src="../assets/img/card-img/accion/godofwar.webp" alt="God Of War">
+                            </div>
+                            <div class="detalles">
+                                <p>God Of War-Ragnarok</p>
+                                <div class="img-chiquitas">
+                                    <div class="chiquitas1y2">
+                                        <img class="img-hover" id="img-hover1" src="../assets/img/card-img/accion/godofwarchiquita1.jpg" alt="1">
+                                        <img class="img-hover" id="img-hover1" src="../assets/img/card-img/accion/godofwarchiquita2.jpg" alt="2">
+                                    </div>
+                                    <div class="chiquitas3y4">
+                                        <img class="img-hover" id="img-hover1" src="../assets/img/card-img/accion/godofwarchiquita3.jpg" alt="3">
+                                        <img class="img-hover" id="img-hover1" src="../assets/img/card-img/accion/godofwarchiquita4.jpg" alt="4">
+                                    </div>
+                                </div>
+                                <div class="comprar">
+                                    <div class="oferta">
+                                        <div class="descuento">
+                                            <p>%20</p>
+                                        </div>
+                                        <div class="precio">
+                                            <p>25USD-<s>32USD</s></p>
+                                        </div>
+                                        
+                                    </div>
+                                    <button class="add-to-cart-button-big">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="big-card" id="big-card-activa">
+                            <div class="img-big">
+                                <img class="img-main" id="img-main2" src="../assets/img/card-img/accion/Thelastofus.jpg" alt="The Last Of Us">
+                            </div>
+                            <div class="detalles">
+                                <p>The Last Of Us - Part I</p>
+                                <div class="img-chiquitas">
+                                    <div class="chiquitas1y2">
+                                        <img class="img-hover" id="img-hover2" src="../assets/img/card-img/accion/tlouchiquita1.jpg" alt="1">
+                                        <img class="img-hover" id="img-hover2" src="../assets/img/card-img/accion/tlouchiquita2.jpg" alt="2">
+                                    </div>
+                                    <div class="chiquitas3y4">
+                                        <img class="img-hover" id="img-hover2" src="../assets/img/card-img/accion/tlouchiquita3.jpg" alt="3">
+                                        <img class="img-hover" id="img-hover2" src="../assets/img/card-img/accion/tlouchiquita4.jpg" alt="4">
+                                    </div>
+                                </div>
+                                <div class="comprar">
+                                    <div class="oferta">
+                                        <div class="descuento">
+                                            <p>%35</p>
+                                        </div>
+                                        <div class="precio">
+                                            <p>18USD-<s>28USD</s></p>
+                                        </div>
+                                        
+                                    </div>
+                                    <button class="add-to-cart-button-big">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="big-card" id="big-card-activa">
+                            <div class="img-big">
+                                <img class="img-main" id="img-main3" src="../assets/img/card-img/deportes/forzahorizonoa.jpg" alt="Forza Horizon 5">
+                            </div>
+                            <div class="detalles">
+                                <p>Forza Horizon 5</p>
+                                <div class="img-chiquitas">
+                                    <div class="chiquitas1y2">
+                                        <img class="img-hover" id="img-hover3" src="../assets/img/card-img/deportes/fh1chiquita.jpg" alt="1">
+                                        <img class="img-hover" id="img-hover3" src="../assets/img/card-img/deportes/fh2chiquita.jpg" alt="2">
+                                    </div>
+                                    <div class="chiquitas3y4">
+                                        <img class="img-hover" id="img-hover3" src="../assets/img/card-img/deportes/fh3chiquita.jpg" alt="3">
+                                        <img class="img-hover" id="img-hover3" src="../assets/img/card-img/deportes/fh4chiquita.jpg" alt="4">
+                                    </div>
+                                </div>
+                                <div class="comprar">
+                                    <div class="oferta">
+                                        <div class="descuento">
+                                            <p>%60</p>
+                                        </div>
+                                        <div class="precio">
+                                            <p>16USD-<s>40USD</s></p>
+                                        </div>
+                                        
+                                    </div>
+                                    <button class="add-to-cart-button-big">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="big-card" id="big-card-activa">
+                            <div class="img-big">
+                                <img class="img-main" id="img-main4" src="../assets/img/card-img/deportes/fifa25.webp" alt="EA FC25">
+                            </div>
+                            <div class="detalles">
+                                <p>EA FC25</p>
+                                <div class="img-chiquitas">
+                                    <div class="chiquitas1y2">
+                                        <img class="img-hover" id="img-hover4" src="../assets/img/card-img/deportes/fifachiquita1.jpg" alt="1">
+                                        <img class="img-hover" id="img-hover4" src="../assets/img/card-img/deportes/fifachiquita2.jpg" alt="2">
+                                    </div>
+                                    <div class="chiquitas3y4">
+                                        <img class="img-hover" id="img-hover4" src="../assets/img/card-img/deportes/fifachiquita3.jpg" alt="3">
+                                        <img class="img-hover" id="img-hover4" src="../assets/img/card-img/deportes/fifachiquita4.jpg" alt="4">
+                                    </div>
+                                </div>
+                                <div class="comprar">
+                                    <div class="oferta">
+                                        <div class="descuento">
+                                            <p>%5</p>
+                                        </div>
+                                        <div class="precio">
+                                            <p>85USD-<s>90USD</s></p>
+                                        </div>
+                                        
+                                    </div>
+                                    <button class="add-to-cart-button-big">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="big-card" id="big-card-activa">
+                            <div class="img-big">
+                                <img class="img-main" id="img-main5" src="../assets/img/card-img/superheroes/batman.jpg" alt="Batman™: Arkham Knight">
+                            </div>
+                            <div class="detalles">
+                                <p>Batman™: Arkham Knight</p>
+                                <div class="img-chiquitas">
+                                    <div class="chiquitas1y2">
+                                        <img class="img-hover" id="img-hover5" src="../assets/img/card-img/superheroes/batman1.jpg" alt="1">
+                                        <img class="img-hover" id="img-hover5" src="../assets/img/card-img/superheroes/batman2.jpg" alt="2">
+                                    </div>
+                                    <div class="chiquitas3y4">
+                                        <img class="img-hover" id="img-hover5" src="../assets/img/card-img/superheroes/batman3.jpg" alt="3">
+                                        <img class="img-hover" id="img-hover5" src="../assets/img/card-img/superheroes/batman4.jpg" alt="4">
+                                    </div>
+                                </div>
+                                <div class="comprar">
+                                    <div class="oferta">
+                                        <div class="descuento">
+                                            <p>%50</p>
+                                        </div>
+                                        <div class="precio">
+                                            <p>12USD-<s>24USD</s></p>
+                                        </div>
+                                        
+                                    </div>
+                                    <button class="add-to-cart-button-big">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="big-card" id="big-card-activa">
+                            <div class="img-big">
+                                <img class="img-main" id="img-main7" src="../assets/img/card-img/accion/Mortalkombat.jpg" alt="Mortal Kombat 11">
+                            </div>
+                            <div class="detalles">
+                                <p>NBA 2K25</p>
+                                <div class="img-chiquitas">
+                                    <div class="chiquitas1y2">
+                                        <img class="img-hover" id="img-hover7" src="../assets/img/card-img/accion/mk1.jpg" alt="1">
+                                        <img class="img-hover" id="img-hover7" src="../assets/img/card-img/accion/mk2.jpg" alt="2">
+                                    </div>
+                                    <div class="chiquitas3y4">
+                                        <img class="img-hover" id="img-hover7" src="../assets/img/card-img/accion/mk3.jpg" alt="3">
+                                        <img class="img-hover" id="img-hover7" src="../assets/img/card-img/accion/mk4.jpg" alt="4">
+                                    </div>
+                                </div>
+                                <div class="comprar">
+                                    <div class="oferta">
+                                        <div class="descuento">
+                                            <p>%10</p>
+                                        </div>
+                                        <div class="precio">
+                                            <p>63USD-<s>70USD</s></p>
+                                        </div>
+                                        
+                                    </div>
+                                    <button class="add-to-cart-button-big">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="big-card" id="big-card-activa">
+                            <div class="img-big">
+                                <img class="img-main" id="img-main6" src="../assets/img/card-img/deportes/2k25.jpg" alt="NBA 2K25">
+                            </div>
+                            <div class="detalles">
+                                <p>Mortal Kombat 11</p>
+                                <div class="img-chiquitas">
+                                    <div class="chiquitas1y2">
+                                        <img class="img-hover" id="img-hover6" src="../assets/img/card-img/deportes/nba1.jpg" alt="1">
+                                        <img class="img-hover" id="img-hover6" src="../assets/img/card-img/deportes/nba2.jpg" alt="2">
+                                    </div>
+                                    <div class="chiquitas3y4">
+                                        <img class="img-hover" id="img-hover6" src="../assets/img/card-img/deportes/nba3.jpg" alt="3">
+                                        <img class="img-hover" id="img-hover6" src="../assets/img/card-img/deportes/nba4.jpg" alt="4">
+                                    </div>
+                                </div>
+                                <div class="comprar">
+                                    <div class="oferta">
+                                        <div class="descuento">
+                                            <p>%25</p>
+                                        </div>
+                                        <div class="precio">
+                                            <p>45USD-<s>60USD</s></p>
+                                        </div>
+                                        
+                                    </div>
+                                    <button class="add-to-cart-button-big">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="next-btn-big"><span class="weui--arrow-filled2"></span></button>    
+                    </div>
+                    <div class="puntitos">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                
+                <div class="carrusel-container">
+                    <p class="card-title">Continuar Jugando...</p>
+                    <button class="prev-btn" id="pb1"><span class="weui--arrow-filled"></span></button>
+                    <div class="carrusel" id="carrusel1">
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de Cuatro</p>
+                                <div class="play-button" id="game">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Rocket League</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Counter Strike 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Minecraft</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Golf</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Grand theft auto - San...</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Fornite</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Star Wars Episodio 3 </p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Call Of Duty - WARZONE</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Valorant</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Lego Batman</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Spiderman</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Football Manager 2024</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>F124</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>W2K24</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Age of empires IV</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>League of Legends</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Risk</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Among Us</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="next-btn" id="nb1"><span class="weui--arrow-filled2"></span></button>
+                </div>
+                <div class="carrusel-container">
+                    <p class="card-title">Accion</p>
+                    <button class="prev-btn" id="pb2"><span class="weui--arrow-filled"></span></button>
+                    <div class="carrusel" id="carrusel2">
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Grand Theft Auto - San...</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Call Of Duty - WARZONE</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>PUBG</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$63</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Mortal Kombat 11</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>RUST</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$12</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Batman™: Arkham Knight</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Assassin's Creed II</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Throne and Liberty</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$40</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Grand Theft Auto - V</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>red Dead Redemption II</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$0.5</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>The Last of Us - Part I</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Valorant</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Star Wars Episodio 3</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Diablo IV</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Destiny 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$55</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Dragon Ball Sparking Zero</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Black Myth : Wukong</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Dragon Ball Budokai...</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Apex Legends</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="next-btn" id="nb2"><span class="weui--arrow-filled2"></span></button>
+                </div>
+                <div class="carrusel-container">
+                    <p class="card-title">Deportes</p>
+                    <button class="prev-btn" id="pb3"><span class="weui--arrow-filled"></span></button>
+                    <div class="carrusel" id="carrusel3">
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Football Manager 2024</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Need for Speed M...</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$50</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Undisputed</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$35</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Dirty Rally 2.0</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>eFootball™</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Golf</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$85</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>EA FC25</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Fishing Planet</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$16</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Forza Horizon 5</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Rocket League</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Descender</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Asseto Corsa</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>NBA 2K25</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Captain Tsubasa</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>F124</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>W2K24</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Wii Sports</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Top Spin 2K25</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>God Of Pes</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="next-btn" id="nb3"><span class="weui--arrow-filled2"></span></button>
+                </div>
+                <div class="carrusel-container">
+                    <p class="card-title">Estrategia</p>
+                    <button class="prev-btn" id="pb4"><span class="weui--arrow-filled"></span></button>
+                    <div class="carrusel" id="carrusel4">
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Age Of Empires IV</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$10</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Dota 2</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Linea de cuatro</p>
+                                <div class="play-button" id="game">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Among us</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>League of Legends</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Risk</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Geometry Dash</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$22</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Age Of Mythology</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Portal</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Portal 2</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$18</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Planet Zoo</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Plant vs Zombies 3</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$30</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Crusader Kings III</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Stellaris</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Cities Skylines II</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Minecraft</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Poly Bridge</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Move or Die</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Yu-Gi-Ho</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                    <button class="next-btn" id="nb4"><span class="weui--arrow-filled2"></span></button>
+                </div>
+                <div class="carrusel-container">
+                    <p class="card-title">SuperHeroes</p>
+                    <button class="prev-btn" id="pb5"><span class="weui--arrow-filled"></span></button>
+                    <div class="carrusel" id="carrusel5">
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Marvel vs Capcom</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$28</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Injustice</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Guardians Of The Galaxy</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$55</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Dragon Ball Sparking Zero</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Lego Batman</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Marvel - Snap</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Dragon Ball Budokai...</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$35</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Spider-Man</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$40</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Spider-Man : Miles Morales</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Marvel - Puzzle Quest</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Lego Advengers</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Gotham Knights</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$12</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Batman™: Arkham Knight</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Dragon Ball Z - Kakarot</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Naruto - Ultimate Ninja...</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Lego Batman - Saga</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Lego Superheroes</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card pay-card">
+                            <div class="card-pay-top">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                                <div class="label">
+                                    <p>$24</p>
+                                </div>
+                            </div>
+                            <button class="add-to-cart-button">Agregar al carrito</button>
+                            <div class="card-bottom">
+                                <p>Marvel - Midnight Suns</p>
+                            </div>
+                            <div class="hover"></div>
+                        </div>
+                        <div class="card">
+                            <div class="fav">
+                                <span class="favoriteStar mdi--star-outline"></span>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Spider-Man Original</p>
+                                <div class="play-button">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="next-btn" id="nb5"><span class="weui--arrow-filled2"></span></button>
+                </div>
+            </section>
+        </main>
+
+        <div class="spinner"></div>
+        <div class="loading-percent">0%</div>
+        
+        <footer>
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <figure></figure>
+                    <p>30 Games</p>
+                </div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li>Inicio</li>
+                        <li>Favoritos</li>
+                        <li>Dos Jugadores</li>
+                        <li>Accion</li>
+                        <li>Aventura</li>
+                        <li>Deportes</li>
+                        <li>Estrategia</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-middle">
+                <div class="about-us">
+                    <h3>Sobre nosotros</h3>
+                    <div class="line"></div>
+                    <p>
+                        Somos una plataforma de juegos online inspirada en las clásicas paginas  Friv y 1001 Juegos.
+                        Ofrecemos una amplia variedad de juegos para todas las edades, desde aventuras emocionantes hasta puzzles desafiantes.
+                        Nuestro objetivo es brindarte los mejores juegos para que  te puedas divertir,
+                        con una experiencia divertida y segura. ¡Empeza ya mismo a dievertirte!
+                    </p>
+                    <div class="line"></div>
+                </div>
+                
+                <div class="social-media">
+                    <span class="ic--baseline-facebook"></span>
+                    <span class="mdi--instagram"></span>
+                    <span class="hugeicons--new-twitter"></span>
+                    <span class="mdi--youtube"></span>
+                </div>
+            </div>
+            <div class="footer-right">
+
+                <h3>Contacto</h3>
+
+                <div class="mail">
+                    <span class="material-symbols--mail-outline"></span>
+                    <p>30games@gmail.com</p>
+                </div>
+
+                <div class="phone">
+                    <span class="ic--baseline-phone"></span>
+                    <p>+54 123 456 789</p>
+                </div>
+
+            </div>
+        </footer>
+        
+        <script src="../js/card.js"></script>
+        <script src="../js/carrusel.js"></script>
+        <script src="../js/nav.js"></script>
+        <script src="../js/big-carrsel.js"></script>
+        <script src="../js/big-card.js"></script>
+    </body>
+</html>

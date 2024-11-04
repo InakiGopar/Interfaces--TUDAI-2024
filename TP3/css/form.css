@@ -1,0 +1,228 @@
+form {
+    padding-top: 5px;
+    text-align: center;
+    margin: 10px;
+    width: 500px;
+    height: 650px;
+    background-color: var(--background-form);
+    border-radius: 25px;
+    color: #fff;
+}
+
+form h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.logo-form figure {
+    background-image: url("../assets/img/30\ games\ logo.png");
+    background-size: cover;
+    background-position: center center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 100px;
+    -webkit-box-shadow: 8px -1px 14px -4px rgba(0,0,0,1);
+    -moz-box-shadow: 8px -1px 14px -4px rgba(0,0,0,1);
+    box-shadow: 8px -1px 14px -4px rgba(0,0,0,1);
+}
+
+.logo-form {
+    display: flex;
+    align-items: center;
+    margin-top: 11px;
+    margin-bottom: 25px;
+    margin-left: 19px;
+}
+
+.logo-form p {
+    margin-left: 12px;
+    font-size: 25px;
+}
+
+.line {
+    background-color: var(--secondary-violet);
+    width: 404px;
+    height: 1.5px;
+    margin: auto;
+    margin-bottom: 27px;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-form p {
+    margin-top: 5px;
+    margin-right: 140px;
+    font-size: 11px;
+    color: var(--primary-green);
+    cursor: pointer;
+}
+
+.input-form p:hover {
+    color: var(--primary-green-hover);
+}
+
+.separator {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.separator-line {
+    background-color: var(--secondary-violet);
+    height: 1.5px;
+    width: 110px;
+}
+
+.separator-circle {
+    height: 10px;
+    width: 10px;
+    border-radius: 60%;
+    margin: 0px 2px;
+    border: 1.8px solid var(--secondary-violet);
+}
+
+.login-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100px;
+    margin-top: 15px;
+}
+
+.login-button-container button {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1;
+    background-color: var(--secondary-violet);
+    color: #fff;
+    width: 250px;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+    border-style: none;
+}
+
+.login-button-container button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; 
+    width: 100%;
+    height: 100%;
+    background-color: var(--fourth-violet); 
+    z-index: -1;
+    transition: left 0.4s ease; 
+}
+
+.login-button-container button:hover::before {
+    left: 0;
+}
+
+.login-button-container button figure {
+    transition: transform 0.4s ease;
+}
+
+.login-button-container button:hover figure {
+    transform: rotate(360deg); 
+}
+
+.logo-google {
+    background-size: cover;
+    background-position: center center;
+    width: 20px;
+    height: 20px;
+    background-image: url("../assets/img/google.png");
+}
+
+.logo-facebook {
+    background-size: cover;
+    background-position: center center;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    background-image: url("../assets/img/facebook.png");
+}
+
+.register {
+    margin-top: 20px;
+}
+
+.register a {
+    color: var(--primary-green);
+}
+
+.register a:hover {
+    color: var(--primary-green-hover);
+}
+
+.sing-in {
+    margin-top: 30px;
+}
+
+.sing-in button {
+    height: 50px;
+    width: 150px;
+    font-size: 22px;
+    position: relative; /* Posicionamiento para los elementos hijos */
+    overflow: hidden;
+}
+
+.sing-in button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; 
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-green-hover); 
+    transition: left 0.4s ease; 
+}
+
+.sing-in button:hover::before {
+    left: 0;
+}
+
+.text-button {
+    display: inline-block; 
+    transition: transform 0.3s ease; /* Transición para el movimiento */
+}
+
+.play-text {
+    position: absolute; 
+    top: 50%; 
+    left: 25%; 
+    transform: translate(-100%, -50%);
+    opacity: 0; /* Inicialmente oculto */
+    visibility: hidden; /* Asegurar que no sea visible */
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; /* Transiciones para movimiento y opacidad */
+}
+
+.sing-in button:hover .text-button {
+    transform: translateX(-150%); 
+}
+
+.sing-in button:hover .play-text {
+    transform: translate(0, -50%); 
+    opacity: 1; 
+    visibility: visible;
+}
+
+
