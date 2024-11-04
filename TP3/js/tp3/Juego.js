@@ -331,18 +331,16 @@ class Juego {
         if (this.juegoTerminado) return; // Bloquear si el juego ha terminado
 
         const { offsetX, offsetY } = e;
-        const fichas = this.turno ? this.fichasJugador1 : this.fichasJugador2;
+        const fichasActuales = this.turno ? this.fichasJugador1 : this.fichasJugador2;
 
-        // Recorre las fichas de arriba hacia abajo
-        for (let i = fichas.length - 1; i >= 0; i--) { // Comenzar desde la última ficha (superior)
-            const ficha = fichas[i];
+        // Solo permitir arrastrar fichas del jugador actual
+        for (let i = fichasActuales.length - 1; i >= 0; i--) {
+            const ficha = fichasActuales[i];
             if (!ficha.colocada && ficha.isPointInside(offsetX, offsetY)) {
                 ficha.setDragging(true);
                 this.fichaArrastrada = ficha;
-
-                // Guardar posición inicial de la ficha antes de arrastrarla
                 ficha.posicionInicial = { x: ficha.posX, y: ficha.posY };
-                break; // Salir del bucle una vez que se ha seleccionado una ficha
+                break;
             }
         }
     }
