@@ -37,7 +37,7 @@ class Juego {
         this.turno = this.turnoInicial;
         this.botonReiniciar = new BotonJugarDeNuevo(this.canvasWidth / 2 - 150, canvasHeight / 2 + 50, this.ctx, 300, 50, "Jugar de nuevo");
         this.juegoTerminado = false; // Variable para controlar el estado del juego
-        this.temporizador = new Temporizador(this.canvasWidth / 2 - 80, 5, this.ctx, 140); // 30 segundos como tiempo máximo
+        this.temporizador = new Temporizador(this.canvasWidth / 2 - 80, 5, this.ctx, 150); // 30 segundos como tiempo máximo
         this.imagenGanadorArgentina = new Image();
         this.imagenGanadorArgentina.src = '../assets/img/game/Cartel-ganador-argentina.png';
         this.imagenGanadorFrancia = new Image();
@@ -47,7 +47,6 @@ class Juego {
         this.botonVolverAlMenu = new BotonVolverMenu(this.canvasWidth / 2 - 150, canvasHeight / 2 + 110, this.ctx, 300, 50, "Volver al Menu");
         this.botonVolverDesdeJuego = new VolverMenuEnJuego(this.canvasWidth / 2 - 480, 5, this.ctx, 40, 40, "<");
         this.soundTrack = new Audio('../assets/sounds/game-soundtrack.mp3');
-        this.endMatchSound = new Audio('../assets/sounds/sonido-final.mp3');
     }
 
     iniciarJuego() {
@@ -163,7 +162,7 @@ class Juego {
             this.botonVolverAlMenu.draw();
         }
     
-        if (this.temporizador.tiempoRestante === 0) {
+        if (this.temporizador.tiempoRestante === 0 && !this.juegoTerminado) {
             this.juegoTerminado = true;
             this.mostrarEmpate();
             this.botonReiniciar.draw();
@@ -200,29 +199,13 @@ class Juego {
 
 
     mostrarGanador() {
-        this.endMatchSound.play();
-        this.endMatchSoundPlayed = true;
-
-
-        setTimeout(() => {
-            this.endMatchSound.pause();
-            this.endMatchSound.currentTime = 0;
-        }, 3000);
-
-
+        
         const imagenGanador = !this.turno ? this.imagenGanadorArgentina : this.imagenGanadorFrancia;
         const mensajeGanador = new MensajeFinal(0, 0, this.ctx, this.canvasWidth, this.canvasHeight, imagenGanador);
         mensajeGanador.draw();
     }
 
     mostrarEmpate() {
-        this.endMatchSound.play();
-        this.endMatchSoundPlayed = true;
-
-        setTimeout(() => {
-            this.endMatchSound.pause();
-            this.endMatchSound.currentTime = 0;
-        }, 3000);
 
         const mensajeEmpate = new MensajeFinal(0, 0, this.ctx, this.canvasWidth, this.canvasHeight, this.imagenEmpate)
         mensajeEmpate.draw();
@@ -332,6 +315,15 @@ class Juego {
         this.canvas.addEventListener("mouseup", () => this.onMouseUp());
         // Detectar clic en el botón de reinicio
         this.canvas.addEventListener("click", (e) => this.onClick(e));
+        
+        // Agregar eventos para el hover del botón
+        this.canvas.addEventListener("mousemove", (e) => {
+            const { offsetX, offsetY } = e;
+            this.botonVolverDesdeJuego.setHovered(
+                this.botonVolverDesdeJuego.isPointInside(offsetX, offsetY)
+            );
+            this.drawGame(); // Redibujar para mostrar el efecto hover
+        });
     }
 
 
@@ -393,37 +385,43 @@ class Juego {
     }
 
     onClick(e) {
+        const { offsetX, offsetY } = e;
+        
+        // Verificar el botón de volver al menú primero, independiente del estado del juego
+        if (this.botonVolverDesdeJuego.isPointInside(offsetX, offsetY)) {
+            this.soundTrack.pause(); // Detener la música antes de volver al menú
+            this.soundTrack.currentTime = 0;
+            this.backToMenu();
+            return;
+        }
+
+        // Verificar los otros botones solo si el juego terminó
         if (this.juegoTerminado || this.temporizador.tiempoRestante == 0) {
-            const { offsetX, offsetY } = e;
             if (this.botonReiniciar.isPointInside(offsetX, offsetY)) {
                 this.reiniciarJuego();
             }
             if (this.botonVolverAlMenu.isPointInside(offsetX, offsetY)) {
-                this.backToMenu()
-            }
-            if (this.botonVolverDesdeJuego.isPointInside(offsetX, offsetY)) {
-                console.log("entro perri")
-                this.backToMenu()
+                this.backToMenu();
             }
         }
     }
 
     backToMenu() {
+        // Detener todos los sonidos antes de volver al menú
+        this.soundTrack.pause();
+        this.soundTrack.currentTime = 0;
+        
         this.canvas.parentNode.removeChild(this.canvas);
-        // Crea un nuevo canvas
         const nuevoCanvas = document.createElement('canvas');
         nuevoCanvas.id = 'canvas'; 
         nuevoCanvas.width = 1000; 
         nuevoCanvas.height = 650; 
-    
+        
         const gameSection = document.getElementById('game_section');
-
         gameSection.appendChild(nuevoCanvas);
-    
+        
         const nuevoCtx = nuevoCanvas.getContext('2d');
-
-        const menu = new Menu(0, 180,nuevoCtx,nuevoCanvas,200,50,"#007bff", "13px 'Press Start 2P'", 20);
-    
+        const menu = new Menu(0, 180, nuevoCtx, nuevoCanvas, 200, 50, "#007bff", "13px 'Press Start 2P'", 20);
         menu.draw();
     }
 
@@ -434,7 +432,6 @@ class Juego {
         this.fichasJugador2 = [];
         this.juegoTerminado = false; // Restablecer el estado del juego
         this.temporizador.reiniciar();
-        this.endMatchSound.pause();
         this.soundTrack.pause();
         this.iniciarJuego(); // Reiniciar el juego
     }
