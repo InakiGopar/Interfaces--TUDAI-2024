@@ -3,6 +3,7 @@ class Juego {
         (
             canvas,
             tablero,
+            fichasTotales,
             fichasToWin,
             context,
             canvasWidth,
@@ -16,6 +17,7 @@ class Juego {
         ) {
         this.canvas = canvas;
         this.tablero = tablero;
+        this.fichasTotales = fichasTotales;
         this.fichasToWin = fichasToWin;
         this.fichasToWin = fichasToWin
         this.ctx = context;
@@ -43,6 +45,9 @@ class Juego {
         this.imagenEmpate = new Image();
         this.imagenEmpate.src = '../assets/img/game/empate.jpg';
         this.botonVolverAlMenu = new BotonVolverMenu(this.canvasWidth / 2 - 150, canvasHeight / 2 + 110, this.ctx, 300, 50, "Volver al Menu");
+        this.botonVolverDesdeJuego = new VolverMenuEnJuego(this.canvasWidth / 2 - 480, 5, this.ctx, 40, 40, "<");
+        this.soundTrack = new Audio('../assets/sounds/game-soundtrack.mp3');
+        this.endMatchSound = new Audio('../assets/sounds/sonido-final.mp3');
     }
 
     iniciarJuego() {
@@ -50,7 +55,7 @@ class Juego {
         const offsetXJugador1 = this.tablero.getPosX() - this.fichaSize * 5; // Posición de Jugador 1
         const offsetXJugador2 = this.tablero.getPosX() + this.tablero.columns * this.cellSize + this.fichaSize * 3; // Posición de Jugador 2
 
-        const numFichasPorPila = 11; // Ajusta el número según la cantidad de fichas que desees en cada pila
+        const numFichasPorPila = (this.fichasTotales / 2) / 2; 
         const espacioEntrePilas = 20;
 
         // Crear fichas para Jugador 1 - Primera Pila
@@ -110,6 +115,7 @@ class Juego {
 
     loop() {
         if (!this.juegoTerminado || this.temporizador.tiempoRestante != 0) {
+            this.soundTrack.play();
             this.drawGame();
             requestAnimationFrame(() => this.loop());
         }
@@ -134,6 +140,9 @@ class Juego {
         // Dibujamos el tablero
         this.tablero.draw();
         this.tablero.drawArrows(this.zonaLanzar);
+
+        //Dibujamos Boton Reiniciar
+        this.botonVolverDesdeJuego.draw();
     
         // Dibujamos las fichas que NO están en animación (por encima del tablero)
         for (const ficha of this.fichasJugador1) {
@@ -191,12 +200,30 @@ class Juego {
 
 
     mostrarGanador() {
+        this.endMatchSound.play();
+        this.endMatchSoundPlayed = true;
+
+
+        setTimeout(() => {
+            this.endMatchSound.pause();
+            this.endMatchSound.currentTime = 0;
+        }, 3000);
+
+
         const imagenGanador = !this.turno ? this.imagenGanadorArgentina : this.imagenGanadorFrancia;
         const mensajeGanador = new MensajeFinal(0, 0, this.ctx, this.canvasWidth, this.canvasHeight, imagenGanador);
         mensajeGanador.draw();
     }
 
     mostrarEmpate() {
+        this.endMatchSound.play();
+        this.endMatchSoundPlayed = true;
+
+        setTimeout(() => {
+            this.endMatchSound.pause();
+            this.endMatchSound.currentTime = 0;
+        }, 3000);
+
         const mensajeEmpate = new MensajeFinal(0, 0, this.ctx, this.canvasWidth, this.canvasHeight, this.imagenEmpate)
         mensajeEmpate.draw();
     }
@@ -374,6 +401,10 @@ class Juego {
             if (this.botonVolverAlMenu.isPointInside(offsetX, offsetY)) {
                 this.backToMenu()
             }
+            if (this.botonVolverDesdeJuego.isPointInside(offsetX, offsetY)) {
+                console.log("entro perri")
+                this.backToMenu()
+            }
         }
     }
 
@@ -403,6 +434,8 @@ class Juego {
         this.fichasJugador2 = [];
         this.juegoTerminado = false; // Restablecer el estado del juego
         this.temporizador.reiniciar();
+        this.endMatchSound.pause();
+        this.soundTrack.pause();
         this.iniciarJuego(); // Reiniciar el juego
     }
 

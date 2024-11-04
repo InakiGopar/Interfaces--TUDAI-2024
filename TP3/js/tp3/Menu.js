@@ -33,18 +33,20 @@ class Menu extends Dibujable {
         this.countryTitlesY = this.logoY + 100; // Posición para los countryTitulos en y
         this.argentinaTitleX = (this.canvas.width) / 2 - 470;
         this.franciaTitleX = (this.canvas.width) / 2 + 120;
+        this.startGameSound = new Audio("../assets/sounds/sonido-inicial.mp3");
+        this.backgroundSound = new Audio('../assets/sounds/cancion-fondo.mp3');
     }
 
     async loadResources() {
-        // Cargar imágenes principales y skins
+        // Cargar imágenes y sonidos
         await Promise.all([
             this.loadImage(this.logo),
             this.loadImage(this.argentinaTitle),
             this.loadImage(this.franciaTitle),
+            this.loadAudio(this.startGameSound),
+            this.loadAudio(this.backgroundSound),
             this.loadSkins()
         ]);
-
-        // Cargar la fuente de manera asincrónica si no está ya disponible
         await document.fonts.load("13px 'Press Start 2P'");
     }
 
@@ -55,6 +57,13 @@ class Menu extends Dibujable {
         });
     }
 
+    loadAudio(audio) {
+        return new Promise((resolve, reject) => {
+            audio.oncanplaythrough = resolve;
+            audio.onerror = reject;
+        });
+    }
+
     async loadSkins() {
         const skinsPromises = this.reglas.skins.map(skin => this.loadImage(skin));
         await Promise.all(skinsPromises);
@@ -62,6 +71,7 @@ class Menu extends Dibujable {
 
 
     draw() {
+        this.backgroundSound.play();
         this.ctx.font = this.btnFuente;
         this.ctx.textAlign = "center";
 
@@ -209,7 +219,7 @@ class Menu extends Dibujable {
         this.player2Nickname = prompt("Ingrese el nickname para el Jugador 2");
     }
 
-    startGame(canvas, context, columns, rows, cellSize, tamFicha, fichasToWin) {
+    startGame(canvas, context, columns, rows, cellSize, tamFicha, fichasToWin, fichasTotales) {
         this.btnAlto = 0;
         this.btnAncho = 0;
         this.skinRadius = 0;
@@ -218,6 +228,7 @@ class Menu extends Dibujable {
         const juego = new Juego(
                 canvas,
                 tablero,
+                fichasTotales,
                 fichasToWin,
                 context, 
                 canvas.width,
@@ -229,6 +240,8 @@ class Menu extends Dibujable {
                 this.player1Nickname,
                 this.player2Nickname
             );
+            this.backgroundSound.pause();
+            this.startGameSound.play();
         juego.iniciarJuego();
     }
 }

@@ -9,7 +9,6 @@ class BotonJugarDeNuevo extends Dibujable {
     }
 
     draw() {
-        console.log("Dibujando botón");
         // Cambiar el color del botón si está siendo hovered
         this.ctx.fillStyle = this.isHovered ? '#4CD406' : '#86B700';
         this.ctx.fillRect(this.posX, this.posY, this.width, this.height);
