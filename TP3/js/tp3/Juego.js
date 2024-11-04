@@ -47,6 +47,7 @@ class Juego {
         this.botonVolverAlMenu = new BotonVolverMenu(this.canvasWidth / 2 - 150, canvasHeight / 2 + 110, this.ctx, 300, 50, "Volver al Menu");
         this.botonVolverDesdeJuego = new VolverMenuEnJuego(this.canvasWidth / 2 - 480, 5, this.ctx, 40, 40, "<");
         this.soundTrack = new Audio('../assets/sounds/game-soundtrack.mp3');
+        this.animacionEnCurso = false; // Nueva bandera para controlar la animación
     }
 
     iniciarJuego() {
@@ -180,17 +181,20 @@ class Juego {
         if (this.zonaLanzar.isFichaEnZona(ficha)) {
             const columna = this.tablero.obtenerColumnaPorPosicion(ficha.getPosX());
             if (columna !== null && !this.tablero.isColumnaLlena(columna)) {
-                // Si la columna tiene espacio, procedemos normalmente
+                // Activar la bandera de animación
+                this.animacionEnCurso = true;
+                
                 ficha.colocada = true;
                 this.tablero.soltarFichaEnColumna(ficha, columna, (columna, fila) => {
                     if (this.verificarGanador(columna, ficha)) {
                         this.juegoTerminado = true;
                     }
                     this.turno = !this.turno;
+                    // Desactivar la bandera cuando la animación termina
+                    this.animacionEnCurso = false;
                     this.drawGame();
                 });
             } else {
-                // Si la columna está llena, devolvemos la ficha a su posición inicial
                 ficha.setPosition(ficha.posicionInicial.x, ficha.posicionInicial.y);
                 ficha.colocada = false;
             }
@@ -328,7 +332,7 @@ class Juego {
 
 
     onMouseDown(e) {
-        if (this.juegoTerminado) return; // Bloquear si el juego ha terminado
+        if (this.juegoTerminado || this.animacionEnCurso) return;
 
         const { offsetX, offsetY } = e;
         const fichasActuales = this.turno ? this.fichasJugador1 : this.fichasJugador2;
