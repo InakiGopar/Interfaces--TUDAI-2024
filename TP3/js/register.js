@@ -85,7 +85,7 @@ function loading() {
 
     setTimeout(() => {
         window.location.href = '../templates/home.html'; 
-    }, 2000); // Simulamos 2 segundos de carga
+    }, 5000); // Simulamos 5 segundos de carga
 }
 
 

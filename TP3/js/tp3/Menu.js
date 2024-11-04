@@ -16,9 +16,12 @@ class Menu extends Dibujable {
         this.skinRadius = 25;
         this.skinPositionXRight = canvas.width / 2 + 200;
         this.skinPositionXLeft = canvas.width / 2 - 400;
-        this.skinPositionY = 250;
+        this.skinPositionY = 280;
         this.skinSpacing =  this.skinRadius * 3 //Espacio entre los distintos skins
-        this.selectedSkinIndex = null; // Índice de la skin seleccionada
+        this.selectedSkinArgentina = null;
+        this.selectedSkinFrancia = null;
+        this.skinListenerAdded = false;
+        //variable para las imagenes
         this.logo = new Image();
         this.logo.src = "../assets/img/game/linea-de-cuatro-logo.png"; 
         this.logoX = (this.canvas.width) / 2 -123;
@@ -31,22 +34,77 @@ class Menu extends Dibujable {
         this.argentinaTitleX = (this.canvas.width) / 2 - 470;
         this.franciaTitleX = (this.canvas.width) / 2 + 120;
     }
-    
+
+    async loadResources() {
+        // Cargar imágenes principales y skins
+        await Promise.all([
+            this.loadImage(this.logo),
+            this.loadImage(this.argentinaTitle),
+            this.loadImage(this.franciaTitle),
+            this.loadSkins()
+        ]);
+
+        // Cargar la fuente de manera asincrónica si no está ya disponible
+        await document.fonts.load("13px 'Press Start 2P'");
+    }
+
+    loadImage(image) {
+        return new Promise((resolve, reject) => {
+            image.onload = resolve;
+            image.onerror = reject;
+        });
+    }
+
+    async loadSkins() {
+        const skinsPromises = this.reglas.skins.map(skin => this.loadImage(skin));
+        await Promise.all(skinsPromises);
+    }
+
 
     draw() {
+        this.ctx.font = this.btnFuente;
+        this.ctx.textAlign = "center";
 
         // Logo 
         this.ctx.drawImage(this.logo, this.logoX, this.logoY, 250, 250); 
-
-        this.ctx.font = "18px 'Press Start 2P'";
-        this.ctx.textAlign = "center";
 
         // Bandera de Argentina
         this.ctx.drawImage(this.argentinaTitle, this.argentinaTitleX, this.countryTitlesY , 350, 250); 
 
         // Bandera de Francia
         this.ctx.drawImage(this.franciaTitle, this.franciaTitleX, this.countryTitlesY , 350, 250); 
+    
+        // Mostrar mensaje central
+        this.ctx.fillStyle = "#FFF";
+        this.ctx.font = "15px 'Press Start 2P'"; // Fuente para el mensaje
+        this.ctx.fillText("Selecciona tu estadio", this.canvas.width / 2, 550);
+        this.ctx.strokeStyle = "#000000"; // Color negro para el borde
+        this.ctx.lineWidth = 1; // Ancho del borde
+        this.ctx.strokeText("Selecciona tu estadio", this.canvas.width / 2, 550);
 
+
+        // Mostrar mensaje seleccionar jugador arg
+        this.ctx.fillStyle = "#FFF";
+        this.ctx.font = "14px 'Press Start 2P'"; // Fuente para el mensaje
+        this.ctx.fillText("Selecciona tu jugador", 210, 250);
+        this.ctx.strokeStyle = "#000000"; // Color negro para el borde
+        this.ctx.lineWidth = 1; // Ancho del borde
+        this.ctx.strokeText("Selecciona tu jugador", 210, 250);
+
+        // Mostrar mensaje seleccionar jugador francia
+        this.ctx.fillStyle = "#FFF";
+        this.ctx.font = "14px 'Press Start 2P'"; // Fuente para el mensaje
+        this.ctx.fillText("Selecciona tu jugador", 810, 250);
+        this.ctx.strokeStyle = "#000000"; // Color negro para el borde
+        this.ctx.lineWidth = 1; // Ancho del borde
+        this.ctx.strokeText("Selecciona tu jugador", 810, 250);
+
+        // Dibujar botones y skins
+        this.drawButtons();
+        this.drawSkins();
+    }
+
+    drawButtons() {
         this.reglas.gameRules.forEach((opcion, index) => {
             const x = (this.canvas.width - this.btnAncho) / 2;
             const y = this.posY + index * (this.btnAlto + this.marginVertical) + 50;
@@ -66,34 +124,52 @@ class Menu extends Dibujable {
                 const clickY = event.clientY - rect.top;
 
                 if (clickX > x && clickX < x + this.btnAncho && clickY > y && clickY < y + this.btnAlto && this.player1Skin && this.player2Skin) {
-                    this.startGame(this.canvas, this.ctx, opcion.columnas, opcion.filas, opcion.cellSize, opcion.tamFicha, opcion.fichasToWin);
+                    this.startGame(this.canvas, this.ctx, opcion.columnas, opcion.filas, opcion.cellSize, opcion.tamFicha, opcion.fichasToWin, opcion.fichasTotales);
                 }
             });
         });
-
-        this.drawSkins();
     }
 
-    drawSkins(){   
+    drawSkins() {   
+        // Limpiar el área de los skins antes de redibujarlos
+        const leftAreaX = this.skinPositionXLeft - this.skinRadius;
+        const rightAreaX = this.skinPositionXRight - this.skinRadius;
+        const areaY = this.skinPositionY - this.skinRadius;
+        const areaWidth = this.skinSpacing * 3 + this.skinRadius * 2;
+        const areaHeight = this.skinRadius * 4;
+        
+        this.ctx.clearRect(leftAreaX, areaY, areaWidth, areaHeight);
+        this.ctx.clearRect(rightAreaX, areaY, areaWidth, areaHeight);
 
         this.reglas.skins.forEach((skin, index) => {
-
             const x = index < 3 ? this.skinPositionXLeft + (index % 3) * this.skinSpacing : this.skinPositionXRight + (index % 3) * this.skinSpacing;
-            const y = this.skinPositionY ;  
+            const y = this.skinPositionY;
+            
+            // Dibuja el skin
+            this.ctx.save();
+            this.ctx.beginPath();
+            this.ctx.arc(x + this.skinRadius, y + this.skinRadius, this.skinRadius, 0, Math.PI * 2);
+            this.ctx.closePath();
+            this.ctx.clip();
+            this.ctx.drawImage(skin, x, y, this.skinRadius * 2, this.skinRadius * 2);
+            this.ctx.restore();
 
-            skin.onload = () => {
-                this.ctx.save();
+            // Dibuja el borde para el skin seleccionado de cada equipo
+            if ((index < 3 && this.selectedSkinArgentina === index) || 
+                (index >= 3 && this.selectedSkinFrancia === index)) {
+                this.ctx.strokeStyle = "yellow";
+                this.ctx.lineWidth = 2;
                 this.ctx.beginPath();
-                this.ctx.arc(x + this.skinRadius, y + this.skinRadius, this.skinRadius, 0, Math.PI * 2);
-                this.ctx.closePath();
-                this.ctx.clip();
-                this.ctx.drawImage(skin, x, y, this.skinRadius * 2, this.skinRadius * 2);
-                this.ctx.restore();
-            };
+                this.ctx.arc(x + this.skinRadius, y + this.skinRadius, this.skinRadius + 4, 0, Math.PI * 2);
+                this.ctx.stroke();
+            }
         });
 
-        // Agrega un solo listener para seleccionar las skins
-        this.canvas.addEventListener("click", this.seleccionarSkin.bind(this));
+        // Agregar el event listener solo una vez
+        if (!this.skinListenerAdded) {
+            this.canvas.addEventListener("click", this.seleccionarSkin.bind(this));
+            this.skinListenerAdded = true;
+        }
     }
 
 
@@ -103,7 +179,7 @@ class Menu extends Dibujable {
         const clickY = event.clientY - rect.top;
     
         this.reglas.skins.forEach((skin, index) => {
-            const y = this.skinPositionY ;  
+            const y = this.skinPositionY;  
             const x = index < 3 ? this.skinPositionXLeft + (index % 3) * this.skinSpacing : this.skinPositionXRight + (index % 3) * this.skinSpacing;
 
             if (
@@ -112,25 +188,17 @@ class Menu extends Dibujable {
                 clickY > y &&
                 clickY < y + this.skinRadius * 2
             ) {
-    
-                // Marcar el borde del skin seleccionado
-                this.ctx.strokeStyle = "yellow";
-                this.ctx.lineWidth = 3;
-                this.ctx.beginPath();
-                this.ctx.arc(x + this.skinRadius, y + this.skinRadius, this.skinRadius + 4, 0, Math.PI * 2);
-                this.ctx.stroke();
-    
-                // Asignar el skin al jugador actual 
+                // Actualizar la selección según el equipo
                 if (index < 3) {
+                    this.selectedSkinArgentina = index;
                     this.player1Skin = skin;
-                }
-                if ( index >= 3) {
+                } else {
+                    this.selectedSkinFrancia = index;
                     this.player2Skin = skin;
                 }
-    
-                this.selectedSkinIndex = index; 
-    
-                this.draw(); 
+                
+                // Solo redibujar los skins
+                this.drawSkins();
             }
         });
     }
@@ -142,7 +210,6 @@ class Menu extends Dibujable {
     }
 
     startGame(canvas, context, columns, rows, cellSize, tamFicha, fichasToWin) {
-
         this.btnAlto = 0;
         this.btnAncho = 0;
         this.skinRadius = 0;

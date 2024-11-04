@@ -88,25 +88,39 @@ class Tablero extends Dibujable {
         const posYInicial = this.posY + filaActual * this.cellSize + this.cellSize / 2;
         const posYFinal = this.posY + filaFinal * this.cellSize + this.cellSize / 2;
         
-        let velocidad = 6;
+        let velocidad = 0; 
+        const gravedad = 0.5; // Factor de gravedad 
         let posYActual = posYInicial;
-    
-        // Marcamos la ficha como en animación
+        let rebote = 0.5;
+        let rebotesRestantes = 3;
+
         ficha.enAnimacion = true;
     
         const animar = () => {
+            velocidad += gravedad; // Incrementa la velocidad con la gravedad
             posYActual += velocidad;
+
             ficha.setPosition(posX, posYActual);
     
             if (posYActual >= posYFinal) {
+            // La ficha alcanzó el punto final de caída
+            posYActual = posYFinal;
+            velocidad = -velocidad * rebote; 
+
+            rebotesRestantes -= 1;
+            if (rebotesRestantes <= 0) {
+                // Si ya no quedan rebotes, finaliza la animación
                 ficha.setPosition(posX, posYFinal);
-                ficha.enAnimacion = false; // Quitamos la marca de animación
+                ficha.enAnimacion = false;
                 this.putFicha(columna, filaFinal, ficha);
                 if (callback) callback(columna, filaFinal);
-            } else {
-                requestAnimationFrame(animar);
+                return;
             }
-        };
+        }
+        ficha.setPosition(posX, posYActual);
+        
+        requestAnimationFrame(animar);
+    };
     
         requestAnimationFrame(animar);
     }
@@ -162,9 +176,7 @@ class Tablero extends Dibujable {
         }
     }
 
-
-
-    drawArrows(zonaLanzar) {
+    drawArrows() {
         if (this.flechaActiva !== null) {
             const flechaPosX = this.posX + this.flechaActiva * this.cellSize + this.cellSize / 2;
             const flechaPosY = this.posY - 5; // Ajusta la posición Y de la flecha
@@ -181,6 +193,4 @@ class Tablero extends Dibujable {
     setFlechaActiva(columna) {
         this.flechaActiva = columna;
     }
-    
-  
 }

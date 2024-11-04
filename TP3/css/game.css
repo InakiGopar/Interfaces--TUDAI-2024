@@ -24,14 +24,7 @@ main {
     color: var(--primary-green);
 }
 
-
-canvas {
-    margin-top: 2%;
-    background-image: url('../assets/img/game/Estadio-fondo.avif');
-    background-size: cover; 
-    background-position: center center;
-}
-/* .game {
+.game {
     margin-top: 2%;
     background-image: url('../assets/img/card-img/estrategia/Portadacuatroenlinea.png');
     background-size: cover;
@@ -40,7 +33,7 @@ canvas {
     height: 495px;
     background-color: rgba(37, 0, 67, 0.591); 
     background-blend-mode: multiply;
-} */
+}
 
 .game button {
     display: flex;
@@ -285,7 +278,7 @@ canvas {
 }
 
 .box-comment-header .user-img {
-    background-image: url('../assets/img/messienano.jpg');
+    background-image: url('../assets/img/users/messienano.jpg');
     background-size: cover;
     background-position: center center;
     height: 40px;
@@ -427,4 +420,11 @@ canvas {
         transform: translate(var(--x), var(--y)) scale(0.5);
         opacity: 0;
     }
+}
+
+canvas {
+    margin-top: 2%;
+    background-image: url('../assets/img/game/Estadio-fondo.avif');
+    background-size: cover; 
+    background-position: center center;
 }

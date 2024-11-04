@@ -80,6 +80,6 @@ games.forEach(game=>game.addEventListener('click', ()=> {
 
     setTimeout(() => {
         window.location.href = 'game.html'; 
-    }, 2000); // Simulamos 2 segundos de carga
+    }, 5000); // Simulamos 5 segundos de carga
 }));
 

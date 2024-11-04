@@ -13,7 +13,6 @@ class Ficha extends Dibujable {
     }
 
 
-   
     draw() {
         // Guarda el contexto de dibujo actual
         this.ctx.save();
@@ -48,8 +47,6 @@ class Ficha extends Dibujable {
         let _y = this.posY - y;
         return Math.sqrt(_x * _x + _y * _y) < this.radius;
     }
-
-    
 
     setDragging(isDragging) {
         this.dragging = isDragging;

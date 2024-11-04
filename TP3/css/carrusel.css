@@ -172,7 +172,6 @@ background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255,
 
 
 
-/*REVISAR PROBLEMA CON LAS FLECHAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 @media only screen and (max-width: 420px){
     .prev-btn, .next-btn {
         height: 30px;

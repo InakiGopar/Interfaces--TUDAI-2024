@@ -14,7 +14,7 @@ class BotonJugarDeNuevo extends Dibujable {
         this.ctx.fillStyle = this.isHovered ? '#4CD406' : '#86B700';
         this.ctx.fillRect(this.posX, this.posY, this.width, this.height);
         this.ctx.fillStyle = '#fff';
-        this.ctx.font = '20px Arial';
+        this.ctx.font = "16px 'Press Start 2P'";
         this.ctx.textAlign = 'center';
         this.ctx.fillText(this.label, this.posX + this.width / 2, this.posY + this.height / 1.5);
     }

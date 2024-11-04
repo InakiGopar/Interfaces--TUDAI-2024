@@ -35,11 +35,13 @@ class Juego {
         this.turno = this.turnoInicial;
         this.botonReiniciar = new BotonJugarDeNuevo(this.canvasWidth / 2 - 150, canvasHeight / 2 + 50, this.ctx, 300, 50, "Jugar de nuevo");
         this.juegoTerminado = false; // Variable para controlar el estado del juego
-        this.temporizador = new Temporizador(this.canvasWidth / 2 - 80, 5, this.ctx, 150); // 30 segundos como tiempo máximo
+        this.temporizador = new Temporizador(this.canvasWidth / 2 - 80, 5, this.ctx, 140); // 30 segundos como tiempo máximo
         this.imagenGanadorArgentina = new Image();
         this.imagenGanadorArgentina.src = '../assets/img/game/Cartel-ganador-argentina.png';
         this.imagenGanadorFrancia = new Image();
         this.imagenGanadorFrancia.src = '../assets/img/game/Cartel-ganador-francia.png';
+        this.imagenEmpate = new Image();
+        this.imagenEmpate.src = '../assets/img/game/empate.jpg';
         this.botonVolverAlMenu = new BotonVolverMenu(this.canvasWidth / 2 - 150, canvasHeight / 2 + 110, this.ctx, 300, 50, "Volver al Menu");
     }
 
@@ -162,6 +164,8 @@ class Juego {
         if (!this.juegoTerminado) {
             this.temporizador.draw();
         }
+
+        this.drawTurno();
     }
 
     handleFichaDrop(ficha) {
@@ -193,8 +197,7 @@ class Juego {
     }
 
     mostrarEmpate() {
-        const mensaje = "Empate";
-        const mensajeEmpate = new MensajeFinal(0, 0, this.ctx, mensaje, this.canvasWidth, this.canvasHeight)
+        const mensajeEmpate = new MensajeFinal(0, 0, this.ctx, this.canvasWidth, this.canvasHeight, this.imagenEmpate)
         mensajeEmpate.draw();
     }
 
@@ -293,8 +296,6 @@ class Juego {
     }
 
 
-
-
     addEventListeners() {
         // Detectar clic inicial
         this.canvas.addEventListener("mousedown", (e) => this.onMouseDown(e));
@@ -313,14 +314,16 @@ class Juego {
         const { offsetX, offsetY } = e;
         const fichas = this.turno ? this.fichasJugador1 : this.fichasJugador2;
 
-        for (const ficha of fichas) {
+        // Recorre las fichas de arriba hacia abajo
+        for (let i = fichas.length - 1; i >= 0; i--) { // Comenzar desde la última ficha (superior)
+            const ficha = fichas[i];
             if (!ficha.colocada && ficha.isPointInside(offsetX, offsetY)) {
                 ficha.setDragging(true);
                 this.fichaArrastrada = ficha;
 
                 // Guardar posición inicial de la ficha antes de arrastrarla
                 ficha.posicionInicial = { x: ficha.posX, y: ficha.posY };
-                break;
+                break; // Salir del bucle una vez que se ha seleccionado una ficha
             }
         }
     }
@@ -375,20 +378,21 @@ class Juego {
     }
 
     backToMenu() {
-        // Remueve el canvas actual
-        this.canvas.parentNode.removeChild(canvas);
-
+        this.canvas.parentNode.removeChild(this.canvas);
         // Crea un nuevo canvas
         const nuevoCanvas = document.createElement('canvas');
-        nuevoCanvas.id = 'canvas';
-        nuevoCanvas.width = 1000;
-        nuevoCanvas.height = 650;
+        nuevoCanvas.id = 'canvas'; 
+        nuevoCanvas.width = 1000; 
+        nuevoCanvas.height = 650; 
+    
+        const gameSection = document.getElementById('game_section');
 
-        document.body.appendChild(nuevoCanvas);
-
+        gameSection.appendChild(nuevoCanvas);
+    
         const nuevoCtx = nuevoCanvas.getContext('2d');
-        const menu = new Menu(0, 180, nuevoCtx, nuevoCanvas, 200, 50, "#007bff", "20px Arial", 20);
 
+        const menu = new Menu(0, 180,nuevoCtx,nuevoCanvas,200,50,"#007bff", "13px 'Press Start 2P'", 20);
+    
         menu.draw();
     }
 
@@ -400,5 +404,35 @@ class Juego {
         this.juegoTerminado = false; // Restablecer el estado del juego
         this.temporizador.reiniciar();
         this.iniciarJuego(); // Reiniciar el juego
+    }
+
+    drawTurno() {
+        // Configuración del texto
+        this.ctx.font = "bold 16px 'Press Start 2P'";
+        this.ctx.textAlign = "center";
+        
+        // Posición del texto (ajusta estos valores según tu layout)
+        const x = this.canvas.width / 2;
+        const y = 630;  // Altura desde la parte superior
+        
+        // Determinar el mensaje según el turno
+        const mensaje = this.turno ? "Turno de Argentina" : "Turno de Francia";
+        
+        // Color según el equipo
+        this.ctx.fillStyle = this.turno ? "#75AADB" : "#002654"; // Colores de las banderas
+        
+        // Dibujar un fondo para el texto
+        const medidas = this.ctx.measureText(mensaje);
+        const padding = 10;
+        this.ctx.fillRect(
+            x - medidas.width/2 - padding,
+            y - 25,
+            medidas.width + (padding * 2),
+            35
+        );
+        
+        // Dibujar el texto
+        this.ctx.fillStyle = "#FFFFFF"; // Texto en blanco
+        this.ctx.fillText(mensaje, x, y);
     }
 }

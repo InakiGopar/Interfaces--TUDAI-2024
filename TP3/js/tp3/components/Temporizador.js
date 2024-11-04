@@ -1,4 +1,3 @@
-
 class Temporizador extends Dibujable {
     constructor(posX, posY, ctx, tiempoMaximo) {
         super(posX, posY, ctx);
@@ -23,12 +22,22 @@ class Temporizador extends Dibujable {
     }
 
     draw() {
+        // Calcular minutos y segundos
+        const minutos = Math.floor(this.tiempoRestante / 60);
+        const segundos = this.tiempoRestante % 60;
+        
+        // Formatear el tiempo con ceros a la izquierda si es necesario
+        const tiempoFormateado = `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+        
+        // Dibujar el fondo
         this.ctx.fillStyle = '#86B700';
-        this.ctx.fillRect(this.posX, this.posY, 150 , 50 );
-        this.ctx.fillStyle = '#fff'; // Color del texto
-        this.ctx.font = '20px Arial';
-        this.ctx.textAlign = 'center';  
-        this.ctx.fillText(`Tiempo: ${this.tiempoRestante}`, this.posX + 72, this.posY + 33);
+        this.ctx.fillRect(this.posX, this.posY, 150, 50);
+        
+        // Dibujar el texto
+        this.ctx.fillStyle = '#fff';
+        this.ctx.font = "20px 'Press Start 2P'";
+        this.ctx.textAlign = 'center';
+        this.ctx.fillText(tiempoFormateado, this.posX + 76, this.posY + 36);
     }
 
     reiniciar() {
