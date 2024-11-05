@@ -196,11 +196,22 @@ main {
 .gallery div {
     width: 250px;
     height: 150px;
-    background-image: url('../assets/img/card-img/estrategia/Portadacuatroenlinea.png');
     background-size: cover;
     background-position: center center;
     border-radius: 15px;
     cursor: pointer;
+}
+
+.photo-game1{
+    background-image: url('../assets/img/imagen1CuatroenLinea.png');
+}
+
+.photo-game2{
+    background-image: url('../assets/img/imagen3CuatroenLinea.png');
+}
+
+.photo-game3{
+    background-image: url('../assets/img/imagen2CuatroenLinea.png');
 }
 
 .gallery span {
