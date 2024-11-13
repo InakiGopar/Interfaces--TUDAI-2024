@@ -1,0 +1,105 @@
+.loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(154, 243, 255, 0.676);
+    z-index: 15000;
+}
+
+.eye-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 2em;
+}
+
+.eye {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 3px solid #000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pupil {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.1s ease;
+}
+
+.loading-message {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.letter {
+    color: #fff;
+    display: flex;
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #f34646;
+    border-radius: 50%;
+    animation: bounce 1s infinite alternate;
+}
+
+.letter:nth-child(2) {
+    animation-delay: 0.2s;
+    background-color: #f39d46;
+}
+
+.letter:nth-child(3) {
+    animation-delay: 0.4s;
+    background-color: #e7f346;
+}
+
+.letter:nth-child(4) {
+    animation-delay: 0.4s;
+    background-color: #57f346;
+}
+
+.letter:nth-child(5) {
+    animation-delay: 0.2s;
+    background-color: #46d9f3;
+}
+
+.letter:nth-child(6) {
+    animation-delay: 0.1s;
+    background-color: #b946f3;
+}
+
+.letter:nth-child(7) {
+    animation-delay: 0.2s;
+    background-color: #4669f3;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+.main-content {
+    transition: filter 1s ease; /* Transición para el desenfoque */
+}

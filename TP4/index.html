@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Fuente para el loader-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&family=Luckiest+Guy&family=Merienda:wght@300..900&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!--Fuente para la tipografia de la pagina-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Luckiest+Guy&family=Merienda:wght@300..900&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!--Estilos-->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/loader.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="/css/funnyApp.css">
+    <title>Number Blocks</title>
+</head>
+<body>
+    <!--Loader-->
+    <div class="loader" id="loader">
+        <!--Loader eyes-->
+        <div class="eye-container">
+            <div class="eye" id="eye-left">
+                <div class="pupil"></div>
+            </div>
+            <div class="eye" id="eye-right">
+                <div class="pupil"></div>
+            </div>
+        </div>
+        <!--Loader message-->
+        <div class="loading-message">
+            <div class="letter">
+                <p>C</p>
+            </div>
+            <div class="letter">
+                <p>A</p>
+            </div>
+            <div class="letter">
+                <p>R</p>
+            </div>
+            <div class="letter">
+                <p>G</p>
+            </div>
+            <div class="letter">
+                <p>A</p>
+            </div>
+            <div class="letter">
+                <p>N</p>
+            </div>
+            <div class="letter">
+                <p>D</p>
+            </div>
+            <div class="letter">
+                <p>O</p>
+            </div>
+        </div>
+    </div>
+    <!--Main content-->
+    <main>
+
+        <header>
+            <!--icono hamburgesa-->
+            <div class="menu-hamburger-container" id="btn-hamburger">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+            <!--Menu desplegable-->
+            <div class="menu-items-container" id="menu">
+                <ul>
+                    <li class="item-menu">Descargar</li>
+                    <li class="item-menu">Exeprimentar</li>
+                    <li class="item-menu">Suscribirse</li>
+                </ul>
+            </div>    
+            <!--Boton comprar-->
+            <div class="btn-comprar-container">
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </header>
+
+        <!--Logo-->
+        <div class="logo-container">
+            <figure class="logo"></figure>
+        </div>
+
+        <!--Hero-->
+        <section class="hero">
+            <div class="layer background"></div>
+            <div class="layer character1"></div>
+            <div class="layer character2"></div>
+            <div class="layer character3"></div>
+            <div class="layer tree-left"></div>
+            <div class="layer tree-right"></div>
+            <div class="layer tree-right-2"></div>
+            <div class="layer rock-1"></div>
+            <div class="layer rock-2"></div>
+            <div class="layer rock-3"></div>
+            <div class="layer rock-4"></div>
+            <div class="layer bush-1"></div>
+            <div class="layer bush-2"></div>
+            <div class="layer bush-3"></div>
+            <div class="layer bush-4"></div>
+        </section>
+
+        <!--Seccion la app mas divertida del mundo-->
+        <section class="funny-app">
+
+            <div class="title">
+                <p>La app más divertida, educativa y para niños de 3 años</p>
+            </div>
+            <div class="text">
+                <p>
+                    Numberblocks World es una divertida aplicación de vídeo a la carta y juegos por
+                    suscripción dirigida a niños a partir de 3 años, con un grupo de edad principal
+                    de 4 a 6 años, creada por el equipo de Alphablocks Ltd. y Blue Zoo Animations Studio,
+                    ganador de un premio BAFTA.
+                </p>
+            </div>
+
+            <!--Imagen de la seccion app mas divertida del mundo-->
+            <div class="imagen-container" id="funny-app-img"></div>
+
+            <div class="character-container">
+                <!--Personaje Verde-->
+                <div class="character4"></div>
+                <!--Personaje Celeste-->
+                <div class="character5"></div>
+            </div>
+
+            <div class="ondulacion">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#a3ebea" fill-opacity="1" d="M0,288L80,245.3C160,203,320,117,480,117.3C640,117,800,203,960,240C1120,277,1280,267,1360,261.3L1440,256L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+                </svg>
+            </div>
+            
+        </section>
+
+    </main>
+
+    <script src="js/index.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/funnyApp.js"></script>
+</body>
+</html>
