@@ -1,0 +1,30 @@
+.logo-container {
+    width: 560px;
+    height: 300px;
+    position: fixed;
+    top: 0;
+    transition: width 0.4s ease, height 0.4s ease;
+    z-index: 9999;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/img/header/logo-big.png");
+    background-size: cover; 
+    background-position: center center;
+}
+
+.medium-logo.logo-container {
+    width: 350px;
+    height: 160px;
+    transition: all 0.4s ease;
+}
+
+.small-logo.logo-container {
+    width: 180px;
+    height: 86px;
+    transition: all 0.4s ease;
+}
+
+

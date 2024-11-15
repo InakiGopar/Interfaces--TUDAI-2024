@@ -1,0 +1,85 @@
+.funny-app {
+    padding-top: 55px;
+    width: 1080px;
+    height: 820px;
+    background-image: linear-gradient(to bottom, #88de7d, #7ae4a4, #7be8c4, #8ceadd, #a8ebec);
+    display: flex;
+    flex-direction: column;
+    color: rgba(27, 66, 143, 1);
+    clip-path: url("/assets/wave-haikei.svg");
+}
+
+.title {
+    width: 508px;
+    height: 132px;
+    padding-left: 50px;
+}
+
+.title p {
+    font-weight: 600;
+    font-size: 47px;
+}
+
+.text {
+    width: 704px;
+    height: 154px;
+    padding-left: 50px;
+}
+
+.text p {
+    font-weight: 400;
+    font-size: 20px;
+    padding-top: 55px;
+}
+
+.imagen-container {
+    width: 576px;
+    height: 324px;
+    border-radius: 77px;
+    border: 29px solid rgba(27, 66, 143, 1);
+    margin-left: 130px;
+    margin-top: 20px;
+    background-image: url("/assets/img/app-funny/app-mas-divertida-img-1.png");
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease;
+}
+
+.character-container {
+    display: flex;
+    position: relative;
+}
+
+.character4 {
+    position: absolute;
+    left: -50px;
+    top: -120px;
+    width: 601px;
+    height: 603px;
+    background-image: url("/assets/img/app-funny/pj4.png");
+    background-size: cover;
+    background-position: center;
+    transform: scaleX(-1);
+    z-index: 50;
+}
+
+.character5 {
+    position: absolute;
+    left: 650px;
+    top: -1000px;
+    width: 572px;
+    height: 1500px;
+    background-image: url("/assets/img/app-funny/pj5.png");
+    background-size: cover;
+    background-position: center;
+    scale: 0.6;
+    z-index: 50;
+    overflow: hidden;
+}
+
+.ondulacion {
+    position: absolute;
+    top: 1800px;
+    width: 1080px;
+    height: 100px;
+}
