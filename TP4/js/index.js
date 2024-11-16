@@ -1,6 +1,10 @@
 window.onload = () => {
     document.body.style.overflow = "hidden";
     const loader = document.getElementById("loader");
+    const mainContent = document.querySelector('main');
+
+    mainContent.style.visibility = 'visible';
+    mainContent.style.opacity = '1';
 
     setTimeout(() => {
         loader.style.opacity = '0';

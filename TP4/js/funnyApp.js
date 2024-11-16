@@ -10,20 +10,40 @@ const images = [
 
 //elementos del DOM
 const imageContainer = document.getElementById("funny-app-img");
-
-// Asegúrate de que la primera imagen se cargue al inicio
-window.addEventListener('load', () => {
-    imageContainer.style.backgroundImage = `url("${images[0]}")`;
-});
-
 let currentIndexImg = 0;
+let intervalId = null;
+
+// Función para inicializar las imágenes
+function initializeImages() {
+    if (imageContainer) {
+        // Forzar la visibilidad del contenedor
+        imageContainer.style.opacity = '1';
+        imageContainer.style.visibility = 'visible';
+        imageContainer.style.display = 'block';
+        
+        // Establecer la primera imagen
+        imageContainer.style.backgroundImage = `url("${images[0]}")`;
+        
+        // Iniciar el intervalo solo si no existe
+        if (!intervalId) {
+            intervalId = setInterval(changeImg, 3000);
+        }
+    }
+}
 
 function changeImg() {
     currentIndexImg = (currentIndexImg + 1) % images.length;
+    // Asegurar que el contenedor siga visible
+    imageContainer.style.opacity = '1';
+    imageContainer.style.visibility = 'visible';
+    imageContainer.style.display = 'block';
     imageContainer.style.backgroundImage = `url("${images[currentIndexImg]}")`;
 }
 
-setInterval(changeImg, 3000);
+// Inicializar después de que el loader termine
+document.addEventListener('loaderComplete', () => {
+    setTimeout(initializeImages, 50);  // Reducimos el tiempo de espera
+});
 
 // Elementos para el efecto parallax
 const title = document.querySelector('.funny-app .title');
@@ -44,12 +64,11 @@ function handleParallax() {
         
         const relativeScroll = scrolled - sectionTop;
         
-        // Movimiento sutil de los elementos
-        title.style.transform = `translateX(${relativeScroll * 0.1}px)`;
-        text.style.transform = `translateX(${relativeScroll * -0.08}px)`;
-        imageContainer.style.transform = `translateY(${relativeScroll * 0.05}px)`;
-        character4.style.transform = `scaleX(-1) translateX(${relativeScroll * -0.15}px)`;
-        character5.style.transform = `translateX(${relativeScroll * 0.12}px)`;
+        title.style.transform = `translateX(${relativeScroll * 0.02}px)`;
+        text.style.transform = `translateX(${relativeScroll * -0.015}px)`;
+        imageContainer.style.transform = `translateY(${relativeScroll * 0.025}px)`;
+        character4.style.transform = `scaleX(-1) translateY(${relativeScroll * 0.035}px)`;
+        character5.style.transform = `translateY(${relativeScroll * -0.03}px)`;
     }
 }
 
