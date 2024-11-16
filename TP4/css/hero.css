@@ -16,7 +16,7 @@
 .background {
     width: 100%;
     height: 100%;
-    background-image: url('/assets/img/hero/hero-img.png');
+    background-image: url('../assets/img/hero/hero-img.png');
     z-index: 1;
     opacity: 1;
 }
@@ -25,7 +25,7 @@
 .character1 {
     width: 240px;
     height: 314px;
-    background-image: url('/assets/img/hero/pj1.png');
+    background-image: url('../assets/img/hero/pj1.png');
     bottom: 10%;
     left: 35%;
     z-index: 30;
@@ -34,7 +34,7 @@
 .character2 {
     width: 197px;
     height: 270px;
-    background-image: url('/assets/img/hero/pj2.png');
+    background-image: url('../assets/img/hero/pj2.png');
     bottom: 25%;
     left: 45%;
     z-index: 20;
@@ -43,7 +43,7 @@
 .character3 {
     width: 174px;
     height: 384px;
-    background-image: url('/assets/img/hero/pj3.png');
+    background-image: url('../assets/img/hero/pj3.png');
     bottom: 20%;
     left: 60%;
     z-index: 10;
@@ -52,7 +52,7 @@
 .tree-left {
     width: 560px;
     height: 867px;
-    background-image: url('/assets/img/hero/arbol1.png');
+    background-image: url('../assets/img/hero/arbol1.png');
     bottom: 10%;
     left: -150px;
     z-index: 8;
@@ -62,7 +62,7 @@
 .tree-right {
     width: 434px;
     height: 672px;
-    background-image: url('/assets/img/hero/arbol2.png');
+    background-image: url('../assets/img/hero/arbol2.png');
     bottom: 0;
     right: -35px;
     top: 15%;
@@ -73,7 +73,7 @@
 .tree-right-2 {
     width: 278px;
     height: 430px;
-    background-image: url("/assets/img/hero/arbol3.png");
+    background-image: url("../assets/img/hero/arbol3.png");
     bottom: 0;
     right: -85px;
     top: 34%;
@@ -84,7 +84,7 @@
 .rock-1 {
     width: 113px;
     height: 74px;
-    background-image: url("/assets/img/hero/piedra1.png");
+    background-image: url("../assets/img/hero/piedra1.png");
     bottom: 0;
     right: 90px;
     top: 75%;
@@ -94,7 +94,7 @@
 .rock-2 {
     width: 145px;
     height: 78px;
-    background-image: url("/assets/img/hero/piedra2.png");
+    background-image: url("../assets/img/hero/piedra2.png");
     bottom: 20%;
     left: 120px;
     z-index: 9;
@@ -103,7 +103,7 @@
 .rock-3 {
     width: 66px;
     height: 56px;
-    background-image: url("/assets//img/hero/piedra3.png");
+    background-image: url("../assets//img/hero/piedra3.png");
     bottom: 0;
     right: 180px;
     top: 75%;
@@ -113,7 +113,7 @@
 .rock-4 {
     width: 59px;
     height: 35px;
-    background-image: url("/assets/img/hero/piedra4.png");
+    background-image: url("../assets/img/hero/piedra4.png");
     bottom: 0;
     right: 185px;
     top: 79%;
@@ -123,7 +123,7 @@
 .bush-1 {
     width: 191px;
     height: 63px;
-    background-image: url("/assets/img/hero/arbusto1.png");
+    background-image: url("../assets/img/hero/arbusto1.png");
     bottom: 0;
     right: 60px;
     top: 62%;
@@ -133,7 +133,7 @@
 .bush-2 {
     width: 244px;
     height: 107px;
-    background-image: url("/assets/img/hero/arbusto2.png");
+    background-image: url("../assets/img/hero/arbusto2.png");
     bottom: 0;
     right: -40px;
     top: 64%;
@@ -144,7 +144,7 @@
 .bush-3 {
     width: 155px;
     height: 102px;
-    background-image: url("/assets/img/hero/arbusto3.png");
+    background-image: url("../assets/img/hero/arbusto3.png");
     bottom: 15%;
     left: 180px;
     z-index: 9;
@@ -153,7 +153,7 @@
 .bush-4 {
     width: 400px;
     height: 180px;
-    background-image: url("/assets/img/hero/arbusto4.png");
+    background-image: url("../assets/img/hero/arbusto4.png");
     background-size: cover;
     background-position: center;
     bottom: 20%;

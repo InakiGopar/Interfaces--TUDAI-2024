@@ -13,6 +13,8 @@
     width: 508px;
     height: 132px;
     padding-left: 50px;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
 }
 
 .title p {
@@ -24,6 +26,8 @@
     width: 704px;
     height: 154px;
     padding-left: 50px;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
 }
 
 .text p {
@@ -39,10 +43,11 @@
     border: 29px solid rgba(27, 66, 143, 1);
     margin-left: 130px;
     margin-top: 20px;
-    background-image: url("/assets/img/app-funny/app-mas-divertida-img-1.png");
+    background-image: url("../assets/img/app-funny/app-mas-divertida-img-1.png");
     background-size: cover;
     background-position: center;
-    transition: background-image 0.5s ease;
+    transition: all 0.5s ease;
+    transform: translateY(0);
 }
 
 .character-container {
@@ -56,7 +61,7 @@
     top: -120px;
     width: 601px;
     height: 603px;
-    background-image: url("/assets/img/app-funny/pj4.png");
+    background-image: url("../assets/img/app-funny/pj4.png");
     background-size: cover;
     background-position: center;
     transform: scaleX(-1);
@@ -69,7 +74,7 @@
     top: -1000px;
     width: 572px;
     height: 1500px;
-    background-image: url("/assets/img/app-funny/pj5.png");
+    background-image: url("../assets/img/app-funny/pj5.png");
     background-size: cover;
     background-position: center;
     scale: 0.6;
