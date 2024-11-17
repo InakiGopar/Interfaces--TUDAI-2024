@@ -1,0 +1,29 @@
+:root {
+    /*Violetas*/
+    --background-color: #250043;
+    --primary-violet: #45007C;
+    --secondary-violet: #6E01C8;
+    --background-form: #5800a180;
+    --card-botton-color: #5800a1e4;
+    --third-violet: #5900A1;
+    --fourth-violet: #9747FF;
+
+    /*Verdes*/
+    --primary-green: #86B700;
+    --primary-green-hover:#5e8101;
+    --play-icon-green: #2BF001;
+    --discount-background: #4C6B22;
+    --discount-color: #BEEE11;
+    --input-success: #A6E300;
+
+    /*Amarillo*/
+    --yellow: #FFCB00;
+
+    /*Gris*/
+    --grey: #5E6367;
+    --background-grey: #777d82;
+
+    /*Rojo*/
+    --input-denied: #F24E1E; 
+
+}

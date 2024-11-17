@@ -1,0 +1,88 @@
+.discover-the-game {
+    position: relative;
+    background-color: #5a2ea6; /* Fondo violeta */
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    width: 1080px;
+    margin: 40px auto; /* Centrar la sección horizontalmente */
+    overflow: hidden; /* Asegurar que los elementos no se desborden */
+}
+
+.content {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content h1 {
+    font-size: 61px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 20px;
+    width: 950px;
+    margin-top: 150px;
+}
+
+.content span {
+    font-style: italic;
+}
+
+.content button {
+    width: 450px;
+    background-color: #34c759; /* Fondo verde vibrante */
+    color: white; /* Texto blanco */
+    font-size: 1.5rem; /* Tamaño de fuente mayor para llamar la atención */
+    font-weight: bold; /* Negrita para el texto */
+    border: 7px solid white; /* Borde blanco */
+    border-radius: 50px; /* Bordes completamente redondeados */
+    padding: 12px 24px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    margin-bottom: 0px;
+}
+
+.content button:hover {
+    background-color: #1da53d; /* Fondo más oscuro al pasar */
+    transform: scale(1.05); /* Ligero aumento al pasar */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+}
+
+.content button:active {
+    transform: scale(0.95); /* Reducir tamaño al hacer clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra más ligera */
+}
+
+.content div {
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Necesario para controlar la posición de los personajes */
+    height: 500px; /* Ajusta la altura según el diseño */
+    overflow: hidden; /* Evita que la imagen se salga del contenedor */
+}
+
+.content div img.characters {
+    position: absolute; /* La imagen se posiciona libremente dentro del contenedor */
+    width: 100%; /* Ajustar tamaño razonable de la imagen */
+    max-width: 100%; /* Evita que exceda el contenedor */
+    height: 100%; /* Mantiene la proporción de la imagen */
+    transition: transform 0.1s linear; /* Movimiento suave */
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Centrado inicial */
+}
+
+.content div img {
+    position: absolute; /* La imagen puede moverse libremente dentro del contenedor */
+    width: 1200px; /* Ajusta según el tamaño requerido */
+    transition: transform 0.1s linear; /* Movimiento suave */
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Corregir el centrado inicial */
+}
+
+

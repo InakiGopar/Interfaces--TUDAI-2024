@@ -1,0 +1,35 @@
+@keyframes loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner {
+    display: none;
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-top: 8px solid var(--primary-green);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: loading 2s linear infinite;
+    position: fixed;
+    margin-top: 200px;
+    transform: translate(-50%, -50%);
+    filter: none;
+    z-index: 999; 
+}
+
+.loading-percent {
+    display: none;
+    position: fixed;
+    top: 300px;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--primary-green);
+    z-index: 999;
+    filter: none;
+}
+
+.blur {
+    filter: blur(5px); 
+    pointer-events: none;
+}

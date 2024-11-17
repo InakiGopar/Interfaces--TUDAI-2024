@@ -1,0 +1,3 @@
+class BotonVolverMenu extends Dibujable {
+
+}

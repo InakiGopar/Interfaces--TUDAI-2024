@@ -1,0 +1,61 @@
+.video-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffc933;
+    position: relative;
+    height: 100vh; /* Asegura que ocupa toda la ventana */
+    overflow: hidden; /* Para evitar que contenido extra sea visible */
+    padding: 0 5%;
+}
+
+  .video-content {
+    flex: 1;
+    z-index: 2; /* Asegura que esté por encima del fondo */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #fff;
+}
+
+  .video-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #fff;
+}
+
+  .video-wrapper {
+    position: relative;
+    width: 80%;
+    padding-bottom: 45%; /* Relación de aspecto 16:9 */
+    margin-bottom: 20px;
+}
+
+  .video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 15px; /* Borde redondeado */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+  .character-content {
+    flex: 1;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transform: translateY(50px); /* Para efecto inicial */
+}
+
+  .character-content img {
+    width: 70%;
+    max-width: 300px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
