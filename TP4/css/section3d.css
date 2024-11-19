@@ -1,0 +1,33 @@
+.section3d {
+    width: 1080px;
+    height: 1034px;
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    width: 786px;
+}
+
+.text h3 {
+    color: rgba(157, 33, 33, 1);
+    font-weight: 600;
+    font-size: 60px;
+}
+
+.text p {
+    font-size: 20px;
+    font-weight: 400;
+    width: 520px;
+}
+
+.figure-3d {
+    position: absolute;
+    width: 380px;
+    height: 729px;
+    left: 70%;
+    top: 1810%;
+    background-image: url("/TP4/assets/img/section-3d/img-3d.png");
+    background-size: cover; 
+    background-position: center center;
+}

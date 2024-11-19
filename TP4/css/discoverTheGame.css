@@ -1,9 +1,8 @@
 .discover-the-game {
     position: relative;
-    background-color: #5a2ea6; /* Fondo violeta */
+    background-color: #5829bf; /* Fondo violeta */
     color: white;
     text-align: center;
-    padding-top: 20px;
     width: 1080px;
     margin: 40px auto; /* Centrar la sección horizontalmente */
     overflow: hidden; /* Asegurar que los elementos no se desborden */
@@ -20,9 +19,10 @@
     font-size: 61px;
     line-height: 1.2;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
+    margin-top: -20px;
     width: 950px;
-    margin-top: 150px;
+    font-weight: bold; /* Negrita para el texto */
 }
 
 .content span {
@@ -31,7 +31,7 @@
 
 .content button {
     width: 450px;
-    background-color: #34c759; /* Fondo verde vibrante */
+    background-color: #83C252; /* Fondo verde vibrante */
     color: white; /* Texto blanco */
     font-size: 1.5rem; /* Tamaño de fuente mayor para llamar la atención */
     font-weight: bold; /* Negrita para el texto */
@@ -45,9 +45,9 @@
 }
 
 .content button:hover {
-    background-color: #1da53d; /* Fondo más oscuro al pasar */
-    transform: scale(1.05); /* Ligero aumento al pasar */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+    background-color: #6ebf30; 
+    transform: scale(1.05); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); 
 }
 
 .content button:active {
@@ -61,8 +61,8 @@
     display: flex;
     flex-direction: column;
     position: relative; /* Necesario para controlar la posición de los personajes */
-    height: 500px; /* Ajusta la altura según el diseño */
-    overflow: hidden; /* Evita que la imagen se salga del contenedor */
+    height: 600px; /* Ajusta la altura según el diseño */
+    
 }
 
 .content div img.characters {
@@ -83,6 +83,15 @@
     top: 50%; /* Centrar verticalmente */
     left: 50%; /* Centrar horizontalmente */
     transform: translate(-50%, -50%); /* Corregir el centrado inicial */
+}
+
+.characters{
+    z-index: 100;
+    
+}
+.characters-container{
+    scale: 1.09999;
+   
 }
 
 
