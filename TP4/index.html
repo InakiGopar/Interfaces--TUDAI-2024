@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <!--Fuente para el loader-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,14 +12,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Luckiest+Guy&family=Merienda:wght@300..900&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
+    <!--Script para el efecto 3d-->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <!--Estilos-->
-    <link rel="stylesheet" href="../TP4/css/style.css">
-    <link rel="stylesheet" href="../TP4/css/loader.css">
-    <link rel="stylesheet" href="../TP4/css/header.css">
-    <link rel="stylesheet" href="../TP4/css/logo.css">
-    <link rel="stylesheet" href="../TP4/css/hero.css">
-    <link rel="stylesheet" href="../TP4/css/funnyApp.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/funnyApp.css">
+    <link rel="stylesheet" href="css/discoverTheGame.css">
+    <link rel="stylesheet" href="css/moreFriendsMoreFun.css">
+    <link rel="stylesheet" href="css/show-video.css">
+    <link rel="stylesheet" href="css/section3d.css">
     <title>Number Blocks</title>
 </head>
 <body>
@@ -134,20 +139,238 @@
                 <!--Personaje Celeste-->
                 <div class="character5"></div>
             </div>
-
+           
             <div class="ondulacion">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                     <path fill="#a3ebea" fill-opacity="1" d="M0,288L80,245.3C160,203,320,117,480,117.3C640,117,800,203,960,240C1120,277,1280,267,1360,261.3L1440,256L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
                 </svg>
             </div>
-            
+
+        </section>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-image"></div>
+                <p class="card-text">Los niños descubrirán lo divertido que puede ser aprender matemáticas. A través de personajes animados y desafíos interactivos, podrán sumar, restar y entender conceptos básicos de manera fácil y entretenida. ¡Cada número cobra vida para hacer que las matemáticas sean emocionantes!</p>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <p class="card-text">Con NumberBlocks, los niños encontrarán emocionantes retos en cada nivel, diseñados para hacer que el aprendizaje sea tan divertido como un juego. ¡Cada desafío es una nueva aventura matemática!Diviértete e invita a tus amigos, desafíalos y gana premios.</p>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <p class="card-text">Entrena a UNO y Comparte lo que Aprendes!En NumberBlocks, deberás enseñar a UNO cada lección que aprendas, ayudándolo a crecer y superar nuevos desafíos matemáticos. ¡Conviértete en su mejor guía! Se su mejor amigo y diviértete con él.</p>
+                
+            </div>
+        </div>
+
+        <section class="discover-the-game">
+            <!--Ondulacion blanca por encima     -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#F4FCFC" fill-opacity="1" d="M0,32L80,48C160,64,320,96,480,112C640,128,800,128,960,112C1120,96,1280,64,1360,48L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
+            <div class="content">
+                <h1>Descubre el juego que convierte las <span>Matemáticas</span> en diversión</h1>
+                <div>
+                    <button>¡Descarga NumberBlocks hoy!</button>
+                    <!-- Imagen con todos los personajes -->
+                    <div class="characters-container">
+                        <img src="assets/img/discover-the-game/characters-discover.png" alt="Characters" class="characters">
+                    </div>
+                </div>
+            </div>
         </section>
 
-    </main>
+        
 
+        <section>
+            <div class="title-more-friends">
+                <h1>Mas amigos, mas diversion!</h1>
+            </div>
+            <div class="more-friends-more-fun">
+                <!-- Columna izquierda: Imagen sticky -->
+                <div class="sticky-image">
+                    <img id="dynamic-image" src="assets/img/more-friends-more-fun/img-sticky-1.png" alt="Imagen dinámica">
+                </div>
+          
+              <!-- Columna derecha: Texto descriptivo -->
+  
+                <div class="text-content">
+
+                <section data-image="assets/img/more-friends-more-fun/img-sticky-1.png">
+                    <h2>Sumas Mágicas</h2>
+                    <p>
+                        Ayuda a UNO y sus amigos a juntar bloques y ver cómo sus números crecen al sumar.
+                        Cada vez que sumas correctamente, los NumberBlocks ganan fuerza y desbloquean sorpresas mágicas.
+                        ¡Descubre cómo los números se combinan para formar resultados increíbles!
+                    </p>
+                </section>
+
+                <section data-image="assets/img/more-friends-more-fun/img-sticky-2.png">
+                    <h2>Rompecabezas de Restas</h2>
+                    <p>
+                        Acompaña a UNO en un recorrido lleno de obstáculos donde solo podrás avanzar restando
+                        bloques correctamente. Observa cómo los personajes se transforman cuando restan,
+                        ¡y resuelve cada rompecabezas para llegar a la meta!
+                    </p>
+                </section>
+
+                <section data-image="assets/img/more-friends-more-fun/img-sticky-3.png">
+                    <h2>Carrera de Conteo</h2>
+                    <p>
+                        Corre contra el reloj mientras cuentas bloques en secuencia para ayudar a los NumberBlocks
+                        a llegar al final. ¡Cada número correcto te da una ventaja extra! Con cada carrera,
+                        aprenderás a contar y a pensar rápido.
+                    </p>
+                </section>
+
+                <section data-image="assets/img/more-friends-more-fun/img-sticky-41.png">
+                    <h2>Encuentra el Número Oculto</h2>
+                    <p>
+                        Busca entre los escenarios y ayuda a UNO a encontrar el número perdido para completar la secuencia.
+                        ¡Cada número oculto revela una sorpresa especial! Observa bien y explora
+                        cada rincón para descubrir dónde se esconde.
+                    </p>
+                </section>
+
+                <section data-image="assets/img/more-friends-more-fun/img-sticky-5.png">
+                    <h2>Desafío de Comparación</h2>
+                    <p>
+                        En este reto, debes ayudar a UNO a identificar qué NumberBlock es mayor o menor.
+                        Aprende sobre la comparación de números mientras los personajes se colocan en orden de tamaño,
+                        ¡y desbloquea recompensas cada vez que aciertes!
+                    </p>
+                </section>
+
+                <section data-image="assets/img/more-friends-more-fun/img-sticky-6.png">
+                    <h2>Forma el Número Correcto</h2>
+                    <p>
+                        ¿Puedes combinar los bloques para crear el número solicitado?
+                        Elige los números correctos y únelos para formar nuevos resultados.
+                        ¡Es una forma divertida de practicar la construcción de números y descubrir cómo
+                        encajan!
+                    </p>
+                </section>
+
+                <section data-image="assets/img/more-friends-more-fun/img-sticky-7.png">
+                    <h2>Encuentra el Número Oculto</h2>
+                    <p>
+                        Busca entre los escenarios y ayuda a UNO a encontrar el número perdido para completar
+                        la secuencia. ¡Cada número oculto revela una sorpresa especial! Observa bien y explora
+                        cada rincón para descubrir dónde se esconde.
+                    </p>
+                </section>
+
+                <section data-image="assets/img/more-friends-more-fun/img-sticky-8.png">
+                    <h2>Salto de Sumas</h2>
+                    <p>
+                        Lleva a UNO a saltar de bloque en bloque sumando números a medida que avanzas.
+                        La meta es llegar al otro lado, ¡y solo podrás hacerlo si sumas correctamente!
+                        Cada salto exitoso te acerca a un nuevo nivel.
+                    </p>
+                </section>
+
+                <section data-image="assets/img/more-friends-more-fun/img-sticky-9.png">
+                    <h2>Rompecabezas de Secuencias</h2>
+                    <p>
+                        Ayuda a UNO a completar series de números en orden ascendente o descendente.
+                        Observa los patrones y arrastra el número correcto para terminar la secuencia.
+                        ¡Cada secuencia completada revela una animación especial!
+                    </p>
+                </section>
+
+                <section data-image="assets/img/more-friends-more-fun/img-sticky-10.png">
+                    <h2>El Desafío del Doble</h2>
+                    <p>
+                        Descubre qué sucede cuando multiplicas un NumberBlock por dos.
+                        Ayuda a UNO a duplicar números y ver cómo crecen rápidamente.
+                        ¡Una manera emocionante de aprender el concepto de "el doble" y multiplicación básica!
+                    </p>
+                </section>
+
+                <section data-image="assets/img/more-friends-more-fun/img-sticky-11.png">
+                    <h2>Aventura de Divisiones</h2>
+                    <p>
+                        Guía a UNO y sus amigos mientras dividen bloques en partes iguales.
+                        Divide los bloques correctamente para que cada NumberBlock tenga su parte justa.
+                        Un desafío perfecto para entender la división de una forma divertida y visual.
+                    </p>
+                </section>
+            </div>
+            </div>
+        </section>
+        
+
+        <section class="show-video">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#F4FCFC" fill-opacity="1" d="M0,96L80,90.7C160,85,320,75,480,96C640,117,800,171,960,197.3C1120,224,1280,224,1360,224L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
+            </div>
+            <div id="video-section" class="video-section">
+                <h2>Mira el video y descubre el sorprendente mundo de los NumberBlocks!</h2>
+                <div class="video-content">
+                    <div class="video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/0YKa9DQYdRg"
+                            title="NumberBlocks Video"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen class="move">
+                        </iframe>
+                    </div>
+                    <div class="character-content">
+                        <img class="move" src="assets/img/show-video/character-3.png" alt="NumberBlocks Character">
+                    </div>
+                </div>
+                
+            </div>
+            <svg class="svg-inferior" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#F4FCFC" fill-opacity="1" d="M0,32L80,48C160,64,320,96,480,112C640,128,800,128,960,112C1120,96,1280,64,1360,48L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
+        </section>
+
+        <!--Figura 3D-->
+        <section class="section3d">
+            <div class="text">
+                <h3>
+                    ¡Experimenta Efectos 3D Asombrosos en NumberBlocks: Una Aventura Matemática Inmersiva!
+                </h3>
+                <p>
+                    En NumberBlocks, la aventura no solo está en el aprendizaje,
+                    ¡sino también en la experiencia visual! Disfruta de efectos 3D asombrosos que dan vida a cada número y desafío,
+                    haciendo que las matemáticas cobren una nueva dimensión. A medida que los niños interactúan 
+                    con los personajes y los bloques, verán cómo sus acciones tienen un impacto real en el entorno,
+                    creando un aprendizaje dinámico y emocionante. ¡Cada sesión de juego se convierte en una experiencia inolvidable
+                    llena de color y diversión!
+                </p>
+            </div>
+            <div class="figure-3d">
+                <!-- Modelo 3D -->
+                <model-viewer 
+                    src="assets/img/3d/one.glb" 
+                    alt="A 3D model of NumberBlock" 
+                    camera-controls
+                    auto-rotate 
+                    touch-action="pan-y"
+                    shadow-intensity="1"
+                    exposure="1"
+                    environment-image="neutral"
+                    loading="eager"
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    style="width: 100%; height: 100%;">
+                    <!-- Agregar un poster mientras carga -->
+                    <div class="poster" slot="poster">
+                        Cargando modelo 3D...
+                    </div>
+                </model-viewer>
+            </div>
+        </section>
+          
+        
+
+    </main>
     <script src="js/index.js"></script>
     <script src="js/header.js"></script>
     <script src="js/hero.js"></script>
     <script src="js/funnyApp.js"></script>
+    <script src="js/discoverTheGame.js"></script>
+    <script src="js/moreFriendsMoreFun.js"></script>
+    <script src="js/show-video.js"></script>
+    <script src="js/section3d.js"></script>
 </body>
 </html>

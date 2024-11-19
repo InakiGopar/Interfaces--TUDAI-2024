@@ -1,0 +1,37 @@
+.section3d {
+    width: 1080px;
+    height: 1034px;
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    width: 786px;
+}
+
+.text h3 {
+    color: rgba(157, 33, 33, 1);
+    font-weight: 600;
+    font-size: 60px;
+}
+
+.text p {
+    font-size: 20px;
+    font-weight: 400;
+    width: 520px;
+}
+
+.figure-3d {
+    position: relative;
+    width: 380px; 
+    height: 729px;
+    margin-left: 50px;
+    background: #fafafa;
+}
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+    --poster-color: transparent;
+    background-color: transparent;
+}

@@ -2,75 +2,82 @@
 
 //Las imagenes de la app mas divertida del mundo
 const images = [
-    "../assets/img/app-funny/app-mas-divertida-img-1.png",
-    "../assets/img/app-funny/app-mas-divertida-img-2.png",
-    "../assets/img/app-funny/app-mas-divertida-img-3.png",
-    "../assets/img/app-funny/app-mas-divertida-img-4.png"
+    "assets/img/app-funny/app-mas-divertida-img-1.png",
+    "assets/img/app-funny/app-mas-divertida-img-2.png",
+    "assets/img/app-funny/app-mas-divertida-img-3.png",
+    "assets/img/app-funny/app-mas-divertida-img-4.png"
 ];
 
 //elementos del DOM
-const imageContainer = document.getElementById("funny-app-img");
-let currentIndexImg = 0;
-let intervalId = null;
+const imageContainer = document.querySelector(".imagen-container");
 
-// Función para inicializar las imágenes
-function initializeImages() {
-    if (imageContainer) {
-        // Forzar la visibilidad del contenedor
-        imageContainer.style.opacity = '1';
-        imageContainer.style.visibility = 'visible';
-        imageContainer.style.display = 'block';
-        
-        // Establecer la primera imagen
-        imageContainer.style.backgroundImage = `url("${images[0]}")`;
-        
-        // Iniciar el intervalo solo si no existe
-        if (!intervalId) {
-            intervalId = setInterval(changeImg, 3000);
-        }
-    }
-}
+//Indice con el cual vamos a seleccionar la imagen
+let currentIndexImg = 0;
 
 function changeImg() {
     currentIndexImg = (currentIndexImg + 1) % images.length;
-    // Asegurar que el contenedor siga visible
-    imageContainer.style.opacity = '1';
-    imageContainer.style.visibility = 'visible';
-    imageContainer.style.display = 'block';
+    //cambia la imagen del contenedor en base al currentIndexImg
     imageContainer.style.backgroundImage = `url("${images[currentIndexImg]}")`;
 }
 
-// Inicializar después de que el loader termine
-document.addEventListener('loaderComplete', () => {
-    setTimeout(initializeImages, 50);  // Reducimos el tiempo de espera
+//Cambia la imagen cada 3 segundos (3000 ms)
+setInterval(changeImg, 3000);
+
+// Evento scroll para el efecto parallax
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    const amplitude = 35; // Aumentado de 25 para más desplazamiento
+
+    // Calcula un valor sinusoidal basado en el scroll para crear un efecto ondulante
+    const offset = Math.sin(scrollPosition * 0.002) * amplitude;
+
+    // Ajusta la posición de los personajes manteniendo sus transformaciones originales
+    const character4 = document.querySelector('.character4');
+    const character5 = document.querySelector('.character5');
+    const text = document.querySelector('.text');
+    const imagenContainer = document.querySelector('.imagen-container');
+
+    if (character4) {
+        character4.style.transform = `translateY(${offset * 1.4}px) scaleX(-1)`;
+    }
+
+    if (character5) {
+        character5.style.transform = `translateY(${offset * 1.6}px)`;
+    }
+
+    if (text) {
+        text.style.transform = `translateY(${offset * 1.2}px)`;
+    }
+
+    if (imagenContainer) {
+        imagenContainer.style.transform = `translateY(${offset * 1.3}px)`;
+    }
 });
 
-// Elementos para el efecto parallax
-const title = document.querySelector('.funny-app .title');
-const text = document.querySelector('.funny-app .text');
-const character4 = document.querySelector('.character4');
-const character5 = document.querySelector('.character5');
+//Cards
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".card");
 
-// Función para manejar el efecto parallax
-function handleParallax() {
-    const scrolled = window.scrollY;
-    const funnyAppSection = document.querySelector('.funny-app');
-    const sectionTop = funnyAppSection.offsetTop;
-    const sectionHeight = funnyAppSection.offsetHeight;
-    
-    // Solo aplicar el efecto cuando la sección está visible
-    if (scrolled >= sectionTop - window.innerHeight && 
-        scrolled <= sectionTop + sectionHeight) {
-        
-        const relativeScroll = scrolled - sectionTop;
-        
-        title.style.transform = `translateX(${relativeScroll * 0.02}px)`;
-        text.style.transform = `translateX(${relativeScroll * -0.015}px)`;
-        imageContainer.style.transform = `translateY(${relativeScroll * 0.025}px)`;
-        character4.style.transform = `scaleX(-1) translateY(${relativeScroll * 0.035}px)`;
-        character5.style.transform = `translateY(${relativeScroll * -0.03}px)`;
-    }
-}
+    //IntersectionObserver permite detectar cuándo un elemento del DOM entra o sale del área visible del navegador.
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            //si la card está visible
+            if (entry.isIntersecting) {
+                // Agregar la clase "visible" con un retraso
+                setTimeout(() => {
+                    entry.target.classList.add("visible");
+                }, index * 300); // Retraso de 0.3s por tarjeta
+            } 
+            else {
+                // eliminar la clase "visible" cuando ya no esté visible
+                entry.target.classList.remove("visible");
+            }
+        });
+    }, 
+    {
+        threshold: 0.5 // Se activa cuando el 50% de la card está visible
+    });
 
-// Agregar el evento de scroll
-window.addEventListener('scroll', handleParallax);
+    // Observa cada tarjeta
+    cards.forEach((card) => observer.observe(card));
+});

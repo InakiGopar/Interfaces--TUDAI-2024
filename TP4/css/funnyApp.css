@@ -6,15 +6,13 @@
     display: flex;
     flex-direction: column;
     color: rgba(27, 66, 143, 1);
-    clip-path: url("/assets/wave-haikei.svg");
+    clip-path: url("../assets/wave-haikei.svg");
 }
 
 .title {
     width: 508px;
     height: 132px;
     padding-left: 50px;
-    transform: translateX(0);
-    transition: transform 0.3s ease-out;
 }
 
 .title p {
@@ -23,22 +21,21 @@
 }
 
 .text {
-    width: 704px;
+    width: 900px;
     height: 154px;
     padding-left: 50px;
-    transform: translateX(0);
-    transition: transform 0.3s ease-out;
 }
 
 .text p {
     font-weight: 400;
     font-size: 20px;
     padding-top: 55px;
+    line-height: 1.3;
 }
 
 .imagen-container {
-    width: 576px;
-    height: 324px;
+    width: 520px;
+    height: 292px;
     border-radius: 77px;
     border: 29px solid rgba(27, 66, 143, 1);
     margin-left: 130px;
@@ -46,8 +43,7 @@
     background-image: url("../assets/img/app-funny/app-mas-divertida-img-1.png");
     background-size: cover;
     background-position: center;
-    transition: all 0.5s ease;
-    transform: translateY(0);
+    transition: background-image 0.5s ease;
 }
 
 .character-container {
@@ -57,7 +53,7 @@
 
 .character4 {
     position: absolute;
-    left: -50px;
+    left: 0px;
     top: -120px;
     width: 601px;
     height: 603px;
@@ -70,7 +66,7 @@
 
 .character5 {
     position: absolute;
-    left: 650px;
+    left: 620px;
     top: -1000px;
     width: 572px;
     height: 1500px;
@@ -88,3 +84,81 @@
     width: 1080px;
     height: 100px;
 }
+
+/* Cards que aparecen desde abajo*/
+
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 400px;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.card {
+    width: 323.96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(50px); /* Desplazado hacia abajo */
+    transition: all 0.8s ease; /* Transición para la animación */
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0); /* Aparece en su lugar */
+}
+
+.card-image {
+    width:  314.96px;
+    height: 284.69px;
+    background-color: #f0f0f0;
+    border: 9px solid #007aff; /* Borde azul */
+    border-radius: 41px;
+    background-image: url("/assets/img/app-funny/img-card-1.png"); /* Cambia esto por la imagen de cada card */
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-size: 20px;
+    color: rgb(0, 0, 0); /* Asegúrate de usar un color que combine con el fondo */
+    text-align: justify;
+    line-height: 1.2;
+}
+
+.card:nth-child(1) .card-image {
+
+    background-image: url("../assets/img/app-funny/img-card-1.png");
+}
+
+.card:nth-child(2) .card-image {
+    background-image: url("../assets/img/app-funny/img-card-2.png");
+}
+
+.card:nth-child(3) .card-image {
+    background-image: url("../assets/img/app-funny/img-card-3.png");
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.character4, .character5, .text, .imagen-container {
+    transition: transform 0.2s ease-out;
+    will-change: transform;
+}
+
+
+
