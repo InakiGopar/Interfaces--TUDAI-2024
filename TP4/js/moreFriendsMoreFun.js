@@ -4,7 +4,7 @@ let currentImage = ''; // Variable para guardar la imagen actual
 
 // Función para detectar cambios al hacer scroll
 window.addEventListener('scroll', () => {
-  let newimage = ''; // Nueva imagen a mostrar
+  let newImage = ''; // Nueva imagen a mostrar
   const firstSection = sections[0]; // Primera sección (mantendrá la primera imagen)
 
   // Detectamos si estamos todavía dentro de la primera sección
