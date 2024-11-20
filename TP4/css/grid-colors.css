@@ -1,0 +1,88 @@
+.container-grid {
+    width: 1080px;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-direction: column;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.5) 10%, /* Rojo con 50% de transparencia */
+        rgba(255, 165, 0, 0.5) 10% 20%, /* Naranja con 50% de transparencia */
+        rgba(255, 255, 0, 0.5) 20% 30%, /* Amarillo con 50% de transparencia */
+        rgba(0, 128, 0, 0.5) 30% 40%, /* Verde con 50% de transparencia */
+        rgba(0, 255, 255, 0.5) 40% 50%, /* Cian con 50% de transparencia */
+        rgba(0, 0, 255, 0.5) 50% 60%, /* Azul con 50% de transparencia */
+        rgba(128, 0, 128, 0.5) 60% 70%, /* Morado con 50% de transparencia */
+        rgba(128, 128, 128, 0.5) 70% 80%, /* Gris con 50% de transparencia */
+        rgba(255, 255, 255, 0.5) 80% 90% /* Blanco con 50% de transparencia */
+      );
+    
+  }
+
+  .characters-up{
+    display: flex;
+  }
+  .characters-down{
+    display: flex;
+  }
+  
+  .character-grid {
+    width: 250px;
+    height: 300.5px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px;
+  }
+  
+  #character-grid-1 {
+    background-image: url('../assets/img/grid-colors/img-grilla-1.png');
+  }
+  
+  #character-grid-2 {
+    background-image: url('../assets/img/grid-colors/img-grilla-2.png');
+  }
+  
+  #character-grid-3 {
+    background-image: url('../assets/img/grid-colors/img-grilla-3.png');
+  }
+
+  #character-grid-4 {
+    background-image: url('../assets/img/grid-colors/img-grilla-4.png');
+  }
+  
+  #character-grid-5 {
+    background-image: url('../assets/img/grid-colors/img-grilla-5.png');
+  }
+  
+  #character-grid-6 {
+    background-image: url('../assets/img/grid-colors/img-grilla-6.png');
+  }
+
+  #character-grid-7 {
+    background-image: url('../assets/img/grid-colors/img-grilla-7.png');
+  }
+  
+  #character-grid-8 {
+    background-image: url('../assets/img/grid-colors/img-grilla-8.png');
+  }
+  
+  #character-grid-9 {
+    background-image: url('../assets/img/grid-colors/img-grilla-9.png');
+  }
+
+  #character-grid-10 {
+    background-image: url('../assets/img/grid-colors/img-grilla-10.png');
+  }
+  
+ 
+  
+  /* Efecto al pasar el mouse */
+  .character-grid:hover {
+    transform: scale(1.1); /* Agranda sutilmente el personaje */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.7); /* Añade iluminación */
+    filter: brightness(1.2);
+  }
+
+  

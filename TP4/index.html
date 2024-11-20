@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <!--Fuente para el loader-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Luckiest+Guy&family=Merienda:wght@300..900&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!--Script para el efecto 3d-->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <!--Estilos-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/loader.css">
@@ -23,6 +25,7 @@
     <link rel="stylesheet" href="css/moreFriendsMoreFun.css">
     <link rel="stylesheet" href="css/show-video.css">
     <link rel="stylesheet" href="css/section3d.css">
+    <link rel="stylesheet" href="css/grid-colors.css">
     <title>Number Blocks</title>
 </head>
 <body>
@@ -336,8 +339,48 @@
                     llena de color y diversión!
                 </p>
             </div>
-            <div class="figure-3d"></div>
+            <div class="figure-3d">
+                <!-- Modelo 3D -->
+                <model-viewer class="figure"
+                    src="assets/img/3d/one.glb" 
+                    alt="A 3D model of NumberBlock" 
+                    camera-controls
+                    auto-rotate 
+                    touch-action="pan-y"
+                    shadow-intensity="1"
+                    exposure="1"
+                    environment-image="neutral"
+                    loading="eager"
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    style="width: 100%; height: 100%;">
+                    <!-- Agregar un poster mientras carga -->
+                    <div class="poster" slot="poster">
+                        Cargando modelo 3D...
+                    </div>
+                </model-viewer>
+            </div>
+        </section>
 
+        <!--Grilla Colores-->
+
+        <section class="container-grid">
+
+            <div class="characters-up">
+                <div class="character-grid" id="character-grid-1"></div>
+                <div class="character-grid" id="character-grid-2"></div>
+                <div class="character-grid" id="character-grid-3"></div>
+                <div class="character-grid" id="character-grid-4"></div>
+                <div class="character-grid" id="character-grid-5"></div>
+            </div>
+            <div class="characters-down">
+                <div class="character-grid" id="character-grid-6"></div>
+                <div class="character-grid" id="character-grid-7"></div>
+                <div class="character-grid" id="character-grid-8"></div>
+                <div class="character-grid" id="character-grid-9"></div>
+                <div class="character-grid" id="character-grid-10"></div>
+            </div>
+            
         </section>
           
         
@@ -350,5 +393,6 @@
     <script src="js/discoverTheGame.js"></script>
     <script src="js/moreFriendsMoreFun.js"></script>
     <script src="js/show-video.js"></script>
+    <script src="js/section3d.js"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@ const images = [
 ];
 
 //elementos del DOM
-const imageContainer = document.getElementById("funny-app-img");
+const imageContainer = document.querySelector(".imagen-container");
 
 //Indice con el cual vamos a seleccionar la imagen
 let currentIndexImg = 0;
@@ -23,6 +23,36 @@ function changeImg() {
 //Cambia la imagen cada 3 segundos (3000 ms)
 setInterval(changeImg, 3000);
 
+// Evento scroll para el efecto parallax
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    const amplitude = 35; // Aumentado de 25 para más desplazamiento
+
+    // Calcula un valor sinusoidal basado en el scroll para crear un efecto ondulante
+    const offset = Math.sin(scrollPosition * 0.002) * amplitude;
+
+    // Ajusta la posición de los personajes manteniendo sus transformaciones originales
+    const character4 = document.querySelector('.character4');
+    const character5 = document.querySelector('.character5');
+    const text = document.querySelector('.text');
+    const imagenContainer = document.querySelector('.imagen-container');
+
+    if (character4) {
+        character4.style.transform = `translateY(${offset * 1.4}px) scaleX(-1)`;
+    }
+
+    if (character5) {
+        character5.style.transform = `translateY(${offset * 1.6}px)`;
+    }
+
+    if (text) {
+        text.style.transform = `translateY(${offset * 1.2}px)`;
+    }
+
+    if (imagenContainer) {
+        imagenContainer.style.transform = `translateY(${offset * 1.3}px)`;
+    }
+});
 
 //Cards
 document.addEventListener("DOMContentLoaded", () => {
