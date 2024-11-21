@@ -1,0 +1,57 @@
+footer {
+    width: 1080px;
+    height: 595px;
+    background-color: rgba(94, 94, 93, 1);
+}
+
+.footer-top {
+    width: 100%;
+    height: 75px;
+    background-color: rgba(36, 36, 36, 1);
+}
+
+.footer-top-img {
+    height: 75px;
+    width: 1080px;
+    scale: 0.9;
+    background-image: url('/assets/img/footer/footer-top-img.png');
+}
+
+.footer-content {
+    color: #fff;
+    margin-left: 80px;
+}
+
+.footer-content p{
+    width: 820px;
+    height: 361px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-family: Lato;
+    font-weight: 400;
+    line-height: 18.9px;
+    letter-spacing: 0.11em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.footer-content span {
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 18.9px;
+    letter-spacing: 0.11em;
+    text-align: left;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.redes {
+    width: 212px;
+    height: 41px;
+    margin-top: 30px;
+    background-image: url('/assets/img/footer/footer-redes-img.png');
+}

@@ -10,19 +10,14 @@
 .logo {
     width: 100%;
     height: 100%;
-    background-image: url("/assets/img/header/logo-big.png");
+    background-image: url("../assets/img/header/logo-big.png");
     background-size: cover; 
     background-position: center center;
 }
 
-.medium-logo.logo-container {
-    width: 350px;
-    height: 160px;
-    transition: all 0.4s ease;
-}
 
 .small-logo.logo-container {
-    width: 180px;
+    width: 150px;
     height: 86px;
     transition: all 0.4s ease;
 }

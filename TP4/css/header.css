@@ -1,13 +1,14 @@
 header {
-    height: 103px;
-    width: 950px;
-    padding-top: 20px;
+    height: 80px;
+    width: 1050px;
+    padding-top: 15px;
+    padding-left: 1%;
+    padding-right: 1%;
     display: flex;
     position: fixed;
     top: 0;
     z-index: 9999;
-
-    /*background: linear-gradient(180deg, #00D1D5 0%, rgba(0, 209, 213, 0.12) 87.91%, rgba(1, 208, 213, 0) 100%);*/
+    background: linear-gradient(180deg, #00D1D5 50%, rgba(0, 209, 213, 0.12) 87.91%, rgba(1, 208, 213, 0) 100%);
     background-color: transparent;
     justify-content: space-between;
 }
