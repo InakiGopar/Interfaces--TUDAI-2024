@@ -35,7 +35,9 @@
   height: 370px; 
   margin-top: 10px;
   margin-left: 100px;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  opacity: 0;
+  transform: translateX(-200%);
 }
 
 .video-wrapper iframe {
@@ -58,7 +60,9 @@
   position: relative;
   top: -200px;
   margin-left: -10px;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  opacity: 0;
+  transform: translateX(200%);
 }
 
 .character-content img {
@@ -72,4 +76,14 @@
   transform: scaleY(-1);
   position: relative;
   top: -250px;
+}
+
+.video-wrapper.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.character-content.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
