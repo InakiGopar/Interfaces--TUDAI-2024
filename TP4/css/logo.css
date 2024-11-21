@@ -15,14 +15,9 @@
     background-position: center center;
 }
 
-.medium-logo.logo-container {
-    width: 350px;
-    height: 160px;
-    transition: all 0.4s ease;
-}
 
 .small-logo.logo-container {
-    width: 180px;
+    width: 150px;
     height: 86px;
     transition: all 0.4s ease;
 }

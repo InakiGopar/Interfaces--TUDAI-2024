@@ -9,75 +9,96 @@
   }
 
   .characters-up{
-    margin-top: -15px;
+    height: 390px;
+    margin-top: -10px;
     display: flex;
   }
+  
   .characters-down{
-    margin-bottom: -15px;
+    height: 340px;
+    margin-top: 10px;
     display: flex;
   }
   
   .character-grid {
-    height: 370px;
     width: 280px;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center center;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 15px;
+    margin: 10px;
   }
   
   #character-grid-1 {
     background-image: url('../assets/img/grid-colors/img-grilla-1.png');
+    background-size: cover; 
+    background-position: center center;
     margin-left: 0px;
   }
   
   #character-grid-2 {
     background-image: url('../assets/img/grid-colors/img-grilla-2.png');
-    margin-left: 20px;
+    background-size: cover; 
+    background-position: center center;
+    margin-left: 25px;
   }
   
   #character-grid-3 {
     background-image: url('../assets/img/grid-colors/img-grilla-3.png');
+    background-size: cover; 
+    background-position: center center;
     margin-left: 20px;
   }
 
   #character-grid-4 {
     background-image: url('../assets/img/grid-colors/img-grilla-4.png');
-    margin-right: 0px;
+    background-size: cover; 
+    background-position: center center;
+    margin-right: 5px;
   }
   
   #character-grid-5 {
     background-image: url('../assets/img/grid-colors/img-grilla-5.png');
+    background-size: cover; 
+    background-position: center center;
     margin-right: 0px;
   }
   
   #character-grid-6 {
     background-image: url('../assets/img/grid-colors/img-grilla-6.png');
+    background-size: cover; 
+    background-position: center center;
     margin-left: 0px;
   }
 
   #character-grid-7 {
     background-image: url('../assets/img/grid-colors/img-grilla-7.png');
-    margin-left: 5px;
+    background-size: cover; 
+    background-position: center center;
+    margin-left: 20px;
   }
   
   #character-grid-8 {
     background-image: url('../assets/img/grid-colors/img-grilla-8.png');
-    margin-left: 5px;
+    background-size: cover; 
+    background-position: center center;
+    margin-left: 20px;
   }
   
   #character-grid-9 {
     background-image: url('../assets/img/grid-colors/img-grilla-9.png');
-    margin-right: 0px;
+    background-size: cover; 
+    background-position: center center;
+    margin-right: 10px;
   }
 
   #character-grid-10 {
     background-image: url('../assets/img/grid-colors/img-grilla-10.png');
+    background-size: cover; 
+    background-position: center center;
     margin-right: 0px;
   }
-  
- 
   
   /* Efecto al pasar el mouse */
   .character-grid:hover {
@@ -85,5 +106,3 @@
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.7); /* Añade iluminación */
     filter: brightness(1.2);
   }
-
-  

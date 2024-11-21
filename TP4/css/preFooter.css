@@ -1,0 +1,198 @@
+.pre-footer {
+    position: relative;
+    margin-top: 150px;
+    width: 1080px;
+    height: 1396px;
+    background-image: linear-gradient(to bottom, #f4fcfc, #e2fcff, #d6fbff, #cafaff, #bef9fe, #b6f7f6, #b0f5ed, #acf3e2, #b4edcc, #c1e6b7, #d0dca5, #e0d299);
+    overflow: hidden;
+}
+
+.pre-footer h3 {
+    font-size: 60px;
+    font-weight: 600;
+    width: 816px;
+    margin-left: 50px;
+    padding-bottom: 50px;
+}
+
+.pre-footer-form {
+    display: flex;
+    width: 780px;
+    height: 100px;
+    border-radius: 50px 0px 0px 50px;
+    margin-left: 50px;
+}
+
+.pre-footer-form input {
+    width: 562px;
+    border-start-start-radius: 50px;
+    border-end-start-radius: 50px;
+    border: 9px solid #fff;
+    background-color: rgba(236, 236, 236, 1);
+    box-shadow: 4px 5px 0px 0px rgba(2, 24, 126, 1);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 18.9px;
+    letter-spacing: 0.11em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    padding-left: 52px;
+}
+
+.pre-footer-form input::placeholder {
+    color: rgba(0, 0, 0, 0.39);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 18.9px;
+    letter-spacing: 0.11em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.pre-footer-form input:focus {
+    outline: none;
+}
+
+.btn-suscribe {
+    width: 218px;
+    background-color: rgba(131, 194, 82, 1);
+    border: 9px solid #fff;
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+    border-end-end-radius: 50px;
+    border-start-end-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 4px 5px 0px 0px rgba(2, 24, 126, 1);
+}
+
+
+.btn-suscribe:hover {
+    background-color: #6ebf30;
+}
+
+.pre-footer p {
+    font-size: 20px;
+    font-weight: 400;
+    width: 578px;
+    margin-left: 50px;
+    margin-top: 46px;
+}
+
+.teen-img {
+    width: 231px;
+    height: 145px;
+    margin-left: 50px;
+    margin-top: 20px;
+    background-image: url('../assets/img/pre-footer/teen-img.png');
+    background-size: cover; 
+    background-position: center center;
+}
+
+
+/*parallax infinito*/
+
+.nube-1,
+.nube-2,
+.nube-3 {
+    position: absolute;
+    background-size: cover; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 850px;
+    height: 400px;
+}
+
+/* Animación nube 1 */
+.nube-1 {
+    top: 650px;
+    left: -10px; 
+    animation: moveNube1 40s linear infinite;
+    background-image: url('../assets/img/pre-footer/nube-derch-arriba.png');
+    scale: 0.4;
+}
+
+/* Animación nube 2 */
+.nube-2 {
+    top: 600px;
+    left: -10px;
+    animation: moveNube2 45s linear infinite;
+    background-image: url('../assets/img/pre-footer/nube-derch-arriba.png');
+    scale: 0.3;
+}
+
+/* Animación nube 3 */
+.nube-3 {
+    top: 550px;
+    left: -10px;
+    animation: moveNube3 58s linear infinite;
+    background-image: url('../assets/img/pre-footer/nube-derch-arriba.png');
+    scale: 0.5;
+}
+
+/* Pasto */
+.pasto {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Duplica el ancho para el efecto de continuidad */
+    height: 300px;
+    background-image: url('../assets/img/pre-footer/pasto.png');
+}
+
+/* Keyframes para las animaciones */
+
+@keyframes moveNube1 {
+    0% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(300%);
+    }
+}
+
+/* Nube 2: movimiento similar pero más lento */
+@keyframes moveNube2 {
+    0% {
+        transform: translateX(-350%);
+    }
+    100% {
+        transform: translateX(350%);
+    }
+}
+
+/* Nube 3: movimiento similar pero con diferente duración */
+@keyframes moveNube3 {
+    0% {
+        transform: translateX(-210%);
+    }
+    100% {
+        transform: translateX(210%);
+    }
+}
+
+
+/*Gifs*/
+.gifs-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.gif1 {
+    padding-top: 230px;
+    z-index: 50;
+}
+
+.gif2 {
+    padding-top: 260px;
+    z-index: 50;
+}
+
+.gif3 {
+    padding-top: 260px;
+    z-index: 50;
+}

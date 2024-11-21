@@ -1,7 +1,7 @@
 header {
     height: 80px;
     width: 1050px;
-    padding-top: 20px;
+    padding-top: 15px;
     padding-left: 1%;
     padding-right: 1%;
     display: flex;
@@ -158,7 +158,7 @@ header {
     0% { transform: rotate(0deg) translate(0, 0); }
     100%
     { 
-        transform: rotate(-45deg) translate(11px, -11px); 
+        transform: rotate(-45deg) translate(12px, -12px); 
         box-shadow: none;
     }
 }

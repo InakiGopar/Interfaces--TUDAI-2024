@@ -1,26 +1,28 @@
-.show-video{
+.show-video {
   background-color: #ffc933;
-  height: 1443.83px;
+  height: 1400px;
 }
 
 .video-section {
   display: flex;
-  flex-direction:  column;
+  flex-direction: column;
   align-items: center;
   width: 1080px;
 }
-.video-section h2{
+
+.video-section h2 {
+  margin-top: 50px;
+  padding-right: 90px;
   font-size: 55px;
   font-weight: bold;
   margin-bottom: 20px;
-  text-align: left;
   color: #fff;
-  margin-left: 84px ;
+  width: 802px;
 }
 
 .video-content {
   flex: 1;
-  z-index: 2; /* Asegura que esté por encima del fondo */
+  z-index: 2; 
   display: flex;
   justify-content: center;
   color: #fff;
@@ -29,8 +31,8 @@
 
 .video-wrapper {
   position: relative;
-  width: 650px; /* Ajustado al tamaño del diseño */
-  height: 370px; /* Relación aproximada 16:9 */
+  width: 650px; 
+  height: 370px; 
   margin-top: 10px;
   margin-left: 100px;
 }
@@ -42,7 +44,7 @@
   top: 0;
   left: 0;
   border: 29px solid #fff;
-  border-radius: 45px; /* Borde redondeado */
+  border-radius: 45px; 
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   margin-left: 100px ;
 }
@@ -52,7 +54,7 @@
   z-index: 1;
   display: flex;
   align-items: center;
-  transform: translateY(10px); /* Posicionamiento similar al diseño */
+  transform: translateY(10px); 
   position: relative;
   top: -200px;
   margin-left: -10px;
@@ -68,5 +70,5 @@
 .svg-inferior{
   transform: scaleY(-1);
   position: relative;
-  top: -100px;
+  top: -250px;
 }

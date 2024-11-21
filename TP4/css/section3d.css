@@ -1,8 +1,8 @@
 .section3d {
+    margin-top: 100px;
     width: 1080px;
-    height: 1034px;
+    height: 750px;
     display: flex;
-    justify-content: center;
 }
 
 .text {
@@ -22,16 +22,10 @@
 }
 
 .figure-3d {
-    position: relative;
-    width: 380px; 
-    height: 729px;
+    position: absolute;
+    left: 50%;
+    width: 600px; 
+    height: 600px;
     margin-left: 50px;
-    background: #fafafa;
 }
 
-/* .figure {
-    width: 100%;
-    height: 100%;
-    --poster-color: transparent;
-    background-color: transparent;
-} */

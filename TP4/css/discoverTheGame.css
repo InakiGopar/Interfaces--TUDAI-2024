@@ -1,11 +1,11 @@
 .discover-the-game {
     position: relative;
-    background-color: #5829bf; /* Fondo violeta */
+    background-color: rgba(88, 41, 191, 1); 
     color: white;
     text-align: center;
     width: 1080px;
-    margin: 40px auto; /* Centrar la sección horizontalmente */
-    overflow: hidden; /* Asegurar que los elementos no se desborden */
+    margin: 40px auto; 
+    overflow: hidden; 
 }
 
 .content {
@@ -22,7 +22,7 @@
     margin-bottom: 60px;
     margin-top: -20px;
     width: 950px;
-    font-weight: bold; /* Negrita para el texto */
+    font-weight: 600; 
 }
 
 .content span {
