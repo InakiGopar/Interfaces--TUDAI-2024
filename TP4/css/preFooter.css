@@ -110,7 +110,7 @@
 .nube-1 {
     top: 650px;
     left: -10px; 
-    animation: moveNube1 40s linear infinite;
+    animation: moveNube1 20s linear infinite;
     background-image: url('../assets/img/pre-footer/nube-derch-arriba.png');
     scale: 0.4;
 }
@@ -119,7 +119,7 @@
 .nube-2 {
     top: 600px;
     left: -10px;
-    animation: moveNube2 45s linear infinite;
+    animation: moveNube2 25s linear infinite;
     background-image: url('../assets/img/pre-footer/nube-derch-arriba.png');
     scale: 0.3;
 }
@@ -128,7 +128,7 @@
 .nube-3 {
     top: 550px;
     left: -10px;
-    animation: moveNube3 58s linear infinite;
+    animation: moveNube3 35s linear infinite;
     background-image: url('../assets/img/pre-footer/nube-derch-arriba.png');
     scale: 0.5;
 }
