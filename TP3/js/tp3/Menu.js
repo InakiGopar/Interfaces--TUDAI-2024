@@ -86,7 +86,7 @@ class Menu extends Dibujable {
     
         // Mostrar mensaje central
         this.ctx.fillStyle = "#FFF";
-        this.ctx.font = "15px 'Press Start 2P'"; // Fuente para el mensaje
+        this.ctx.font = "18px 'Press Start 2P'"; // Fuente para el mensaje
         this.ctx.fillText("Selecciona tu estadio", this.canvas.width / 2, 550);
         this.ctx.strokeStyle = "#000000"; // Color negro para el borde
         this.ctx.lineWidth = 1; // Ancho del borde
@@ -95,7 +95,7 @@ class Menu extends Dibujable {
 
         // Mostrar mensaje seleccionar jugador arg
         this.ctx.fillStyle = "#FFF";
-        this.ctx.font = "14px 'Press Start 2P'"; // Fuente para el mensaje
+        this.ctx.font = "16px 'Press Start 2P'"; // Fuente para el mensaje
         this.ctx.fillText("Selecciona tu jugador", 210, 250);
         this.ctx.strokeStyle = "#000000"; // Color negro para el borde
         this.ctx.lineWidth = 1; // Ancho del borde
@@ -103,7 +103,7 @@ class Menu extends Dibujable {
 
         // Mostrar mensaje seleccionar jugador francia
         this.ctx.fillStyle = "#FFF";
-        this.ctx.font = "14px 'Press Start 2P'"; // Fuente para el mensaje
+        this.ctx.font = "16px 'Press Start 2P'"; // Fuente para el mensaje
         this.ctx.fillText("Selecciona tu jugador", 810, 250);
         this.ctx.strokeStyle = "#000000"; // Color negro para el borde
         this.ctx.lineWidth = 1; // Ancho del borde

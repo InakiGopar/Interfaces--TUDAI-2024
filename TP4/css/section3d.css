@@ -1,0 +1,31 @@
+.section3d {
+    margin-top: 100px;
+    width: 1080px;
+    height: 750px;
+    display: flex;
+}
+
+.text {
+    width: 786px;
+}
+
+.text h3 {
+    color: rgba(157, 33, 33, 1);
+    font-weight: 600;
+    font-size: 60px;
+}
+
+.text p {
+    font-size: 20px;
+    font-weight: 400;
+    width: 520px;
+}
+
+.figure-3d {
+    position: absolute;
+    left: 50%;
+    width: 600px; 
+    height: 600px;
+    margin-left: 50px;
+}
+

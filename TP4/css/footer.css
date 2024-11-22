@@ -1,0 +1,127 @@
+footer {
+    width: 1080px;
+    height: 595px;
+    background-color: rgba(94, 94, 93, 1);
+}
+
+.footer-top {
+    width: 100%;
+    height: 75px;
+    background-color: rgba(36, 36, 36, 1);
+}
+
+.footer-top-img {
+    height: 75px;
+    width: 1080px;
+    scale: 0.9;
+    background-image: url('../assets/img/footer/footer-top-img.png');
+}
+
+.footer-content {
+    color: #fff;
+    margin-left: 80px;
+}
+
+.footer-content p{
+    width: 820px;
+    height: 361px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-family: Lato;
+    font-weight: 400;
+    line-height: 18.9px;
+    letter-spacing: 0.11em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.footer-content span {
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 18.9px;
+    letter-spacing: 0.11em;
+    text-align: left;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.redes {
+    width: 212px;
+    height: 41px;
+    margin-top: 30px;
+    background-image: url('../assets/img/footer/footer-redes-img.png');
+}
+
+.container-spritesheet{
+    height:480px;
+    width:  270px;
+    position: absolute;
+}
+
+.spritesheet{
+    background-image: url("../assets/img/spritesheet/spirtesheet-5.png");
+    width: 480px;
+    height: 270px; 
+    background-repeat: no-repeat;
+    animation: animateSprite 1s steps(40) infinite;
+    position: absolute;
+    right: -935px;
+}
+
+@keyframes animateSprite {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 -10800px; } /* Ajusta para cubrir el total */
+}
+
+.container-spritesheet2{
+    height:180px;
+    width:  180px;
+    position: absolute;
+}
+
+.spritesheet2{
+    background-image: url("../assets/img/spritesheet/spritesheet-100.png");
+    width: 180px;
+    height: 180px; 
+    background-repeat: no-repeat;
+    animation: animateSprite2 1s steps(105) infinite;
+    position: absolute;
+    top: 330px;
+    left: 550px;
+}
+
+
+@keyframes animateSprite2 {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 -18900px; } /* Ajusta para cubrir el total */
+}
+
+.container-spritesheet4{
+    height: 350px;
+    width: 260px;
+    position: absolute;
+}
+
+.spritesheet4{
+    position: absolute;
+    right: -820px;
+    top: 250px;
+    width: 350px;
+    height: 260px;
+    background-image: url('../assets/img/spritesheet/sprintsheet-4.png');
+    background-repeat: no-repeat;
+    animation: animateSprite4 1s steps(40) infinite;
+}
+
+@keyframes animateSprite4 {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0px -10800px;
+    }
+}
